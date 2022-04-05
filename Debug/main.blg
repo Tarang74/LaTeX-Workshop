@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'C:/Users/tarang/repos/LaTeX-Workshop/Debug/main.blg'
+[96] biber-MSWIN64:340> INFO - === 
+[126] Biber.pm:418> INFO - Reading 'C:/Users/tarang/repos/LaTeX-Workshop/Debug/main.bcf'
+[221] Biber.pm:972> INFO - Found 4 citekeys in bib section 0
+[234] Biber.pm:4383> INFO - Processing section 0
+[247] Biber.pm:4574> INFO - Looking for bibtex file 'sample.bib' for section 0
+[283] bibtex.pm:1713> INFO - LaTeX decoding ...
+[294] bibtex.pm:1518> INFO - Found BibTeX data source 'sample.bib'
+[333] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[333] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[333] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[333] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[339] bbl.pm:654> INFO - Writing 'C:/Users/tarang/repos/LaTeX-Workshop/Debug/main.bbl' with encoding 'UTF-8'
+[340] bbl.pm:757> INFO - Output to C:/Users/tarang/repos/LaTeX-Workshop/Debug/main.bbl
+[341] Biber.pm:130> WARN - I didn't find a database entry for 'smit54' (section 0)
+[341] Biber.pm:132> INFO - WARNINGS: 1

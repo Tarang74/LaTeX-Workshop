@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Pronunciation and Spelling}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Language Structures}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Macros}{1}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Environments}{1}{subsubsection.1.2.2}%
+\contentsline {section}{\numberline {2}Basic Structure}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Sections}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Subsections}{1}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Subsubsection}{1}{subsubsection.2.2.1}%
+\contentsline {subsection}{Unumbered sections}{1}{section*.4}%
+\contentsline {subsection}{\numberline {2.3}Lists}{1}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Maths}{1}{section.3}%
+\contentsline {section}{\numberline {4}Figures, Tables, and Code}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}References \& Labels}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}\LaTeX {} (usually) knows better than you}{5}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Citations}{5}{section.5}%
+\contentsline {section}{\numberline {6}Other Use Cases}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}In-Place Diagrams}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Circuit Diagrams}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Matrices/Vectors}{6}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Other Resources}{8}{section.7}%
