@@ -1,3 +1,4 @@
+%!TEX program = xelatex
 % -------------------------------------
 % QUT Mathematics Society
 % LaTeX Workshop
@@ -31,45 +32,52 @@
 % new macros or changing default behaviours.
 
 %% Page layout
-\usepackage[a4paper, margin = 2.5cm]{geometry} % Controls layout of the page, including margins
+\usepackage[a4paper, margin = 2.5cm]{geometry}  % Controls layout of the page, including margins
 
 %% Mathematical environments and symbols
-\usepackage{mathtools}                         % Maths equations and aligns (inherits from amsmath)
-\usepackage{amssymb}                           % More maths symbols
-\usepackage{derivative}                        % Derivative symbols
+\usepackage{mathtools}                          % Maths equations and aligns (inherits from amsmath)
+\usepackage{amsmath}                            % Misc enhancements to math equations
+\usepackage{amssymb}                            % More maths symbols
+\usepackage{derivative}                         % Derivative symbols
+
+%% Scientific Notation
+\usepackage{siunitx}                            % SI unit typesetting
+\usepackage[version=4]{mhchem}                  % Chemical equation typesetting
 
 %% Figures
-\usepackage{float}                             % Figure positioning
-\usepackage{graphicx}                          % Including images
-\usepackage{booktabs}                          % For prettier looking tables
-\usepackage{subcaption}                        % For using subfigures
+\usepackage{float}                              % Figure positioning
+\usepackage{graphicx}                           % Including images
+\usepackage{booktabs}                           % For prettier looking tables
+\usepackage{subcaption}                         % For using subfigures
+\usepackage{array}                              % Column formatting
 
 %% Source code
-\usepackage{listings}                          % Source code layout, formatting and styling
-\usepackage{color}                             % Needed for colouring source code syntax
+\usepackage{listings}                           % Source code layout, formatting and styling
+\usepackage{color}                              % Needed for colouring source code syntax
 
 %% References
-\usepackage[style=ieee]{biblatex}              % Controls bibliography and citations
-\usepackage[hidelinks]{hyperref}               % Support for links. Autolinks citations, references, and TOC
+\usepackage[style=ieee]{biblatex}               % Controls bibliography and citations
+\usepackage[hidelinks]{hyperref}                % Support for links. Autolinks citations, references, and TOC
 
 %% Lists
-\usepackage{enumitem}                          % List environments
+\usepackage{enumitem}                           % List environments
 
-\usepackage{xfrac}
-\usepackage{breqn}
+%% Unicode support
+\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
 
-% Additional use cases
-\usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{width=0.7\textwidth}
-\usepackage[american,siunitx]{circuitikz}
+%% Extra operator example
+\DeclareMathOperator{\proj}{proj}
+
+%% Font used by QUT (remove to use original TeX font)
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
 
 % -------------------------------------
 %% Global settings
 % -------------------------------------
 
 \lstset{
-	language=TeX,              % Language for syntax highlighting
+	language=tex,              % Language for syntax highlighting
 	basicstyle=\ttfamily,      % Style for fonts
 	numbers=left,              % Line numbers
 	numberstyle=\tiny,         % Line number style
@@ -141,10 +149,9 @@
 % -------------------------------------
 
 \section{Introduction}
-
 ``\LaTeX{} is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. \LaTeX{} is the de facto standard for the communication and publication of scientific documents. \LaTeX{} is available as free software''. \parencite{latex_project_latex_2018}
 
-One of the key differences in \LaTeX{} when compared to more common word processors such as MS Word, LibreOffice etc., is the separation of content and presentation. In \LaTeX{}, the author describes the general structure of the document (i.e., section headings, paragraphs, equations, figures), and the layout and typesetting is handled by \LaTeX{} (or rather the underlying \TeX{} backend).
+One of the key differences between \LaTeX{} and more common word processors such as MS Word, LibreOffice etc., is the separation of content and presentation. In \LaTeX{}, the author describes the general structure of the document (i.e., section headings, paragraphs, equations, and figures), and the layout and typesetting is handled by \LaTeX{} (or rather the underlying \TeX{} backend).
 
 There are several advantages to this:
 \begin{itemize}
@@ -152,184 +159,450 @@ There are several advantages to this:
     \item The presentation can be modified without introducing major changes to the document
     \item \LaTeX{}'s standard format allows authors to easily conform to styles provided by external publishers
 \end{itemize}
-
 \LaTeX{} is written in plaintext and processed by an external program to generate output files (usually PDFs).
-
 \subsection{Pronunciation and Spelling}
 \LaTeX{} is pronounced \emph{lah-tech} or \emph{lay-tech}, but \TeX{} is never pronounced \emph{tecks}. It is typeset using the \lstinline|\LaTeX{}| macro or with the capitalisation ``LaTeX''.
-
 \subsection{Language Structures}
-There are two major language structures that you will encounter when using \LaTeX{}; macros and environments.
-
+There are two major language structures that we encounter when using \LaTeX{}; \textit{macros} and \textit{environments}.
 \subsubsection{Macros}
-Macros tell \LaTeX{} how to do things. They use the following syntax
-\begin{lstlisting}[language=tex]
+Macros (or commands) tell \LaTeX{} how to do things. They use the following syntax
+\begin{lstlisting}
 \commandname
 % or
 \commandname[optional args]{required args}
 \end{lstlisting}
-Macros provide functionality for layouts, symbols, styles, etc. Common font styles include
+Macros provide functionality for layouts, symbols, styles, etc. As shown below, common font styles can be invoked using macros.
 \begin{description}
-    \item[Bold face] \lstinline!\textbf{Text}! --- \textbf{Text} 
-    \item[Italics] \lstinline!\textit{Text}! --- \textit{Text}
-    \item[Emphasis] \lstinline!\emph{Text}! --- \emph{Text} (either upright or italics depending on surrounding text)
-    \item[Underline] \lstinline!\underline{Text}! --- \underline{Text}
+    \item[Bold face] \lstinline|\textbf{Text}| --- \textbf{Text}
+    \item[Italics] \lstinline|\textit{Text}| --- \textit{Text}
+    \item[Emphasis] \lstinline|\emph{Text}| --- \emph{Text} (either upright or italics depending on surrounding text)
+    \item[Underline] \lstinline|\underline{Text}| --- \underline{Text}
 \end{description}
 We can also define custom macros that combine other macros or simplify repetitive instructions.
-% ! Up to here
+\begin{lstlisting}
+\newcommand{\commandname}[number_of_arguments]{command_body}
+\end{lstlisting}
+Arguments can be referenced inside the command body with the \lstinline|#argument_number| syntax.
+For example
+\begin{lstlisting}
+\newcommand{\boldanditalics}[1]{\textbf{\textit{#1}}}
+\boldanditalics{Bold and italics text}
+\end{lstlisting}
+\newcommand{\boldanditalics}[1]{\textbf{\textit{#1}}}
+\boldanditalics{Bold and italics text}
 \subsubsection{Environments}
-Environments are how we write larger sections of the document which often contain many lines or macros. Environments begin with a \lstinline|\begin{environmentname}| macro, and end with a \lstinline|\end{environmentname}| macro. Common environments include \lstinline{figure}, \lstinline{equation}, \lstinline{itemize} (these will be discussed later).
-
+Environments are used to format large blocks of text which often contain many lines or multiple macros. Environments use opening \lstinline|\begin| and closing \lstinline|\end| tags so that everything inside those tags will be formatted in a special manner depending on the type of the environment.
+\begin{lstlisting}
+\begin{environment_name}[optional_arguments]{required_arguments}
+    ...
+\end{environment_name} 
+\end{lstlisting}
+Common environments include \lstinline{figure}, \lstinline{equation}, \lstinline{itemize} (these will be discussed later), etc.
 \newpage
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
 \section{Basic Structure}
-
 \subsection{Sections}
-Sections are used to divide the document into parts. A new section is started with the \lstinline|\section{sectionname}| macro. Section titles are formatted to be bigger, bolded, and automatically numbered.
+Sections are used to divide the document into parts. A new section is started with the \lstinline|\section{section_name}| macro. Section titles are formatted to be bold and larger than regular text. The number preceding the titles are automatically determined.
 
-The table of contents (\lstinline{\tableofcontents}) is generated from the section headings. All the page numbers and section numbers are set automatically.
-
+The table of contents (\lstinline{\tableofcontents}) is also generated from these section macros, so that page numbers and section numbers are set automatically.
 \subsection{Subsections}
-We can also split sections into smaller \lstinline|\subsection{subsectionname}|
-\subsubsection{Subsubsection}
-... and \lstinline|\subsubsection{subsubsectionname}|
-
+We can split sections into smaller subsections \lstinline|\subsection{Subsections}|,
+\subsubsection{Subsubsections}
+and also subsubsections \lstinline|\subsubsection{Subsubsections}|.
 \subsection*{Unnumbered sections}
 \addcontentsline{toc}{subsection}{Unumbered sections}
-Sections and subsections can be unnumbered if they are declared with an asterisk. e.g.\ \lstinline|\section*{section name}|. The current subsection is un numbered in this way
+We can remove section numbering by using the starred version of the section macro
+e.g.\ \lstinline|\subsection*{Unnumbered sections}|.
 
+As this also removes the section from the table of contents, we can manually add it using
+\begin{lstlisting}
+\addcontentsline{toc}{subsection}{Unumbered sections}
+\end{lstlisting}
+remembering to place this immediately after the section macro so that the reference is set to the
+correct location.
 \subsection{Lists}
-
-\label{sec:lists}
-Dot point lists are created with the \lstinline{itemize} environment
+Unordered (bullet) lists are produced by the \lstinline{itemize} environment,
+where each list entry starts by using the \lstinline{\item} command, which
+also generates the bullet symbol.
+\begin{lstlisting}
 \begin{itemize}
-    \item Each item begins with the \lstinline{\item} macro
-    \item another item
+    \item List entries ...
+    \item We can ...
           \begin{itemize}
-              \item You can also do nested lists by just starting a new \lstinline{itemize} environment
+              \item We can ...
                     \begin{itemize}
-                        \item And the marker changes for each level you are on
+                        \item The marker ...
                               \begin{itemize}
-                                  \item List markers and spacing and spacing can be customised with the \lstinline{enumitem} package
+                                  \item List markers, ...
                               \end{itemize}
                     \end{itemize}
           \end{itemize}
 \end{itemize}
-
-
-Numbered lists are created with the \lstinline{enumerate} environment
+\end{lstlisting}
+\begin{itemize}
+    \item List entries start with the \lstinline{\item} macro and are indicated by the black dot
+    \item We can create multiple entries
+          \begin{itemize}
+              \item We can nest lists by creating another \lstinline{itemize} environment
+                    \begin{itemize}
+                        \item The marker changes in each nested list to reflect the depth
+                              \begin{itemize}
+                                  \item List markers, spacing, and other behaviour can be customised with the \lstinline{enumitem} package
+                              \end{itemize}
+                    \end{itemize}
+          \end{itemize}
+\end{itemize}
+Numbered (ordered) lists use the same syntax as unordered lists but use the \lstinline{enumerate} environment.
+\begin{lstlisting}
 \begin{enumerate}
-    \item Each item begins with the \lstinline{\item} macro
-    \item another item
+    \item List entries ...
+    \item Nested lists ...
           \begin{enumerate}
-              \item You can also do nested lists by just starting a new \lstinline{enumerate} environment
+              \item But use ...
                     \begin{enumerate}
-                        \item And the marker changes for each level you are on
-                              \begin{enumerate}
-                                  \item List markers and spacing and spacing can be customised with the \lstinline{enumitem} package
-                              \end{enumerate}
+                        \item Such as ...
                     \end{enumerate}
           \end{enumerate}
 \end{enumerate}
+\end{lstlisting}
+\begin{enumerate}
+    \item List entries are numbered automatically
+    \item Nested lists are also numbered
+          \begin{enumerate}
+              \item But use a different number format
+                    \begin{enumerate}
+                        \item Such as lowercase letters and roman numerals
+                    \end{enumerate}
+          \end{enumerate}
+\end{enumerate}
+We can change the top-level number format by specifying a value to the \lstinline{label}
+parameter.
+\begin{lstlisting}
+\begin{enumerate}[label=label_specifier]
+    \item ...
+\end{enumerate}
+\end{lstlisting}
+The following label specifiers can be used to override the default numbering format:
+\begin{enumerate}[label=\arabic*.]
+    \item --- \lstinline|[label=\arabic*.]| (Default)
+\end{enumerate}
+\begin{enumerate}[label=<\Roman*>]
+    \item --- \lstinline|[label=<\Roman*>]|
+\end{enumerate}
+\begin{enumerate}[label=\roman*]
+    \item --- \lstinline|[label=\roman*]|
+\end{enumerate}
+\begin{enumerate}[label=(\alph*)]
+    \item --- \lstinline|[label=(\alph*)]|
+\end{enumerate}
+\begin{enumerate}[label=Part \Alph*:]
+    \item --- \lstinline|[label=Part \Alph*:]|
+\end{enumerate}
+\newpage
+\section{Mathematics}
+One of \LaTeX{}'s strengths is how it formats mathematical expressions.
+There are two ways to format mathematical expressions; inline using \lstinline|\( \)| and display style using \lstinline|\[ \]|.
 
-\section{Maths}
+Mathematical expressions can be contained ``inline'' (within) text and require less space:
+\begin{lstlisting}
+Let \(\mathbb{N}\) denote the set of all natural numbers.
+\end{lstlisting}
+Let \(\mathbb{N}\) denote the set of all natural numbers.
 
-One of \LaTeX{}'s strengths is the formatting of maths. The easiest way to layout maths is with the inline maths mode, which is used by surrounding expressions with \$s. e.g.\ \(a + b = c\). \LaTeX{} automatically handles spacing and formatting of maths.
-
-In order to print an equation on its own line, you can use the \lstinline{equation} environment. To make things super script, \lstinline{^} is used, and to make things subscript, \lstinline{_} is used. Fractions are formatted with the \lstinline|\frac{numerator}{denominator}| macro
+Mathematical expressions typeset outside paragraph text appear as standalone, display style math:
+\begin{lstlisting}
+\[
+    \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
+\]
+\end{lstlisting}
+\[
+    \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
+\]
+Note that we commonly use \lstinline|\equation| environments for automatic vertical spacing and equation numbering
+(as with section headings).
+\begin{lstlisting}
 \begin{equation}
-    a^2_2 + {b_2}^2  = \frac{r}{c}
+    a^2 + b^2 = c^2
 \end{equation}
-\begin{align}
-    a^2_2 + {b_2}^2  = \frac{r}{c}       \\
-    a^{22}_{33} + (b_2)^2  = \frac{r}{c} \\
-    a^{22}_{33} + {b_2}^2  = \frac{r}{c} \\
-    \sum_{i=1}^{n} {x_i}^2 = 5           \\
-    \lim_{x\rightarrow\infty} sdfjsdf
-\end{align}
-
-The \lstinline{equation} environment only allows for a single line of maths, if multiple lines are required, the \lstinline{align} environment can be used. In addition to allowing multiple lines, \lstinline{align} also allows you to align each line at a point specified by an \lstinline{&}. Below, each line is aligned on the \(=\) sign.
-
-\begin{align}
-    0                               & = ax^2 + bx + c \nonumber                                                           \\
-    0                               & = a(x^2 + \frac{b}{a}x) + c \nonumber                                               \\
-    a \left( \frac{b}{2a} \right)^2 & = a \left( x^2 + \frac{b}{a}x + \left( \frac{b}{2a} \right)^2 \right) + c \nonumber \\
-    \frac{b^2-4ac}{4a^2}            & = \left( x +\frac{b}{2a} \right)^2 \nonumber                                        \\
-    x                               & = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-\end{align}
-
-If you want to write normal text in maths mode, you need to use the \lstinline{\text} macro
-
-\begin{align}
-    \text{this text is written in text mode} \\
-    this text is written in math mode
-\end{align}
-
-\LaTeX{} provides a lot of different  symbols that can be  used in math mode including the greek alphabet (shown below). A more extensive list can be found at \href{https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}{The Great, Big List of \LaTeX{} Symbols} \parencite{carlisle_great_2001}
-
+\end{lstlisting}
 \begin{equation}
+    a^2 + b^2 = c^2
+\end{equation}
+We can use the starred version of this environment to remove the equation label.
+\begin{lstlisting}
+\begin{equation*}
+    a^2 + b^2 = c^2
+\end{equation*}
+\end{lstlisting}
+\begin{equation*}
+    a^2 + b^2 = c^2
+\end{equation*}
+\subsection{Paired Delimiters}
+\begin{table}[H]
+    \centering
+    \begingroup
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Name}  & \textbf{\LaTeX{} Command}                & \textbf{Inline}                  & \textbf{Display Style}                         \\
+        \midrule
+        Parentheses    & \lstinline|\left( a \right)|             & \(\left( a \right)\)             & \(\displaystyle \left( a \right)\)             \\ % chktex 37
+        Brackets       & \lstinline|\left[ a \right]|             & \(\left[ a \right]\)             & \(\displaystyle \left[ a \right]\)             \\
+        Braces         & \lstinline|\left\{ a \right\}|           & \(\left\{ a \right\}\)           & \(\displaystyle \left\{ a \right\}\)           \\
+        Angle brackets & \lstinline|\left\langle a \right\rangle| & \(\left\langle a \right\rangle\) & \(\displaystyle \left\langle a \right\rangle\) \\
+        Pipes          & \lstinline|\left\lvert a \right\lvert|   & \(\left\lvert a \right\lvert\)   & \(\displaystyle \left\lvert a \right\lvert\)   \\
+        Double Pipes   & \lstinline|\left\lVert a \right\lVert|   & \(\left\lVert a \right\lVert\)   & \(\displaystyle \left\lVert a \right\lVert\)   \\
+        Ceiling        & \lstinline|\left\lceil a \right\rceil|   & \(\left\lceil a \right\rceil\)   & \(\displaystyle \left\lceil a \right\rceil\)   \\
+        Floor          & \lstinline|\left\lfloor a \right\rfloor| & \(\left\lfloor a \right\rfloor\) & \(\displaystyle \left\lfloor a \right\rfloor\) \\
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Paired Delimiters in \LaTeX{}.} % \label{}
+\end{table}
+Note that we can declare custom paired delimiters for the final five examples using the following syntax:
+\begin{lstlisting}
+\DeclarePairedDelimiter{\paired_delimiter_name}{left_delimiter}{right_delimiter}
+\end{lstlisting}
+Here are a few suggestions
+\begin{lstlisting}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\abracket}{\langle}{\rangle}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\end{lstlisting}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\abracket}{\langle}{\rangle}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\subsection{Arithmetic Operators}
+\begin{table}[H]
+    \centering
+    \begingroup
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Name}  & \textbf{\LaTeX{} Command}                     & \textbf{Inline}                       & \textbf{Display Style}                              \\
+        \midrule
+        Addition       & \lstinline|a + b|                             & \(a + b\)                             & \(\displaystyle a + b\)                             \\
+        Subtraction    & \lstinline|a - b|                             & \(a - b\)                             & \(\displaystyle a - b\)                             \\ % chktex 8
+        Multiplication & \lstinline|a \cdot \left( b \times c \right)| & \(a \cdot \left( b \times c \right)\) & \(\displaystyle a \cdot \left( b \times c \right)\) \\ % chktex 37
+        Inequalities   & \lstinline|a \ll b < c \leq d|                & \(a \ll b < c \leq d\)                & \(\displaystyle a \ll b < c \leq d\)                \\
+        Fractions      & \lstinline|\frac{a}{b}|                       & \(\frac{a}{b}\)                       & \(\displaystyle \frac{a}{b}\)                       \\
+        Superscripts   & \lstinline|a^2|                               & \(a^2\)                               & \(\displaystyle a^2\)                               \\
+        Subscripts     & \lstinline|a_i|                               & \(a_i\)                               & \(\displaystyle a_i\)                               \\
+        Square root    & \lstinline|\sqrt{a}|                          & \(\sqrt{a}\)                          & \(\displaystyle \sqrt{a}\)                          \\
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Arithmetic operators in \LaTeX{}.} % \label{}
+\end{table}
+\subsection{Common Large Operators}
+\begin{table}[H]
+    \centering
+    \begingroup
+    \renewcommand{\arraystretch}{2.2}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Name} & \textbf{\LaTeX{} Command}                      & \textbf{Inline}                        & \textbf{Display Style}                               \\
+        \midrule
+        Summations    & \lstinline|\sum_{i=1}^n i|                     & \(\sum_{i=1}^n i\)                     & \(\displaystyle \sum_{i=1}^n i\)                     \\
+        Limits        & \lstinline|\lim_{x \to 0} \frac{\sin{x}}{x}|   & \(\lim_{x \to 0} \frac{\sin{x}}{x}\)   & \(\displaystyle \lim_{x \to 0} \frac{\sin{x}}{x}\)   \\
+        Derivatives   & \lstinline|\odv{f}{x} \pdv{}{t} \odif{\Omega}| & \(\odv{f}{x} \pdv{}{t} \odif{\Omega}\) & \(\displaystyle \odv{f}{x} \pdv{}{t} \odif{\Omega}\) \\
+        Integrals     & \lstinline|\int_0^\infty e^{-x^2} \odif{x}|    & \(\int_0^\infty e^{-x^2} \odif{x}\)    & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)    \\
+        Union         & \lstinline|\bigcup_{i=1}^n S_i|                & \(\bigcup_{i=1}^n S_i\)                & \(\displaystyle \bigcup_{i=1}^n S_i\)                \\
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Common large operators in \LaTeX{}.} % \label{}
+\end{table}
+\subsection{Common Mathematical Functions}
+\begin{table}[H]
+    \centering
+    \begingroup
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Name}     & \textbf{\LaTeX{} Command}             & \textbf{Inline}               & \textbf{Display Style}                      \\
+        \midrule
+        Sine              & \lstinline|\sin{\left( x \right)}|    & \(\sin{\left( x \right)}\)    & \(\displaystyle \sin{\left( x \right)}\)    \\ % chktex 37
+        Inverse Sine      & \lstinline|\arcsin{\left( x \right)}| & \(\arcsin{\left( x \right)}\) & \(\displaystyle \arcsin{\left( x \right)}\) \\ % chktex 37
+        Logarithm         & \lstinline|\log{\left( x \right)}|    & \(\log{\left( x \right)}\)    & \(\displaystyle \log{\left( x \right)}\)    \\ % chktex 37
+        Natural Logarithm & \lstinline|\ln{\left( x \right)}|     & \(\ln{\left( x \right)}\)     & \(\displaystyle \ln{\left( x \right)}\)     \\ % chktex 37
+        Exponential       & \lstinline|\exp{\left( x \right)}|    & \(\exp{\left( x \right)}\)    & \(\displaystyle \exp{\left( x \right)}\)    \\ % chktex 37
+        \bottomrule
+    \end{tabular}
+    \endgroup
+    \caption{Common large operators in \LaTeX{}.} % \label{}
+\end{table}
+\subsection{Multi-line Equations}
+As \lstinline{equation} only allows single line equations, we can use other environments to group multiple equations into one environment.
+\subsubsection{Gather}
+The \lstinline{gather} environment allows us to display a set of consecutive equations with multiple lines.
+New lines are separated using \lstinline|\\|.
+\begin{lstlisting}
+\begin{gather}
+    \sum_{i = 0}^n f\left( i \right) = 
+        f\left( 0 \right) + f\left( 1 \right) 
+        + \cdots + f\left( n \right) \\
+    \prod_{i = 0}^n f\left( i \right) = 
+        f\left( 0 \right) \times f\left( 1 \right) 
+        \times \cdots \times f\left( n \right)
+\end{gather}
+\end{lstlisting}
+\begin{gather}
+    \sum_{i = 0}^n f\left( i \right) = f\left( 0 \right) + f\left( 1 \right) + \cdots + f\left( n \right) \\
+    \prod_{i = 0}^n f\left( i \right) = f\left( 0 \right) \times f\left( 1 \right) \times \cdots \times f\left( n \right)
+\end{gather}
+\newpage
+\subsubsection{Align}
+The \lstinline{align} environment allows us to display consecutive equations that are also aligned. The alignment is determined by the placement of the \lstinline{&} character. This alignment character breaks the equation into ``columns'' that are either right or left aligned, following the pattern: \lstinline{rlrlrl}\dots.
+\begin{lstlisting}
+\begin{align}
+%   R &  L  & R & L & R & L &  R  & L
+    R & = L & R & = & = & L & R = & L
+\end{align}
+\end{lstlisting}
+\begin{align}
+    R & = L & R & = & = & L & R = & L
+\end{align}
+This can be illustrated using a table.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}} % chktex 44
+        Right & Left & Right & Left & Right & Left & Right & Left \\
+        \midrule
+    \end{tabular}
+    \begin{tabular}{wr{4.2em}@{\&}wl{4.2em}@{\&}wr{4.2em}@{\&}wl{4.2em}@{\&}wr{4.2em}@{\&}wl{4.2em}@{\&}wr{4.2em}@{\&}wl{4.2em}}
+        \(R\) & \(= L\) & \(R\) & \(=\) & \(=\) & \(L\) & \(R =\) & \(L\) \\
+    \end{tabular}
+    % \caption{} % \label{}
+\end{table}
+With this in mind, we can create aligned equations as shown below.
+\begin{align}
+    ax^2 + bx + c                                                    & = 0                                  \\
+    a\left( x^2 + \frac{b}{a}x + \frac{c}{a} \right)                 & = 0                                  \\
+    x^2 + \frac{b}{a}x + \left( \frac{b}{2a} \right)^2 + \frac{c}{a} & = \left( \frac{b}{2a} \right)^2      \\
+    \left( x + \frac{b}{2a} \right)^2                                & = \frac{b^2}{4a^2} - \frac{c}{a}     \\
+    x + \frac{b}{2a}                                                 & = \frac{\pm \sqrt{b^2 - 4ac}}{2a}    \\
+    x                                                                & = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{align}
+\begin{align*}
+    \symbf{v}_1 & = \symbf{w}_1                                                                                                   & \symbf{q}_1 & = \frac{\symbf{v}_1}{\norm{\symbf{v}_1}} \\
+    \symbf{v}_2 & = \symbf{w}_2 - \proj_{\symbf{q}_1} \left( \symbf{w}_2 \right)                                                  & \symbf{q}_2 & = \frac{\symbf{v}_2}{\norm{\symbf{v}_2}} \\
+    \symbf{v}_3 & = \symbf{w}_3 - \proj_{\symbf{q}_1} \left( \symbf{w}_3 \right) - \proj_{\symbf{q}_2} \left( \symbf{w}_3 \right) & \symbf{q}_3 & = \frac{\symbf{v}_3}{\norm{\symbf{v}_3}} \\
+                & \vdots                                                                                                          &             & \vdots                                   \\
+    \symbf{v}_i & = \symbf{w}_i - \sum_{j = 1}^{i - 1} \proj_{\symbf{q}_j} \left( \symbf{w}_i \right)                             & \symbf{q}_i & = \frac{\symbf{v}_i}{\norm{\symbf{v}_i}}
+\end{align*}
+If we want to write normal text in math mode, we need to use the \lstinline{\text} macro.
+\begin{lstlisting}
+\begin{align*}
+    \text{Text in text mode} \\
+    Text in math mode
+\end{align*}
+\end{lstlisting}
+\begin{align*}
+    \text{Text in text mode} \\
+    Text in math mode
+\end{align*}
+Notice that spaces are ignored in math mode.
+\subsection{Horizontal Spacing}
+If we want to add horizontal space we can use the following macros:
+\begin{lstlisting}
+\begin{align*}
+    A & \!     B \\
+    A &        B \\
+    A & \,     B \\
+    A & \:     B \\
+    A & \;     B \\
+    A & \      B \\
+    A & \quad  B \\
+    A & \qquad B
+\end{align*}
+\end{lstlisting}
+\begin{align*}
+    A & \!     B \\
+    A & B        \\
+    A & \,     B \\
+    A & \:     B \\
+    A & \;     B \\
+    A & \      B \\
+    A & \quad  B \\
+    A & \qquad B
+\end{align*}
+\subsection{Additional Symbols}
+\LaTeX{} provides lots of symbols that can be installed from the \href{https://ctan.org}{Comprehensive TeX Archive Network} that are used in math mode, including the greek alphabet (shown below). A short (but extensive) list can be found at \href{https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}{The Great, Big List of \LaTeX{} Symbols}.
+\begin{equation*}
     \alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu \xi \pi \varpi \rho \varrho \sigma \varsigma \tau \upsilon \phi \varphi \chi \psi \omega
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
     \Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omega
-\end{equation}
-
+\end{equation*}
 Bringing all of these together can give pretty equations like:
 \begin{equation*}
-    v = \frac{2}{L} \sum_{n=1}^\infty e^{-(\kappa \beta_n^2 + \nu) t} \cos{(\beta_nx)}
-    \left(
-    \kappa \beta_n(-1)^n
-    \int_0^t e^{(\kappa \beta_n^2 + \nu)\lambda}\phi(\lambda) d\lambda +
-    \int_0^L f(x') \cos{(\beta_nx')} dx'
-    \right)
+    \Gamma\left( z \right) = \frac{e^{-\gamma z}}{z} \prod_{k = 1}^\infty \left( 1 + \frac{z}{k} \right)^{-1} e^{\frac{z}{k}}.
 \end{equation*}
 \begin{equation*}
-    v = T - T_f, \quad \kappa = \frac{k}{\rho c}, \quad \nu = \frac{h p}{\rho c A}, \quad \beta_n = \frac{\pi}{2L}(2n + 1)
+    \symbf{G}_{\mu \nu} + \symbf{\Lambda} \symbf{g}_{\mu \nu} = \kappa \symbf{T}_{\mu \nu}
 \end{equation*}
-
+\begin{equation*}
+    \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
+\end{equation*}
+\begin{equation*}
+    i \hbar \pdv{}{t} \Psi\left( x,\: t \right) = -\frac{\hbar^2}{2m} \pdv[order=2]{}{x} \Psi\left( x,\: t \right) + V\left( x,\: t \right) \Psi\left( x,\: t \right)
+\end{equation*}
 \newpage
 \section{Figures, Tables, and Code}
+\LaTeX{} allows us to use figures and tables which can be added raw or by using floats.
+We generally use floats to allow \LaTeX{} to algorithmically place figures on a page, and
+move to the next page if it encounters a vertical overflow.
 
-Figures and tables can be added to the document either raw or by using floats. Floats let \LaTeX{} algorithmically place the figures in the document to look good. The float environment for figures is \lstinline{figure} and for tables is \lstinline{table} (suprise suprise). Floats are containers for objects which can't be displayed over multiple pages. Floats should always have a caption to describe them (with \lstinline{\caption}), as they do not always appear where they appear in the source code. This cat below here is in Figure \ref{fig:cat} and Figure \ref{fig:turtle}.
+The float environment for figures is \lstinline{figure} and \lstinline{table} for tables.
+Floats are containers for objects that cannot be displayed over multiple pages.
+They should always have a descriptive caption (\lstinline{\caption}) so that the reader does not have to rely on the text, and also so that we can reference them using hyperlinks.
 
+If we wish to give the object we want to reference a marker, we can use the \lstinline{label} macro.
+\begin{lstlisting}
+\caption{This is a caption for the figure. The figure numbering is automatic.}\label{fig:cat}
+\end{lstlisting}
+see the source code for the cat figure for this implementation.
+
+Note that labels or reference markers should always be placed immediately after the object we want to reference.
+This ensures that we maintian correct page references.
+
+We can reference figures using the following syntax:
+\begin{lstlisting}
+Figure~\ref{fig:cat} shows a cat, and Figure~\ref{fig:turtle} shows a turtle.
+\end{lstlisting}
+Figure~\ref{fig:cat} shows a cat, and Figure~\ref{fig:turtle} shows a turtle.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/cat.jpg}
-    \caption{This is a caption for the figure. The figure numbering is automatic}
-    \label{fig:cat}
+    \includegraphics[width=0.5\textwidth]{figures/cat.jpg}
+    \caption{This is a caption for the figure. The figure numbering is automatic.}\label{fig:cat}
 \end{figure}
-
-\vspace{5cm}
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=1cm,height=5cm]{figures/cat.jpg}
-    \caption{test}
+    \caption{Providing a second dimension may skew the image.}
 \end{figure}
-
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[height=5.5cm]{figures/rabbit.jpg}
-        \caption{The first subfigure}
+        \centering
+        \includegraphics[height=3.5cm]{figures/rabbit.jpg}
+        \caption{The first subfigure.}
     \end{subfigure}
-    ~
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[height=5.5cm]{figures/turtle.jpg}
-        \caption{The second subfigure}
-        \label{fig:turtle}
+        \centering
+        \includegraphics[height=3.5cm]{figures/turtle.jpg}
+        \caption{The second subfigure.}\label{fig:turtle}
     \end{subfigure}
-    \caption{A caption for both subfigures}
+    \caption{A caption for both subfigures.}
 \end{figure}
-
-
-
-\begin{table}[h]
+\begin{table}[H]
     \centering
-    \caption{An example table. This generally goes above the table}
-    \begin{tabular}{|l|cr|}
+    \caption{An example of a table. Captions are placed above tables.}
+    \begin{tabular}{|l|c r|}
         \hline
               & Column 1 & Column 2 \\
         \hline
@@ -337,7 +610,7 @@ Figures and tables can be added to the document either raw or by using floats. F
         Row 2 & 8        & 9        \\
         Row 3 & 2        & 0        \\
         Row 4 & 4        & 1        \\
-        \bottomrule
+        \hline
     \end{tabular}
 \end{table}
 
@@ -345,7 +618,7 @@ Lists of figures and tables can be printed similarly to a table of contents with
 
 Source code can also be included with the \lstinline{listing} environment. In addition to the environment, code can also be included with the \lstinline{\lstinline} macro (this is what I have been doing for all the macros in this document)
 
-\begin{figure}
+\begin{figure}[H]
     \caption{An example listing}
     \begin{lstlisting}[language=c++,keywordstyle=\color{blue}]
 #include <iostream>
@@ -353,8 +626,7 @@ Source code can also be included with the \lstinline{listing} environment. In ad
 int main() {
     std::cout << "Hello World!" << std::endl;
     return 0;
-}
-			\end{lstlisting}
+}\end{lstlisting}
 \end{figure}
 
 \subsection{References \& Labels}
@@ -398,7 +670,7 @@ There are many ways to manage bibliographies, citations, and reference lists in 
 
 References are stored in a database file with a \lstinline{.bib} extension. An example database file for the sources used in this document is shown below. Each entry in the database file refers to an source, with the necessary fields filled. In the preamble, the database file needs to be added with \lstinline|\addbibresource{references.bibF}|.
 
-These sources can be cited with \lstinline|\cite{referencename}| (no parentheses) or \lstinline|\parencite{referencename}| (with parentheses). For example \parencite{colu92} \cite{smit54}
+These sources can be cited with \lstinline|\cite{referencename}| (no parentheses) or \lstinline|\parencite{referencename}| (with parentheses). For example \parencite{colu92} \cite{phil99}
 
 At the end of the document, the bibliography can be printed with \lstinline{\printbibliography}. It will only print sources that are actually cited in the document.
 
@@ -406,128 +678,128 @@ At the end of the document, the bibliography can be printed with \lstinline{\pri
 
 \subsection{In-Place Diagrams}
 
-In cases where it may be convenient/elegant to draw simple plots/diagrams with LaTeX itself, the \lstinline{tikz} packages provides support for this. In addition, the plots shown in Figures \ref{frequencyplot} and \ref{graphplot} also require the \lstinline{pgfplots} package.
+In cases where it may be convenient/elegant to draw simple plots/diagrams with LaTeX itself, the \lstinline{tikz} packages provides support for this. In addition, the plots shown in Figures~\ref{frequencyplot} and \ref{graphplot} also require the \lstinline{pgfplots} package.
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[xtick = {-6200, 6200}, xticklabels = {\tiny-6200, \tiny6200}, scaled x ticks = false, ytick = {0,1}, yticklabels = {0, \(a\)}, ymin = -0.5, ymax = 1.5, xlabel = Frequency (Hz), ylabel = Magnitude]
-            \addplot[color = black, <-] coordinates {(-12000,0) (-6200,0)};
-            \addplot[color = black, <-] coordinates {(12000,0) (6200,0)};
-            \addplot[color = black, dotted] coordinates {(-6200,0) (-6200,1)};
-            \addplot[color = black, dotted] coordinates {(6200,0) (6200,1)};
-            \addplot[color = black] coordinates {(-6200,1) (6200,1)};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Frequency Plot from EGB242}
-    \label{frequencyplot}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[xtick = {-6200, 6200}, xticklabels = {\tiny-6200, \tiny6200}, scaled x ticks = false, ytick = {0,1}, yticklabels = {0, \(a\)}, ymin = -0.5, ymax = 1.5, xlabel = Frequency (Hz), ylabel = Magnitude]
+%             \addplot[color = black, <-] coordinates {(-12000,0) (-6200,0)};
+%             \addplot[color = black, <-] coordinates {(12000,0) (6200,0)};
+%             \addplot[color = black, dotted] coordinates {(-6200,0) (-6200,1)};
+%             \addplot[color = black, dotted] coordinates {(6200,0) (6200,1)};
+%             \addplot[color = black] coordinates {(-6200,1) (6200,1)};
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Frequency Plot from EGB242}
+%     \label{frequencyplot}
+% \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[legend style={legend pos=north west}]
-            \legend{\(x=-\sqrt{y}\),\(x=\sqrt{y}\),\(x=y-2\)}
-            \addplot [
-                red,
-                domain=-2:0,
-                samples=200,
-            ]{x^2};
+% \begin{figure}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[legend style={legend pos=north west}]
+%             \legend{\(x=-\sqrt{y}\),\(x=\sqrt{y}\),\(x=y-2\)}
+%             \addplot [
+%                 red,
+%                 domain=-2:0,
+%                 samples=200,
+%             ]{x^2};
 
-            \addplot [
-                blue,
-                domain=0:3,
-                samples=200,
-            ]{x^2};
+%             \addplot [
+%                 blue,
+%                 domain=0:3,
+%                 samples=200,
+%             ]{x^2};
 
-            \addplot [
-                green,
-                domain=-3:4,
-                samples=200,
-            ]{x+2};
+%             \addplot [
+%                 green,
+%                 domain=-3:4,
+%                 samples=200,
+%             ]{x+2};
 
-            \addplot [
-                black,
-                dashed,
-                domain=-2:2,
-                samples=200,
-                pin edge = solid
-            ]{1} node [pos=0.95,pin=355:{\(\{y=1\}\)}] {};
+%             \addplot [
+%                 black,
+%                 dashed,
+%                 domain=-2:2,
+%                 samples=200,
+%                 pin edge = solid
+%             ]{1} node [pos=0.95,pin=355:{\(\{y=1\}\)}] {};
 
-            \addplot [
-                black,
-                dashed,
-                domain=1:3,
-                samples=200,
-                pin edge = solid
-            ]{4} node [pos=0.95,pin=355:{\(\{y=4\}\)}] {};
+%             \addplot [
+%                 black,
+%                 dashed,
+%                 domain=1:3,
+%                 samples=200,
+%                 pin edge = solid
+%             ]{4} node [pos=0.95,pin=355:{\(\{y=4\}\)}] {};
 
-            \addplot [
-                black,
-                dashed,
-                domain=-0.5:0.5,
-                samples=200,
-                pin edge = solid
-            ]{0} node [pos=0.95,pin=355:{\(\{y=0\}\)}] {};
+%             \addplot [
+%                 black,
+%                 dashed,
+%                 domain=-0.5:0.5,
+%                 samples=200,
+%                 pin edge = solid
+%             ]{0} node [pos=0.95,pin=355:{\(\{y=0\}\)}] {};
 
-            \addplot[
-                only marks,
-            ]
-            coordinates{(-1,1) (2,4)}
-            node [pos=0, pin=270:{\([-1,1]\)}] {}
-            node [pos=1, pin=135:{\([2,4]\)}] {};
+%             \addplot[
+%                 only marks,
+%             ]
+%             coordinates{(-1,1) (2,4)}
+%             node [pos=0, pin=270:{\([-1,1]\)}] {}
+%             node [pos=1, pin=135:{\([2,4]\)}] {};
 
-            \addplot [
-                only marks,
-            ]
-            coordinates{(0,0)}
-            node [pos=0, pin=270:{\([0,0]\)}] {};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Graph Plot from MXB105}
-    \label{graphplot}
-\end{figure}
+%             \addplot [
+%                 only marks,
+%             ]
+%             coordinates{(0,0)}
+%             node [pos=0, pin=270:{\([0,0]\)}] {};
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Graph Plot from MXB105}
+%     \label{graphplot}
+% \end{figure}
 
 \subsection{Circuit Diagrams}
 
 It may be useful at some point to be able to construct circuit diagrams in LaTeX, and so the \lstinline{circuitikz} package can be used in order to implement this functionality. Shown below in Figure \ref{circuitdiagram} is an example of a circuit diagram one might construct.
 
-\begin{figure}
-    \centering
-    \begin{circuitikz}
-        \draw (0,0)
-        to[american current source=0.42A] (0,4)
-        to[short] (2,4)
-        to[R= 350 <\ohm>, v^>=$$] (2,0)
-        to[short] (0,0)
-        (1,2) node[scale=2]{\(\circlearrowright\)}
-        (1,2) node[scale=0.66]{\(i_s\)};
+% \begin{figure}
+%     \centering
+%     \begin{circuitikz}
+%         \draw (0,0)
+%         to[american current source=0.42A] (0,4)
+%         to[short] (2,4)
+%         to[R= 350 <\ohm>, v^>=\(\)] (2,0)
+%         to[short] (0,0)
+%         (1,2) node[scale=2]{\(\circlearrowright\)}
+%         (1,2) node[scale=0.66]{\(i_s\)};
 
-        \draw (2,4)
-        to[R= 2.97 <\ohm>, v^>=$$] (6,4)
-        to[R= 16.5 <\ohm>, v_>=$$] (6,2)
-        to[empty led, v_>=26.2 <\volt>] (6,0)
-        to[R= 2.97 <\ohm>, v_>=$$] (2,0)
-        (4,2) node[scale=2]{\(\circlearrowright\)}
-        (4,2) node[scale=0.66]{\(i_1\)};
-        \draw (6,4)
-        to[R=0.27 <\ohm>, v^>=$$] (10,4)
-        to[R= 16.5 <\ohm>, v_>=$$] (10,2)
-        to[empty led, v_>=26.2 <\volt>] (10,0)
-        to[R=0.27 <\ohm>, v_>=$$] (6,0)
-        (8,2) node[scale=2]{\(\circlearrowright\)}
-        (8,2) node[scale=0.66]{\(i_2\)};
-        \draw (10,4)
-        to[R=0.36 <\ohm>, v^>=$$] (14,4)
-        to[R= 16.5 <\ohm>, v_>=$$] (14,2)
-        to[empty led, v_>=26.2 <\volt>] (14,0)
-        to[R=0.36 <\ohm>, v_>=$$] (10,0)
-        (12,2) node[scale=2]{\(\circlearrowright\)}
-        (12,2) node[scale=0.66]{\(i_3\)};
-    \end{circuitikz}
-    \caption{Circuit Diagram from EGB120}
-    \label{circuitdiagram}
-\end{figure}
+%         \draw (2,4)
+%         to[R= 2.97 <\ohm>, v^>=\(\)] (6,4)
+%         to[R= 16.5 <\ohm>, v_>=\(\)] (6,2)
+%         to[empty led, v_>=26.2 <\volt>] (6,0)
+%         to[R= 2.97 <\ohm>, v_>=\(\)] (2,0)
+%         (4,2) node[scale=2]{\(\circlearrowright\)}
+%         (4,2) node[scale=0.66]{\(i_1\)};
+%         \draw (6,4)
+%         to[R=0.27 <\ohm>, v^>=\(\)] (10,4)
+%         to[R= 16.5 <\ohm>, v_>=\(\)] (10,2)
+%         to[empty led, v_>=26.2 <\volt>] (10,0)
+%         to[R=0.27 <\ohm>, v_>=\(\)] (6,0)
+%         (8,2) node[scale=2]{\(\circlearrowright\)}
+%         (8,2) node[scale=0.66]{\(i_2\)};
+%         \draw (10,4)
+%         to[R=0.36 <\ohm>, v^>=\(\)] (14,4)
+%         to[R= 16.5 <\ohm>, v_>=\(\)] (14,2)
+%         to[empty led, v_>=26.2 <\volt>] (14,0)
+%         to[R=0.36 <\ohm>, v_>=\(\)] (10,0)
+%         (12,2) node[scale=2]{\(\circlearrowright\)}
+%         (12,2) node[scale=0.66]{\(i_3\)};
+%     \end{circuitikz}
+%     \caption{Circuit Diagram from EGB120}
+%     \label{circuitdiagram}
+% \end{figure}
 
 \subsection{Matrices/Vectors}
 

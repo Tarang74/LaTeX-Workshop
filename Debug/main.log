@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.3.29)  5 APR 2022 23:18
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.12)  14 APR 2022 16:45
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -162,16 +162,61 @@ Package: derivative 2021/06/03 v1.1 Nice and easy derivatives and differentials 
 \l__deriv_sort_max_int=\count286
 \l__deriv_position_int=\count287
 \l__deriv_rebuild_int=\count288
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count289
-\float@exts=\toks23
-\float@box=\box54
-\@float@everytoks=\toks24
-\@floatcapt=\box55
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2022-04-04 v3.0.50 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen166
+\l__siunitx_angle_marker_box=\box54
+\l__siunitx_angle_unit_box=\box55
+\l__siunitx_compound_count_int=\count289
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count290
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+))
+\l__siunitx_number_exponent_fixed_int=\count291
+\l__siunitx_number_min_decimal_int=\count292
+\l__siunitx_number_min_integer_int=\count293
+\l__siunitx_number_round_precision_int=\count294
+\l__siunitx_number_group_minimum_int=\count295
+\l__siunitx_table_tmp_box=\box56
+\l__siunitx_table_tmp_dim=\dimen167
+\l__siunitx_table_column_width_dim=\dimen168
+\l__siunitx_table_integer_box=\box57
+\l__siunitx_table_decimal_box=\box58
+\l__siunitx_table_before_box=\box59
+\l__siunitx_table_after_box=\box60
+\l__siunitx_table_before_dim=\dimen169
+\l__siunitx_table_carry_dim=\dimen170
+\l__siunitx_unit_tmp_int=\count296
+\l__siunitx_unit_position_int=\count297
+\l__siunitx_unit_total_int=\count298
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen171
+\ar@mcellbox=\box61
+\extrarowheight=\dimen172
+\NC@list=\toks23
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box62
+)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/mhchem\mhchem.sty
+Package: mhchem 2021/12/31 v4.09 for typesetting chemical formulae
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/chemgreek\chemgreek.sty
+Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use in chemistry (CN)
+\l__chemgreek_tmpa_int=\count299
+\g__chemgreek_tmpa_int=\count300
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -182,67 +227,92 @@ Package graphics Info: Driver file: xetex.def on input line 107.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
 File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen166
-\Gin@req@width=\dimen167
+\l__mhchem_ce_distanceFromLastComma_int=\count301
+\__mhchem_arrow_extPgfLength_skip=\skip58
+\mhchem@minispace@tmp=\skip59
+\mhchem@minibackspace@tmp=\skip60
+\mhchem@bondwidth=\skip61
+\mhchem@bondheight=\skip62
+\mhchem@smallbondwidth@tmpA=\skip63
+\mhchem@smallbondwidth@tmpB=\skip64
+\mhchem@smallbondwidth=\skip65
+\mhchem@bondtmp@minussidebearingleft=\skip66
+\mhchem@bondtmp@minussidebearingright=\skip67
+\l__mhchem_option_version_int=\count302
+\mhchem@option@minusmathsidebearingleft=\dimen173
+\mhchem@option@minusmathsidebearingright=\dimen174
+\mhchem@option@minustextsidebearingleft=\dimen175
+\mhchem@option@minustextsidebearingright=\dimen176
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count303
+\float@exts=\toks24
+\float@box=\box63
+\@float@everytoks=\toks25
+\@floatcapt=\box64
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen177
+\Gin@req@width=\dimen178
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen168
-\lightrulewidth=\dimen169
-\cmidrulewidth=\dimen170
-\belowrulesep=\dimen171
-\belowbottomsep=\dimen172
-\aboverulesep=\dimen173
-\abovetopsep=\dimen174
-\cmidrulesep=\dimen175
-\cmidrulekern=\dimen176
-\defaultaddspace=\dimen177
-\@cmidla=\count290
-\@cmidlb=\count291
-\@aboverulesep=\dimen178
-\@belowrulesep=\dimen179
-\@thisruleclass=\count292
-\@lastruleclass=\count293
-\@thisrulewidth=\dimen180
+\heavyrulewidth=\dimen179
+\lightrulewidth=\dimen180
+\cmidrulewidth=\dimen181
+\belowrulesep=\dimen182
+\belowbottomsep=\dimen183
+\aboverulesep=\dimen184
+\abovetopsep=\dimen185
+\cmidrulesep=\dimen186
+\cmidrulekern=\dimen187
+\defaultaddspace=\dimen188
+\@cmidla=\count304
+\@cmidlb=\count305
+\@aboverulesep=\dimen189
+\@belowrulesep=\dimen190
+\@thisruleclass=\count306
+\@lastruleclass=\count307
+\@thisrulewidth=\dimen191
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2022/02/28 v3.6a Customizing captions (AR)
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2022/02/28 v2.3a caption3 kernel (AR)
-\caption@tempdima=\dimen181
-\captionmargin=\dimen182
-\caption@leftmargin=\dimen183
-\caption@rightmargin=\dimen184
-\caption@width=\dimen185
-\caption@indent=\dimen186
-\caption@parindent=\dimen187
-\caption@hangindent=\dimen188
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen192
+\captionmargin=\dimen193
+\caption@leftmargin=\dimen194
+\caption@rightmargin=\dimen195
+\caption@width=\dimen196
+\caption@indent=\dimen197
+\caption@parindent=\dimen198
+\caption@hangindent=\dimen199
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count294
-\c@continuedfloat=\count295
+\c@caption@flags=\count308
+\c@continuedfloat=\count309
 Package caption Info: float package is loaded.
 )
-\c@subfigure=\count296
-\c@subtable=\count297
+\c@subfigure=\count310
+\c@subtable=\count311
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count298
-\lst@gtempboxa=\box56
-\lst@token=\toks25
-\lst@length=\count299
-\lst@currlwidth=\dimen189
-\lst@column=\count300
-\lst@pos=\count301
-\lst@lostspace=\dimen190
-\lst@width=\dimen191
-\lst@newlines=\count302
-\lst@lineno=\count303
-\lst@maxwidth=\dimen192
+\lst@mode=\count312
+\lst@gtempboxa=\box65
+\lst@token=\toks26
+\lst@length=\count313
+\lst@currlwidth=\dimen256
+\lst@column=\count314
+\lst@pos=\count315
+\lst@lostspace=\dimen257
+\lst@width=\dimen258
+\lst@newlines=\count316
+\lst@lineno=\count317
+\lst@maxwidth=\dimen259
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count304
-\lst@skipnumbers=\count305
-\lst@framebox=\box57
+\c@lstnumber=\count318
+\lst@skipnumbers=\count319
+\lst@framebox=\box66
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
@@ -255,26 +325,13 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: xetex.def on input line 149.
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode not found.
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count306
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count307
+\lrq@indent=\count320
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
@@ -283,62 +340,62 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count308
-\c@listtotal=\count309
-\c@listcount=\count310
-\c@liststart=\count311
-\c@liststop=\count312
-\c@citecount=\count313
-\c@citetotal=\count314
-\c@multicitecount=\count315
-\c@multicitetotal=\count316
-\c@instcount=\count317
-\c@maxnames=\count318
-\c@minnames=\count319
-\c@maxitems=\count320
-\c@minitems=\count321
-\c@citecounter=\count322
-\c@maxcitecounter=\count323
-\c@savedcitecounter=\count324
-\c@uniquelist=\count325
-\c@uniquename=\count326
-\c@refsection=\count327
-\c@refsegment=\count328
-\c@maxextratitle=\count329
-\c@maxextratitleyear=\count330
-\c@maxextraname=\count331
-\c@maxextradate=\count332
-\c@maxextraalpha=\count333
-\c@abbrvpenalty=\count334
-\c@highnamepenalty=\count335
-\c@lownamepenalty=\count336
-\c@maxparens=\count337
-\c@parenlevel=\count338
-\blx@tempcnta=\count339
-\blx@tempcntb=\count340
-\blx@tempcntc=\count341
-\c@blx@maxsection=\count342
-\c@blx@maxsegment@0=\count343
-\blx@notetype=\count344
-\blx@parenlevel@text=\count345
-\blx@parenlevel@foot=\count346
-\c@blx@sectionciteorder@0=\count347
-\blx@entrysetcounter=\count348
-\blx@biblioinstance=\count349
-\labelnumberwidth=\skip56
-\labelalphawidth=\skip57
-\biblabelsep=\skip58
-\bibitemsep=\skip59
-\bibnamesep=\skip60
-\bibinitsep=\skip61
-\bibparsep=\skip62
-\bibhang=\skip63
+\c@tabx@nest=\count321
+\c@listtotal=\count322
+\c@listcount=\count323
+\c@liststart=\count324
+\c@liststop=\count325
+\c@citecount=\count326
+\c@citetotal=\count327
+\c@multicitecount=\count328
+\c@multicitetotal=\count329
+\c@instcount=\count330
+\c@maxnames=\count331
+\c@minnames=\count332
+\c@maxitems=\count333
+\c@minitems=\count334
+\c@citecounter=\count335
+\c@maxcitecounter=\count336
+\c@savedcitecounter=\count337
+\c@uniquelist=\count338
+\c@uniquename=\count339
+\c@refsection=\count340
+\c@refsegment=\count341
+\c@maxextratitle=\count342
+\c@maxextratitleyear=\count343
+\c@maxextraname=\count344
+\c@maxextradate=\count345
+\c@maxextraalpha=\count346
+\c@abbrvpenalty=\count347
+\c@highnamepenalty=\count348
+\c@lownamepenalty=\count349
+\c@maxparens=\count350
+\c@parenlevel=\count351
+\blx@tempcnta=\count352
+\blx@tempcntb=\count353
+\blx@tempcntc=\count354
+\c@blx@maxsection=\count355
+\c@blx@maxsegment@0=\count356
+\blx@notetype=\count357
+\blx@parenlevel@text=\count358
+\blx@parenlevel@foot=\count359
+\c@blx@sectionciteorder@0=\count360
+\blx@entrysetcounter=\count361
+\blx@biblioinstance=\count362
+\labelnumberwidth=\skip68
+\labelalphawidth=\skip69
+\biblabelsep=\skip70
+\bibitemsep=\skip71
+\bibnamesep=\skip72
+\bibinitsep=\skip73
+\bibparsep=\skip74
+\bibhang=\skip75
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language79
-\c@mincomprange=\count350
-\c@maxcomprange=\count351
-\c@mincompwidth=\count352
+\c@mincomprange=\count363
+\c@maxcomprange=\count364
+\c@mincompwidth=\count365
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
@@ -348,88 +405,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count353
-\c@savedafterword=\count354
-\c@annotator=\count355
-\c@savedannotator=\count356
-\c@author=\count357
-\c@savedauthor=\count358
-\c@bookauthor=\count359
-\c@savedbookauthor=\count360
-\c@commentator=\count361
-\c@savedcommentator=\count362
-\c@editor=\count363
-\c@savededitor=\count364
-\c@editora=\count365
-\c@savededitora=\count366
-\c@editorb=\count367
-\c@savededitorb=\count368
-\c@editorc=\count369
-\c@savededitorc=\count370
-\c@foreword=\count371
-\c@savedforeword=\count372
-\c@holder=\count373
-\c@savedholder=\count374
-\c@introduction=\count375
-\c@savedintroduction=\count376
-\c@namea=\count377
-\c@savednamea=\count378
-\c@nameb=\count379
-\c@savednameb=\count380
-\c@namec=\count381
-\c@savednamec=\count382
-\c@translator=\count383
-\c@savedtranslator=\count384
-\c@shortauthor=\count385
-\c@savedshortauthor=\count386
-\c@shorteditor=\count387
-\c@savedshorteditor=\count388
-\c@labelname=\count389
-\c@savedlabelname=\count390
-\c@institution=\count391
-\c@savedinstitution=\count392
-\c@lista=\count393
-\c@savedlista=\count394
-\c@listb=\count395
-\c@savedlistb=\count396
-\c@listc=\count397
-\c@savedlistc=\count398
-\c@listd=\count399
-\c@savedlistd=\count400
-\c@liste=\count401
-\c@savedliste=\count402
-\c@listf=\count403
-\c@savedlistf=\count404
-\c@location=\count405
-\c@savedlocation=\count406
-\c@organization=\count407
-\c@savedorganization=\count408
-\c@origlocation=\count409
-\c@savedoriglocation=\count410
-\c@origpublisher=\count411
-\c@savedorigpublisher=\count412
-\c@publisher=\count413
-\c@savedpublisher=\count414
-\c@language=\count415
-\c@savedlanguage=\count416
-\c@origlanguage=\count417
-\c@savedoriglanguage=\count418
-\c@pageref=\count419
-\c@savedpageref=\count420
-\shorthandwidth=\skip64
-\shortjournalwidth=\skip65
-\shortserieswidth=\skip66
-\shorttitlewidth=\skip67
-\shortauthorwidth=\skip68
-\shorteditorwidth=\skip69
-\locallabelnumberwidth=\skip70
-\locallabelalphawidth=\skip71
-\localshorthandwidth=\skip72
-\localshortjournalwidth=\skip73
-\localshortserieswidth=\skip74
-\localshorttitlewidth=\skip75
-\localshortauthorwidth=\skip76
-\localshorteditorwidth=\skip77
+\c@afterword=\count366
+\c@savedafterword=\count367
+\c@annotator=\count368
+\c@savedannotator=\count369
+\c@author=\count370
+\c@savedauthor=\count371
+\c@bookauthor=\count372
+\c@savedbookauthor=\count373
+\c@commentator=\count374
+\c@savedcommentator=\count375
+\c@editor=\count376
+\c@savededitor=\count377
+\c@editora=\count378
+\c@savededitora=\count379
+\c@editorb=\count380
+\c@savededitorb=\count381
+\c@editorc=\count382
+\c@savededitorc=\count383
+\c@foreword=\count384
+\c@savedforeword=\count385
+\c@holder=\count386
+\c@savedholder=\count387
+\c@introduction=\count388
+\c@savedintroduction=\count389
+\c@namea=\count390
+\c@savednamea=\count391
+\c@nameb=\count392
+\c@savednameb=\count393
+\c@namec=\count394
+\c@savednamec=\count395
+\c@translator=\count396
+\c@savedtranslator=\count397
+\c@shortauthor=\count398
+\c@savedshortauthor=\count399
+\c@shorteditor=\count400
+\c@savedshorteditor=\count401
+\c@labelname=\count402
+\c@savedlabelname=\count403
+\c@institution=\count404
+\c@savedinstitution=\count405
+\c@lista=\count406
+\c@savedlista=\count407
+\c@listb=\count408
+\c@savedlistb=\count409
+\c@listc=\count410
+\c@savedlistc=\count411
+\c@listd=\count412
+\c@savedlistd=\count413
+\c@liste=\count414
+\c@savedliste=\count415
+\c@listf=\count416
+\c@savedlistf=\count417
+\c@location=\count418
+\c@savedlocation=\count419
+\c@organization=\count420
+\c@savedorganization=\count421
+\c@origlocation=\count422
+\c@savedoriglocation=\count423
+\c@origpublisher=\count424
+\c@savedorigpublisher=\count425
+\c@publisher=\count426
+\c@savedpublisher=\count427
+\c@language=\count428
+\c@savedlanguage=\count429
+\c@origlanguage=\count430
+\c@savedoriglanguage=\count431
+\c@pageref=\count432
+\c@savedpageref=\count433
+\shorthandwidth=\skip76
+\shortjournalwidth=\skip77
+\shortserieswidth=\skip78
+\shorttitlewidth=\skip79
+\shortauthorwidth=\skip80
+\shorteditorwidth=\skip81
+\locallabelnumberwidth=\skip82
+\locallabelalphawidth=\skip83
+\localshorthandwidth=\skip84
+\localshortjournalwidth=\skip85
+\localshortserieswidth=\skip86
+\localshorttitlewidth=\skip87
+\localshortauthorwidth=\skip88
+\localshorteditorwidth=\skip89
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode.def)
@@ -442,19 +499,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
-\c@textcitecount=\count421
-\c@textcitetotal=\count422
-\c@textcitemaxnames=\count423
-\c@biburlbigbreakpenalty=\count424
-\c@biburlbreakpenalty=\count425
-\c@biburlnumpenalty=\count426
-\c@biburlucpenalty=\count427
-\c@biburllcpenalty=\count428
+\c@textcitecount=\count434
+\c@textcitetotal=\count435
+\c@textcitemaxnames=\count436
+\c@biburlbigbreakpenalty=\count437
+\c@biburlbreakpenalty=\count438
+\c@biburlnumpenalty=\count439
+\c@biburlucpenalty=\count440
+\c@biburllcpenalty=\count441
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count429
+\c@smartand=\count442
 )
 Package biblatex Info: Trying to load bibliography style 'ieee'...
 Package biblatex Info: ... file 'ieee.bbx' found.
@@ -472,8 +529,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count430
-\c@bbx:relatedtotal=\count431
+\c@bbx:relatedcount=\count443
+\c@bbx:relatedtotal=\count444
 ))))
 Package biblatex Info: Trying to load citation style 'ieee'...
 Package biblatex Info: ... file 'ieee.cbx' found.
@@ -483,10 +540,10 @@ Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-comp.cbx
 File: numeric-comp.cbx 2022/02/02 v3.17 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count432
-\c@cbx@tempcntb=\count433
-\c@cbx@tempcntc=\count434
-\c@cbx@tempcntd=\count435
+\c@cbx@tempcnta=\count445
+\c@cbx@tempcntb=\count446
+\c@cbx@tempcntc=\count447
+\c@cbx@tempcntd=\count448
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -530,9 +587,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen193
-\Hy@linkcounter=\count436
-\Hy@pagecounter=\count437
+\@linkdim=\dimen260
+\Hy@linkcounter=\count449
+\Hy@pagecounter=\count450
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
@@ -540,7 +597,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count438
+\Hy@SavedSpaceFactor=\count451
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 )
@@ -551,17 +608,17 @@ Package hyperref Info: Plain pages OFF on input line 4152.
 Package hyperref Info: Backreferencing OFF on input line 4157.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4390.
-\c@Hy@tempcnt=\count439
+\c@Hy@tempcnt=\count452
 LaTeX Info: Redefining \url on input line 4749.
-\XeTeXLinkMargin=\dimen194
+\XeTeXLinkMargin=\dimen261
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count440
-\Field@Width=\dimen195
-\Fld@charsize=\dimen196
+\Fld@menulength=\count453
+\Field@Width=\dimen262
+\Fld@charsize=\dimen263
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -575,9 +632,9 @@ LaTeX Info: Redefining \pageref on input line 6101.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count441
-\c@Item=\count442
-\c@Hfootnote=\count443
+\Hy@abspage=\count454
+\c@Item=\count455
+\c@Hfootnote=\count456
 )
 Package hyperref Info: Driver (autodetected): hxetex.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
@@ -585,11 +642,11 @@ File: hxetex.def 2022-02-21 v7.00n Hyperref driver for XeTeX
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\pdfm@box=\box58
-\c@Hy@AnnotLevel=\count444
-\HyField@AnnotCount=\count445
-\Fld@listcount=\count446
-\c@bookmark@seq@number=\count447
+\pdfm@box=\box67
+\c@Hy@AnnotLevel=\count457
+\HyField@AnnotCount=\count458
+\Fld@listcount=\count459
+\c@bookmark@seq@number=\count460
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
@@ -600,465 +657,278 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip78
+\Hy@SectionHShift=\skip90
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip79
-\enit@outerparindent=\dimen197
-\enit@toks=\toks26
-\enit@inbox=\box59
-\enit@count@id=\count448
-\enitdp@description=\count449
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xfrac\xfrac.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xtemplate.sty
-Package: xtemplate 2022-01-12 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen198
-\l__xtemplate_tmp_int=\count450
-\l__xtemplate_tmp_muskip=\muskip22
-\l__xtemplate_tmp_skip=\skip80
-)
-Package: xfrac 2022-01-12 L3 Experimental split-level fractions
-\l__xfrac_slash_box=\box60
-\l__xfrac_tmp_box=\box61
-\l__xfrac_denominator_bot_sep_dim=\dimen199
-\l__xfrac_numerator_bot_sep_dim=\dimen256
-\l__xfrac_numerator_top_sep_dim=\dimen257
-\l__xfrac_slash_left_sep_dim=\dimen258
-\l__xfrac_slash_right_sep_dim=\dimen259
-\l__xfrac_slash_left_muskip=\muskip23
-\l__xfrac_slash_right_muskip=\muskip24
+\labelindent=\skip91
+\enit@outerparindent=\dimen264
+\enit@toks=\toks27
+\enit@inbox=\box68
+\enit@count@id=\count461
+\enitdp@description=\count462
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-math.sty
+Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-math-xetex.sty
+Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count463
+\l__fontspec_language_int=\count464
+\l__fontspec_strnum_int=\count465
+\l__fontspec_tmp_int=\count466
+\l__fontspec_tmpa_int=\count467
+\l__fontspec_tmpb_int=\count468
+\l__fontspec_tmpc_int=\count469
+\l__fontspec_em_int=\count470
+\l__fontspec_emdef_int=\count471
+\l__fontspec_strong_int=\count472
+\l__fontspec_strongdef_int=\count473
+\l__fontspec_tmpa_dim=\dimen265
+\l__fontspec_tmpb_dim=\dimen266
+\l__fontspec_tmpc_dim=\dimen267
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+\g__um_fam_int=\count474
+\g__um_fonts_used_int=\count475
+\l__um_primecount_int=\count476
+\g__um_primekern_muskip=\muskip22
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/unicode-math\unicode-math-table.tex)))
 
-Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
-(xtemplate)             line 80.
+Package fontspec Info: Font family 'TeXGyrePagella(0)' created for font 'TeX
+(fontspec)             Gyre Pagella' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/B/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"TeX
+(fontspec)             Gyre
+(fontspec)             Pagella/B/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/I/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"TeX Gyre
+(fontspec)             Pagella/I/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/BI/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"TeX Gyre
+(fontspec)             Pagella/BI/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
 
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/breqn\breqn.sty
-Package: breqn 2021/10/28 v0.98l Breaking equations
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/breqn\flexisym.sty
-Package: flexisym 2021/10/28 v0.98l Make math characters macros
-LaTeX Info: Redefining \textprime on input line 299.
-LaTeX Info: Redefining \not on input line 357.
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/breqn\cmbase.sym
-File: cmbase.sym 2007/12/19 v0.92
-LaTeX Info: Redefining \hbar on input line 324.
-LaTeX Info: Redefining \surd on input line 326.
-LaTeX Info: Redefining \angle on input line 334.
-LaTeX Info: Redefining \neq on input line 335.
-LaTeX Info: Redefining \mapsto on input line 336.
-LaTeX Info: Redefining \cong on input line 337.
-LaTeX Info: Redefining \notin on input line 340.
-LaTeX Info: Redefining \rightleftharpoons on input line 341.
-LaTeX Info: Redefining \doteq on input line 342.
-LaTeX Info: Redefining \hookrightarrow on input line 343.
-LaTeX Info: Redefining \hookleftarrow on input line 344.
-LaTeX Info: Redefining \bowtie on input line 345.
-LaTeX Info: Redefining \models on input line 346.
-LaTeX Info: Redefining \Longrightarrow on input line 347.
-LaTeX Info: Redefining \longrightarrow on input line 348.
-LaTeX Info: Redefining \Longleftarrow on input line 349.
-LaTeX Info: Redefining \longleftarrow on input line 350.
-LaTeX Info: Redefining \longmapsto on input line 351.
-LaTeX Info: Redefining \longleftrightarrow on input line 352.
-LaTeX Info: Redefining \Longleftrightarrow on input line 353.
-LaTeX Info: Redefining \cdots on input line 357.
-LaTeX Info: Redefining \vdots on input line 360.
-LaTeX Info: Redefining \ddots on input line 365.
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/breqn\mathstyle.sty
-Package: mathstyle 2021/10/28 v0.98l Tracking mathstyle implicitly
-LaTeX Info: Redefining \displaystyle on input line 95.
-LaTeX Info: Redefining \textstyle on input line 97.
-LaTeX Info: Redefining \scriptstyle on input line 99.
-LaTeX Info: Redefining \scriptscriptstyle on input line 101.
-LaTeX Info: Redefining \genfrac on input line 149.
-))
-\inf@bad=\count451
-\maxint=\count452
-\listwidth=\dimen260
-\eqnumsep=\dimen261
-\eqmargin=\dimen262
-\eqlinespacing=\skip81
-\eqlineskip=\skip82
-\eqlineskiplimit=\dimen263
-\eqbinoffset=\muskip25
-\eqdelimoffset=\muskip26
-\eqindentstep=\dimen264
-\eqstyle=\toks27
-\eqbreakdepth=\count453
-\eqinterlinepenalty=\count454
-\intereqpenalty=\count455
-\intereqskip=\skip83
-\prerelpenalty=\count456
-\prebinoppenalty=\count457
-\Dmedmuskip=\muskip27
-\Dthickmuskip=\muskip28
-\eqleftskip=\skip84
-\eqrightskip=\skip85
-\eq@vspan=\skip86
-\eq@binoffset=\muskip29
-\EQ@box=\box62
-\EQ@copy=\box63
-\EQ@numbox=\box64
-\eq@wdNum=\dimen265
-\GRP@numbox=\box65
-\grp@wdNum=\dimen266
-\eq@lines=\count458
-\eq@curline=\count459
-\eq@badness=\count460
-\EQ@vims=\count461
-\eq@dp=\dimen267
-\eq@wdL=\dimen268
-\eq@wdT=\dimen269
-\eq@wdMin=\dimen270
-\grp@wdL=\dimen271
-\grp@wdR=\dimen272
-\grp@wdT=\dimen273
-\eq@wdRmax=\dimen274
-\eq@firstht=\dimen275
-\eq@wdCond=\dimen276
-\eq@indentstep=\dimen277
-\eq@linewidth=\dimen278
-\grp@linewidth=\dimen279
-\eq@hshift=\dimen280
-\eq@given@sidespace=\dimen281
-\mathindent=\dimen282
-\eq@final@linecount=\count462
-\eq@wdR=\dimen283
-\EQ@continue=\toks28
-\lr@level=\count463
-\GRP@queue=\toks29
-\GRP@box=\box66
-\GRP@wholebox=\box67
-\darraycolsep=\skip87
-\cur@row=\count464
-\cur@col=\count465
-\conditionsep=\skip88
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
-\pgfutil@everybye=\toks30
-\pgfutil@tempdima=\dimen284
-\pgfutil@tempdimb=\dimen285
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
-\pgfutil@abb=\box68
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
-Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
-))
-Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
-Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks31
-\pgfkeys@temptoks=\toks32
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks33
-))
-\pgf@x=\dimen286
-\pgf@y=\dimen287
-\pgf@xa=\dimen288
-\pgf@ya=\dimen289
-\pgf@xb=\dimen290
-\pgf@yb=\dimen291
-\pgf@xc=\dimen292
-\pgf@yc=\dimen293
-\pgf@xd=\dimen294
-\pgf@yd=\dimen295
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count466
-\c@pgf@countb=\count467
-\c@pgf@countc=\count468
-\c@pgf@countd=\count469
-\t@pgf@toka=\toks34
-\t@pgf@tokb=\toks35
-\t@pgf@tokc=\toks36
-\pgf@sys@id@count=\count470
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
-File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
-)
-Driver file for pgf: pgfsys-xetex.def
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-xetex.def
-File: pgfsys-xetex.def 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-dvipdfmx.def
-File: pgfsys-dvipdfmx.def 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
-)
-\pgfsys@objnum=\count471
-))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count472
-\pgfsyssoftpath@bigbuffer@items=\count473
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: xetex.def on input line 227.
-LaTeX Info: Redefining \color on input line 711.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1368.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
-Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen296
-\pgfmath@count=\count474
-\pgfmath@box=\box69
-\pgfmath@toks=\toks37
-\pgfmath@stack@operand=\toks38
-\pgfmath@stack@operation=\toks39
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count475
-)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen297
-\pgf@picmaxx=\dimen298
-\pgf@picminy=\dimen299
-\pgf@picmaxy=\dimen300
-\pgf@pathminx=\dimen301
-\pgf@pathmaxx=\dimen302
-\pgf@pathminy=\dimen303
-\pgf@pathmaxy=\dimen304
-\pgf@xx=\dimen305
-\pgf@xy=\dimen306
-\pgf@yx=\dimen307
-\pgf@yy=\dimen308
-\pgf@zx=\dimen309
-\pgf@zy=\dimen310
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen311
-\pgf@path@lasty=\dimen312
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen313
-\pgf@shorten@start@additional=\dimen314
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box70
-\pgf@hbox=\box71
-\pgf@layerbox@main=\box72
-\pgf@picture@serial@count=\count476
-)
-(C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen315
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen316
-\pgf@pt@y=\dimen317
-\pgf@pt@temp=\dimen318
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen319
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen320
-\pgf@sys@shading@range@num=\count477
-\pgf@shadingcount=\count478
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box73
-)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box74
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
-Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen321
-\pgf@nodesepend=\dimen322
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
-Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
-)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
-Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)
-\pgffor@iter=\dimen323
-\pgffor@skip=\dimen324
-\pgffor@stack=\toks40
-\pgffor@toks=\toks41
-)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
-Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count479
-\pgfplotmarksize=\dimen325
-)
-\tikz@lastx=\dimen326
-\tikz@lasty=\dimen327
-\tikz@lastxsaved=\dimen328
-\tikz@lastysaved=\dimen329
-\tikz@lastmovetox=\dimen330
-\tikz@lastmovetoy=\dimen331
-\tikzleveldistance=\dimen332
-\tikzsiblingdistance=\dimen333
-\tikz@figbox=\box75
-\tikz@figbox@bg=\box76
-\tikz@tempbox=\box77
-\tikz@tempbox@bg=\box78
-\tikztreelevel=\count480
-\tikznumberofchildren=\count481
-\tikznumberofcurrentchild=\count482
-\tikz@fig@count=\count483
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count484
-\pgfmatrixcurrentcolumn=\count485
-\pgf@matrix@numberofcolumns=\count486
-)
-\tikz@expandcount=\count487
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
-Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
-\t@pgfplots@toka=\toks42
-\t@pgfplots@tokb=\toks43
-\t@pgfplots@tokc=\toks44
-\pgfplots@tmpa=\dimen334
-\c@pgfplots@coordindex=\count488
-\c@pgfplots@scanlineindex=\count489
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count490
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count491
-\t@pgfplotstable@a=\toks45
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count492
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-xetex.def (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-dvipdfmx.def
-\c@pgfplotslibrarysurf@streamlen=\count493
-)))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen335
-\pgfdecoratedremainingdistance=\dimen336
-\pgfdecoratedinputsegmentcompleteddistance=\dimen337
-\pgfdecoratedinputsegmentremainingdistance=\dimen338
-\pgf@decorate@distancetomove=\dimen339
-\pgf@decorate@repeatstate=\count494
-\pgfdecorationsegmentamplitude=\dimen340
-\pgfdecorationsegmentlength=\dimen341
-)
-\tikz@lib@dec@box=\box79
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count495
-\pgfplots@xmin@reg=\dimen342
-\pgfplots@xmax@reg=\dimen343
-\pgfplots@ymin@reg=\dimen344
-\pgfplots@ymax@reg=\dimen345
-\pgfplots@zmin@reg=\dimen346
-\pgfplots@zmax@reg=\dimen347
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
-File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/circuitikz\circuitikz.sty
-Package: circuitikz 2022/02/04{} The CircuiTikz circuit drawing package version 1.4.6
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowinset=\dimen348
-\pgfarrowlength=\dimen349
-\pgfarrowwidth=\dimen350
-\pgfarrowlinewidth=\dimen351
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybending.code.tex
-File: tikzlibrarybending.code.tex 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulebending.code.tex
-File: pgfmodulebending.code.tex 2021/05/15 v3.1.9a (3.1.9a)
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulenonlineartransformations.code.tex
-File: pgfmodulenonlineartransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgftransformnonlinearflatness=\dimen352
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarycurvilinear.code.tex
-File: pgflibrarycurvilinear.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@curvilinear@time@a=\dimen353
-\pgf@curvilinear@length@a=\dimen354
-\pgf@curvilinear@length@b=\dimen355
-\pgf@curvilinear@length@c=\dimen356
-\pgf@curvilinear@length@d=\dimen357
-)
-\pgf@arrows@the@rigidity=\dimen358
-)) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryfpu.code.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirc.defines.tex
-\pgf@circ@count@a=\count496
-\pgf@circ@count@b=\count497
-\pgf@circ@count@c=\count498
-\pgf@circ@res@up=\dimen359
-\pgf@circ@res@down=\dimen360
-\pgf@circ@res@zero=\dimen361
-\pgf@circ@res@left=\dimen362
-\pgf@circ@res@right=\dimen363
-\pgf@circ@res@other=\dimen364
-\pgf@circ@res@step=\dimen365
-\pgf@circ@res@temp=\dimen366
-\pgf@circ@Rlen=\dimen367
-\pgf@circ@scaled@Rlen=\dimen368
-\pgfstartlinewidth=\dimen369
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircutils.tex
-\ctikz@scratchbox=\box80
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircpath.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircshapes.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmonopoles.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircbipoles.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirctripoles.tex
-\pgf@circ@res@count=\count499
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircquadpoles.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircmultipoles.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirclabel.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircvoltage.tex
-\pgfcirc@labelshift=\dimen370
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcirccurrent.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/circuitikz\pgfcircflow.tex) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\integerpart=\count500
-\decimalpart=\count501
-)
-Package: xstring 2021/07/21 v1.84 String manipulations (CT)
-) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
-Package: siunitx 2022-02-15 v3.0.49 A comprehensive (SI) units package
-\l__siunitx_angle_tmp_dim=\dimen371
-\l__siunitx_angle_marker_box=\box81
-\l__siunitx_angle_unit_box=\box82
-\l__siunitx_compound_count_int=\count502
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/translations\translations.sty
-Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
-)
-\l__siunitx_number_exponent_fixed_int=\count503
-\l__siunitx_number_min_decimal_int=\count504
-\l__siunitx_number_min_integer_int=\count505
-\l__siunitx_number_round_precision_int=\count506
-\l__siunitx_number_group_minimum_int=\count507
-\l__siunitx_table_tmp_box=\box83
-\l__siunitx_table_tmp_dim=\dimen372
-\l__siunitx_table_column_width_dim=\dimen373
-\l__siunitx_table_integer_box=\box84
-\l__siunitx_table_decimal_box=\box85
-\l__siunitx_table_before_box=\box86
-\l__siunitx_table_after_box=\box87
-\l__siunitx_table_before_dim=\dimen374
-\l__siunitx_table_carry_dim=\dimen375
-\l__siunitx_unit_tmp_int=\count508
-\l__siunitx_unit_position_int=\count509
-\l__siunitx_unit_total_int=\count510
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen376
-\ar@mcellbox=\box88
-\extrarowheight=\dimen377
-\NC@list=\toks46
-\extratabsurround=\skip89
-\backup@length=\skip90
-\ar@cellbox=\box89
-))) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+
+Package fontspec Info: Font family 'TeXGyrePagella(1)' created for font 'TeX
+(fontspec)             Gyre Pagella' with options [].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/B/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"TeX
+(fontspec)             Gyre Pagella/B/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"TeX Gyre
+(fontspec)             Pagella/I/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"TeX Gyre
+(fontspec)             Pagella/BI/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"TeX Gyre
+(fontspec)             Pagella/BI/OT:script=latn;language=dflt;+smcp;"
+
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/TeXGyrePagella(1)/m/n on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/TeXGyrePagella(1)/m/it on input line 73.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/TeXGyrePagella(1)/b/n on input line 73.
+
+Package fontspec Info: Could not resolve font "TeX Gyre Pagella Math/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Font family 'TeXGyrePagellaMath(0)' created for font
+(fontspec)             'TeX Gyre Pagella Math' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"TeX Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Could not resolve font "TeX Gyre Pagella Math/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Font family 'TeXGyrePagellaMath(1)' created for font
+(fontspec)             'TeX Gyre Pagella Math' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=9.5265-},{Size=7.06275-9.5265,Font=TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math,Style=MathScript},{Size=-7.06275,Font=TeX Gyre
+(fontspec)             Pagella Math,Style=MathScriptScript}}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <9.5265->"TeX Gyre
+(fontspec)             Pagella
+(fontspec)             Math/OT:script=math;language=dflt;"<7.06275-9.5265>"TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;+ssty=0;"<-7.06275>"TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 74.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/TeXGyrePagellaMath(1)/m/n on input line 74.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 74.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/TeXGyrePagellaMath(1)/b/n on input line 74.
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 1.0001.
+
+
+Package fontspec Info: Could not resolve font "TeX Gyre Pagella Math/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 1.0001.
+
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 1.0001.
+
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 1.0001.
+
+
+Package fontspec Info: Font family 'TeXGyrePagellaMath(2)' created for font
+(fontspec)             'TeX Gyre Pagella Math' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=9.5265-},{Size=7.06275-9.5265,Font=TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math,Style=MathScript},{Size=-7.06275,Font=TeX Gyre
+(fontspec)             Pagella
+(fontspec)             Math,Style=MathScriptScript}},ScaleAgain=1.0001,FontAdjustment={\fontdimen
+(fontspec)             8\font =7.884pt\relax \fontdimen 9\font
+(fontspec)             =5.13554pt\relax \fontdimen 10\font =5.13554pt\relax
+(fontspec)             \fontdimen 11\font =7.2927pt\relax \fontdimen 12\font
+(fontspec)             =3.40546pt\relax \fontdimen 13\font =3.8763pt\relax
+(fontspec)             \fontdimen 14\font =3.8763pt\relax \fontdimen 15\font
+(fontspec)             =3.2412pt\relax \fontdimen 16\font =2.5404pt\relax
+(fontspec)             \fontdimen 17\font =2.5404pt\relax \fontdimen 18\font
+(fontspec)             =2.5404pt\relax \fontdimen 19\font =1.2702pt\relax
+(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.5265->s*[1.0001]"TeX Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;"<7.06275-9.5265>s*[1.0001]"TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;+ssty=0;"<-7.06275>s*[1.0001]"TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =7.884pt\relax \fontdimen 9\font
+(fontspec)             =5.13554pt\relax \fontdimen 10\font =5.13554pt\relax
+(fontspec)             \fontdimen 11\font =7.2927pt\relax \fontdimen 12\font
+(fontspec)             =3.40546pt\relax \fontdimen 13\font =3.8763pt\relax
+(fontspec)             \fontdimen 14\font =3.8763pt\relax \fontdimen 15\font
+(fontspec)             =3.2412pt\relax \fontdimen 16\font =2.5404pt\relax
+(fontspec)             \fontdimen 17\font =2.5404pt\relax \fontdimen 18\font
+(fontspec)             =2.5404pt\relax \fontdimen 19\font =1.2702pt\relax
+(fontspec)             \fontdimen 22\font =2.7375pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
+
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 74.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> TU/TeXGyrePagellaMath(2)/m/n on input line 74.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 74.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> TU/TeXGyrePagellaMath(2)/b/n on input line 74.
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 0.9999.
+
+
+Package fontspec Info: Could not resolve font "TeX Gyre Pagella Math/B" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 0.9999.
+
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 0.9999.
+
+
+Package fontspec Info: TeX Gyre Pagella Math scale = 0.9999.
+
+
+Package fontspec Info: Font family 'TeXGyrePagellaMath(3)' created for font
+(fontspec)             'TeX Gyre Pagella Math' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script=Math,SizeFeatures={{Size=9.5265-},{Size=7.06275-9.5265,Font=TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math,Style=MathScript},{Size=-7.06275,Font=TeX Gyre
+(fontspec)             Pagella
+(fontspec)             Math,Style=MathScriptScript}},ScaleAgain=0.9999,FontAdjustment={\fontdimen
+(fontspec)             8\font =0.657pt\relax \fontdimen 9\font =1.314pt\relax
+(fontspec)             \fontdimen 10\font =1.314pt\relax \fontdimen 11\font
+(fontspec)             =1.314pt\relax \fontdimen 12\font =5.1246pt\relax
+(fontspec)             \fontdimen 13\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <9.5265->s*[0.9999]"TeX Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;"<7.06275-9.5265>s*[0.9999]"TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;+ssty=0;"<-7.06275>s*[0.9999]"TeX
+(fontspec)             Gyre Pagella
+(fontspec)             Math/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =0.657pt\relax \fontdimen 9\font
+(fontspec)             =1.314pt\relax \fontdimen 10\font =1.314pt\relax
+(fontspec)             \fontdimen 11\font =1.314pt\relax \fontdimen 12\font
+(fontspec)             =5.1246pt\relax \fontdimen 13\font =0pt\relax 
+
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 74.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> TU/TeXGyrePagellaMath(3)/m/n on input line 74.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 74.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> TU/TeXGyrePagellaMath(3)/b/n on input line 74.
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2020/03/24 1.8d listings language file
@@ -1066,8 +936,7 @@ File: lstlang2.sty 2020/03/24 1.8d listings language file
 File: lstlang3.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
+) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
 File: lstlang3.sty 2020/03/24 1.8d listings language file
@@ -1080,36 +949,32 @@ File: lstlang3.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-\@quotelevel=\count511
-\@quotereset=\count512
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 115.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 123.
+\@quotelevel=\count477
+\@quotereset=\count478
  (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 115.
- (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
-File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1145,14 +1010,21 @@ LaTeX Font Info:    ... okay on input line 115.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 123.
+
+Package chemgreek Info: Activating mapping `fontspec' on line 123.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count513
+\c@lstlisting=\count479
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-(C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+ (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
 File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: XeTeX detected.
@@ -1163,18 +1035,10 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                smit54
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
-Package biblatex Info: Reference section=0 on input line 115.
-Package biblatex Info: Reference segment=0 on input line 115.
-Package hyperref Info: Link coloring OFF on input line 115.
+ (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.bbl)
+Package biblatex Info: Reference section=0 on input line 123.
+Package biblatex Info: Reference segment=0 on input line 123.
+Package hyperref Info: Link coloring OFF on input line 123.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -1182,115 +1046,144 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count514
+\c@section@level=\count480
 )
-LaTeX Info: Redefining \ref on input line 115.
-LaTeX Info: Redefining \pageref on input line 115.
-LaTeX Info: Redefining \nameref on input line 115.
+LaTeX Info: Redefining \ref on input line 123.
+LaTeX Info: Redefining \pageref on input line 123.
+LaTeX Info: Redefining \nameref on input line 123.
  (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.out) (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
-
-
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 115.
-
-(C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
-File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
-)
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 115.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 123.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 123.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 123.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 123.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 123.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 17.28183pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 17.27815pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 131.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 131.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 123.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 131.
  (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.toc)
-\tf@toc=\write6
-\openout6 = `main.toc'.
+)
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 131.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 131.
+ (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.toc
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 10.95116pt on input line 2.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 8.10385pt on input line 2.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(2)/m/n' will be
+(Font)              scaled to size 6.02315pt on input line 2.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 10.94882pt on input line 2.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 8.10213pt on input line 2.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaMath(3)/m/n' will be
+(Font)              scaled to size 6.02185pt on input line 2.
+)
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
- (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
-
- (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.lot [1
+ (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.lof [1
 
 ])
-\tf@lot=\write8
-\openout8 = `main.lot'.
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
 
  [2]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 176.
- [1] [1] [2]
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 179.
+ [1] [2]
+Overfull \hbox (15.14224pt too wide) in paragraph at lines 249--250
+[]\TU/TeXGyrePagella(0)/m/n/10.95 List markers, spacing, and other behaviour can be customised with the []
+ []
+
+[3] [4] [5] [6] [7] [8] [9]
 File: figures/cat.jpg Graphic file (type bmp)
 <figures/cat.jpg>
 File: figures/cat.jpg Graphic file (type bmp)
 <figures/cat.jpg>
 File: figures/rabbit.jpg Graphic file (type bmp)
 <figures/rabbit.jpg>
-
-Overfull \hbox (20.92346pt too wide) in paragraph at lines 315--316
-[][] 
- []
-
 File: figures/turtle.jpg Graphic file (type bmp)
 <figures/turtle.jpg>
-[3] (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+ [10] (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\tarang\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [4]
+) [11]
 
-LaTeX Warning: Citation 'smit54' on page 5 undefined on input line 401.
+LaTeX Warning: Reference `sec:lists' on page 12 undefined on input line 643.
 
-[5]
-\absvshift=\dimen378
-\absvshift=\dimen379
-\absvshift=\dimen380
-\absvshift=\dimen381
-\absvshift=\dimen382
-\absvshift=\dimen383
-\absvshift=\dimen384
-\absvshift=\dimen385
-\absvshift=\dimen386
-\absvshift=\dimen387
-\absvshift=\dimen388
-\absvshift=\dimen389
-\absvshift=\dimen390
 
-Overfull \hbox (17.58727pt too wide) in paragraph at lines 527--528
- [][] 
- []
+LaTeX Warning: Reference `sec:lists' on page 12 undefined on input line 643.
 
-[6] [7]
-Overfull \hbox (8.82628pt too wide) in paragraph at lines 568--569
-[]\TU/lmr/m/n/10.95 The L[]T[]X Wikibook – Good reference documentation and guides – []$[][][][][] [] [] [] [][] [] [][][][][][][][][] []
+
+LaTeX Warning: Reference `frequencyplot' on page 12 undefined on input line 681.
+
+
+LaTeX Warning: Reference `graphplot' on page 12 undefined on input line 681.
+
+
+LaTeX Warning: Reference `circuitdiagram' on page 12 undefined on input line 765.
+
+[12] [13]
+Overfull \hbox (8.28795pt too wide) in paragraph at lines 840--841
+[]\TU/TeXGyrePagella(0)/m/n/10.95 The L[]T[]X Wikibook – Good reference documentation and guides – []$[][][][][] [] [] [] [][] [] [][][][][][][][][] []
  []
 
 
-Overfull \hbox (19.86871pt too wide) in paragraph at lines 569--570
-[]\TU/lmr/m/n/10.95 The T[]X Stack Exchange – Answers to most of your questions – []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][] []
+Overfull \hbox (16.05815pt too wide) in paragraph at lines 841--842
+[]\TU/TeXGyrePagella(0)/m/n/10.95 The T[]X Stack Exchange – Answers to most of your questions – []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][] []
  []
 
-[8] [9] (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.aux)
+[14] [15] (C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CD0DAB6FC09468899D8775C380C8A3F2;2801.
+(rerunfilecheck)             Checksum: 9B9515F3CE670B3DF32DDD48131B06F6;4180.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64372 strings out of 410967
- 1593562 string characters out of 2823550
- 2613623 words of memory out of 3000000
- 84412 multiletter control sequences out of 15000+600000
- 477878 words of font info for 75 fonts, out of 8000000 for 9000
+ 34255 strings out of 410967
+ 707056 string characters out of 2823550
+ 1687422 words of memory out of 3000000
+ 54639 multiletter control sequences out of 15000+600000
+ 477504 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,17n,89p,1170b,4764s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 86i,16n,114p,1171b,4975s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.xdv (12 pages, 285768 bytes).
+Output written on C:\Users\tarang\repos\LaTeX-Workshop\Debug\main.xdv (17 pages, 301592 bytes).

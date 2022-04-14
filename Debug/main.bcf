@@ -2349,13 +2349,11 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">latex_project_latex_2018</bcf:citekey>
-    <bcf:citekey order="2">carlisle_great_2001</bcf:citekey>
-    <bcf:citekey order="3">colu92</bcf:citekey>
-    <bcf:citekey order="4">smit54</bcf:citekey>
-    <bcf:citekey order="5">latex_project_latex_2018</bcf:citekey>
-    <bcf:citekey order="6">carlisle_great_2001</bcf:citekey>
-    <bcf:citekey order="7">colu92</bcf:citekey>
-    <bcf:citekey order="8">smit54</bcf:citekey>
+    <bcf:citekey order="2">colu92</bcf:citekey>
+    <bcf:citekey order="3">phil99</bcf:citekey>
+    <bcf:citekey order="4">latex_project_latex_2018</bcf:citekey>
+    <bcf:citekey order="5">colu92</bcf:citekey>
+    <bcf:citekey order="6">phil99</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

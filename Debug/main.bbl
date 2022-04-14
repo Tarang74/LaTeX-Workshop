@@ -51,46 +51,6 @@
       \verb https://www.latex-project.org/
       \endverb
     \endentry
-    \entry{carlisle_great_2001}{online}{}
-      \name{author}{3}{}{%
-        {{hash=3094f4812cc660f7320fd1ab3d3da906}{%
-           family={Carlisle},
-           familyi={C\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-        {{hash=b835af205adc9f4cf7b438d1116ffb60}{%
-           family={Pakin},
-           familyi={P\bibinitperiod},
-           given={Scott},
-           giveni={S\bibinitperiod}}}%
-        {{hash=dc3254b255d817e829a44b10246bf343}{%
-           family={Holt},
-           familyi={H\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{f0d97d314a8a1fd5cec0f3d2bad36d66}
-      \strng{fullhash}{f0d97d314a8a1fd5cec0f3d2bad36d66}
-      \strng{bibnamehash}{f0d97d314a8a1fd5cec0f3d2bad36d66}
-      \strng{authorbibnamehash}{f0d97d314a8a1fd5cec0f3d2bad36d66}
-      \strng{authornamehash}{f0d97d314a8a1fd5cec0f3d2bad36d66}
-      \strng{authorfullhash}{f0d97d314a8a1fd5cec0f3d2bad36d66}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{7}
-      \field{month}{2}
-      \field{title}{The Great, Big List of {LaTeX} Symbols}
-      \field{year}{2001}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf
-      \endverb
-    \endentry
     \entry{colu92}{book}{}
       \name{author}{1}{}{%
         {{hash=01f4ba1f526e201a8981c5aa5427746e}{%
@@ -111,15 +71,39 @@
       \strng{authorbibnamehash}{01f4ba1f526e201a8981c5aa5427746e}
       \strng{authornamehash}{01f4ba1f526e201a8981c5aa5427746e}
       \strng{authorfullhash}{01f4ba1f526e201a8981c5aa5427746e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{How {I} Discovered {America}}
       \field{year}{1492}
     \endentry
+    \entry{phil99}{article}{}
+      \name{author}{1}{}{%
+        {{hash=35c8ad331adc73a912f0e726e386c08a}{%
+           family={Phillips},
+           familyi={P\bibinitperiod},
+           given={T.\bibnamedelimi P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{35c8ad331adc73a912f0e726e386c08a}
+      \strng{fullhash}{35c8ad331adc73a912f0e726e386c08a}
+      \strng{bibnamehash}{35c8ad331adc73a912f0e726e386c08a}
+      \strng{authorbibnamehash}{35c8ad331adc73a912f0e726e386c08a}
+      \strng{authornamehash}{35c8ad331adc73a912f0e726e386c08a}
+      \strng{authorfullhash}{35c8ad331adc73a912f0e726e386c08a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Oddball Res.}
+      \field{title}{Possible Influence of the Magnetosphere on {American} History}
+      \field{volume}{98}
+      \field{year}{1999}
+      \field{pages}{1000\bibrangedash 1003}
+      \range{pages}{4}
+    \endentry
   \enddatalist
-  \missing{smit54}
 \endrefsection
 \endinput
 
