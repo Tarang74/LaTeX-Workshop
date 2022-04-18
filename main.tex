@@ -65,6 +65,9 @@
 %% Unicode support
 \usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
 
+%% Menukey and directory path formatting
+\usepackage{menukeys}
+
 %% Extra operator example
 \DeclareMathOperator{\proj}{proj}
 
@@ -221,7 +224,7 @@ remembering to place this immediately after the section macro so that the refere
 correct location.
 \subsection{Lists}
 Unordered (bullet) lists are produced by the \lstinline{itemize} environment,
-where each list entry starts by using the \lstinline{\item} command, which
+where each list entry starts by using the \lstinline{\item} macro, which
 also generates the bullet symbol.
 \begin{lstlisting}
 \begin{itemize}
@@ -404,13 +407,13 @@ Here are a few suggestions
     \renewcommand{\arraystretch}{2.2}
     \begin{tabular}{c c c c}
         \toprule
-        \textbf{Name} & \textbf{\LaTeX{} Command}                      & \textbf{Inline}                        & \textbf{Display Style}                               \\
+        \textbf{Name} & \textbf{\LaTeX{} Command}                        & \textbf{Inline}                          & \textbf{Display Style}                                 \\
         \midrule
-        Summations    & \lstinline|\sum_{i=1}^n i|                     & \(\sum_{i=1}^n i\)                     & \(\displaystyle \sum_{i=1}^n i\)                     \\
-        Limits        & \lstinline|\lim_{x \to 0} \frac{\sin{x}}{x}|   & \(\lim_{x \to 0} \frac{\sin{x}}{x}\)   & \(\displaystyle \lim_{x \to 0} \frac{\sin{x}}{x}\)   \\
-        Derivatives   & \lstinline|\odv{f}{x} \pdv{}{t} \odif{\Omega}| & \(\odv{f}{x} \pdv{}{t} \odif{\Omega}\) & \(\displaystyle \odv{f}{x} \pdv{}{t} \odif{\Omega}\) \\
-        Integrals     & \lstinline|\int_0^\infty e^{-x^2} \odif{x}|    & \(\int_0^\infty e^{-x^2} \odif{x}\)    & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)    \\
-        Union         & \lstinline|\bigcup_{i=1}^n S_i|                & \(\bigcup_{i=1}^n S_i\)                & \(\displaystyle \bigcup_{i=1}^n S_i\)                \\
+        Summations    & \lstinline|\sum_{i=1}^n i|                       & \(\sum_{i=1}^n i\)                       & \(\displaystyle \sum_{i=1}^n i\)                       \\
+        Limits        & \lstinline|\lim_{x \to 0} \frac{\sin{x}}{x}|     & \(\lim_{x \to 0} \frac{\sin{x}}{x}\)     & \(\displaystyle \lim_{x \to 0} \frac{\sin{x}}{x}\)     \\
+        Derivatives   & \lstinline|\odv{f}{x} \pdv*{F}{t} \odif{\Omega}| & \(\odv{f}{x} \pdv*{F}{t} \odif{\Omega}\) & \(\displaystyle \odv{f}{x} \pdv*{F}{t} \odif{\Omega}\) \\
+        Integrals     & \lstinline|\int_0^\infty e^{-x^2} \odif{x}|      & \(\int_0^\infty e^{-x^2} \odif{x}\)      & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)      \\
+        Union         & \lstinline|\bigcup_{i=1}^n S_i|                  & \(\bigcup_{i=1}^n S_i\)                  & \(\displaystyle \bigcup_{i=1}^n S_i\)                  \\
         \bottomrule
     \end{tabular}
     \endgroup
@@ -506,31 +509,47 @@ If we want to write normal text in math mode, we need to use the \lstinline{\tex
     Text in math mode
 \end{align*}
 Notice that spaces are ignored in math mode.
-\subsection{Horizontal Spacing}
-If we want to add horizontal space we can use the following macros:
-\begin{lstlisting}
-\begin{align*}
-    A & \!     B \\
-    A &        B \\
-    A & \,     B \\
-    A & \:     B \\
-    A & \;     B \\
-    A & \      B \\
-    A & \quad  B \\
-    A & \qquad B
-\end{align*}
-\end{lstlisting}
-\begin{align*}
-    A & \!     B \\
-    A & B        \\
-    A & \,     B \\
-    A & \:     B \\
-    A & \;     B \\
-    A & \      B \\
-    A & \quad  B \\
-    A & \qquad B
-\end{align*}
-\subsection{Additional Symbols}
+\subsection{Additional Environments \& Symbols}
+The \lstinline{amsmath} package also allows us to use many matrix environments using:
+\begin{itemize}
+    \item \lstinline{matrix} for a matrix without any enclosing symbols
+    \item \lstinline{pmatrix} for paretheses
+    \item \lstinline{bmatrix} for brackets
+    \item \lstinline{Bmatrix} for braces
+    \item \lstinline{vmatrix} for vertical bars
+    \item \lstinline{Vmatrix} for double vertical bars
+\end{itemize}
+\begin{equation*}
+    \begin{matrix}
+        a & b \\
+        c & d
+    \end{matrix}
+    \quad
+    \begin{pmatrix}
+        a & b \\
+        c & d
+    \end{pmatrix}
+    \quad
+    \begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}
+    \quad
+    \begin{Bmatrix}
+        a & b \\
+        c & d
+    \end{Bmatrix}
+    \quad
+    \begin{vmatrix}
+        a & b \\
+        c & d
+    \end{vmatrix}
+    \quad
+    \begin{Vmatrix}
+        a & b \\
+        c & d
+    \end{Vmatrix}
+\end{equation*}
 \LaTeX{} provides lots of symbols that can be installed from the \href{https://ctan.org}{Comprehensive TeX Archive Network} that are used in math mode, including the greek alphabet (shown below). A short (but extensive) list can be found at \href{https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}{The Great, Big List of \LaTeX{} Symbols}.
 \begin{equation*}
     \alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu \xi \pi \varpi \rho \varrho \sigma \varsigma \tau \upsilon \phi \varphi \chi \psi \omega
@@ -540,7 +559,7 @@ If we want to add horizontal space we can use the following macros:
 \end{equation*}
 Bringing all of these together can give pretty equations like:
 \begin{equation*}
-    \Gamma\left( z \right) = \frac{e^{-\gamma z}}{z} \prod_{k = 1}^\infty \left( 1 + \frac{z}{k} \right)^{-1} e^{\frac{z}{k}}.
+    \Gamma\left( z \right) = \int_0^\infty t^{z - 1} e^{-t} \odif{t} = \frac{e^{-\gamma z}}{z} \prod_{k = 1}^\infty \left( 1 + \frac{z}{k} \right)^{-1} e^{\frac{z}{k}}
 \end{equation*}
 \begin{equation*}
     \symbf{G}_{\mu \nu} + \symbf{\Lambda} \symbf{g}_{\mu \nu} = \kappa \symbf{T}_{\mu \nu}
@@ -548,33 +567,19 @@ Bringing all of these together can give pretty equations like:
 \begin{equation*}
     \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
 \end{equation*}
-\begin{equation*}
-    i \hbar \pdv{}{t} \Psi\left( x,\: t \right) = -\frac{\hbar^2}{2m} \pdv[order=2]{}{x} \Psi\left( x,\: t \right) + V\left( x,\: t \right) \Psi\left( x,\: t \right)
+\begin{equation*}\label{eq:schrodingers_equation}
+    i \hbar \pdv*{\Psi\left( x,\: t \right)}{t} = -\frac{\hbar^2}{2m} \pdv[order=2]{}{x} \Psi\left( x,\: t \right) + V\left( x,\: t \right) \Psi\left( x,\: t \right)
 \end{equation*}
 \newpage
 \section{Figures, Tables, and Code}
+\subsection{Figures and Tables}\label{sec:figures_and_tables}
 \LaTeX{} allows us to use figures and tables which can be added raw or by using floats.
 We generally use floats to allow \LaTeX{} to algorithmically place figures on a page, and
 move to the next page if it encounters a vertical overflow.
 
 The float environment for figures is \lstinline{figure} and \lstinline{table} for tables.
 Floats are containers for objects that cannot be displayed over multiple pages.
-They should always have a descriptive caption (\lstinline{\caption}) so that the reader does not have to rely on the text, and also so that we can reference them using hyperlinks.
-
-If we wish to give the object we want to reference a marker, we can use the \lstinline{label} macro.
-\begin{lstlisting}
-\caption{This is a caption for the figure. The figure numbering is automatic.}\label{fig:cat}
-\end{lstlisting}
-see the source code for the cat figure for this implementation.
-
-Note that labels or reference markers should always be placed immediately after the object we want to reference.
-This ensures that we maintian correct page references.
-
-We can reference figures using the following syntax:
-\begin{lstlisting}
-Figure~\ref{fig:cat} shows a cat, and Figure~\ref{fig:turtle} shows a turtle.
-\end{lstlisting}
-Figure~\ref{fig:cat} shows a cat, and Figure~\ref{fig:turtle} shows a turtle.
+They should always have a descriptive caption (\lstinline{\caption}) so that the reader does not have to rely on the contents, and also so that we can reference them using hyperlinks.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/cat.jpg}
@@ -601,25 +606,28 @@ Figure~\ref{fig:cat} shows a cat, and Figure~\ref{fig:turtle} shows a turtle.
 \end{figure}
 \begin{table}[H]
     \centering
-    \caption{An example of a table. Captions are placed above tables.}
-    \begin{tabular}{|l|c r|}
-        \hline
+    \caption{An example of a table. Captions are placed above tables.}\label{tab:table_example}
+    \begin{tabular}{|l|c r|} % chktex 44
+        \hline % chktex 44
               & Column 1 & Column 2 \\
-        \hline
+        \hline % chktex 44
         Row 1 & 7        & 2        \\
         Row 2 & 8        & 9        \\
         Row 3 & 2        & 0        \\
         Row 4 & 4        & 1        \\
-        \hline
+        \hline % chktex 44
     \end{tabular}
 \end{table}
-
-Lists of figures and tables can be printed similarly to a table of contents with \lstinline{\listoffigures} and  \lstinline{\listoftables}
-
-Source code can also be included with the \lstinline{listing} environment. In addition to the environment, code can also be included with the \lstinline{\lstinline} macro (this is what I have been doing for all the macros in this document)
-
+Note that we also use the \lstinline{\centering} macro to horizontally center the figures and tables, and this macro
+can also be used in subfigures.
+\subsection{List of figures and tables}
+A list of figures and tables can be printed with \lstinline{\listoffigures} and  \lstinline{\listoftables}.
+These are similar to the table of contents.
+\subsection{Code}
+Source code can be displayed using the \lstinline{\lstlisting} environment and in addition to the environment,
+code can also be displayed inline with the \lstinline{\lstinline} macro (this is how code has been formatted throughout this document).
 \begin{figure}[H]
-    \caption{An example listing}
+    \caption{An example listing.}
     \begin{lstlisting}[language=c++,keywordstyle=\color{blue}]
 #include <iostream>
 
@@ -628,43 +636,69 @@ int main() {
     return 0;
 }\end{lstlisting}
 \end{figure}
+Example inline code:
+\begin{lstlisting}
+Here is text formatted as code \lstinline{System.Double}.
+\end{lstlisting}
+Here is text formatted as code \lstinline{System.Double}.
 
+If the inline code contains braces (\lstinline|{ }|), we need to delineate the argument using another symbol.
+\begin{lstlisting}
+Example containing braces \lstinline|set = { 1, 2, 3 }|.
+\end{lstlisting}
+Example containing braces \lstinline|set = { 1, 2, 3 }|.
+
+The example illustrates how we must delineate the arguments with the same symbol, in this case, pipes (\lstinline{|}), but we cannot use comment delimiters (\lstinline{\%}). For example, \lstinline|\lstinline%code%| will not compile.
 \subsection{References \& Labels}
-Throughout this document you may have noticed that everything is numbered (e.g. equations, sections, figures, tables). It is incredibly easy to refer to these things with the label and reference system in \LaTeX{}. Everything that is numbered (and some things that are not) can have a label attached with the \lstinline|\label{labelname}| macro. The number can then be later referred to with the \lstinline|\ref{labelname}| macro. This means that if you go back and add a figure, all your reference to later figures will be automatically updated to reflect the new figure names.
+Throughout this document you may have noticed that everything is numbered (e.g.\ equations, sections, figures, tables, etc.).
 
-Even better, when the \lstinline{hyperref} package is included (by \lstinline|\usepackage{hyperref}| in the preamble), all of these references are turned into hyperlinks to the item. This means that you can click on a reference and go straight to the related equation, figure, or table. This package also turns all the entries in the table of contents and table of figures into a link, to allow for easy navigation of the document
+It is incredibly easy to reference figures, equations, sections, or any element on a page with \LaTeX{}. Anything that is numbered (and some things that are not) can be marked using the \lstinline{\label} macro. This marker can then be referenced anywhere in the document (even before it is defined) with the \lstinline{\ref} macro, and its page number can be obtained with the \lstinline{\pageref} macro.
 
-If you want to reference the page that a label is on, you can do that with the \lstinline|\pageref{labelname}| macro.
 Below are some examples of references.
+\begin{lstlisting}
+Cat figure: Figure~\ref{fig:cat}
+Turtle subfigure: Figure~\ref{fig:turtle}
+Example table: Table~\ref{tab:table_example}
+Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
+Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}    
+\end{lstlisting}
 \begin{itemize}
-    \item Reference to a figure -- Figure \ref{fig:cat}
-    \item Reference to a subfigure -- Figure \ref{fig:turtle}
-    \item Reference to table -- Table \ref{tab:placement-specs}
-    \item Reference to a section (with pageref) -- Section \ref{sec:lists} on page \pageref{sec:lists}
+    \item Cat figure: Figure~\ref{fig:cat}
+    \item Turtle subfigure: Figure~\ref{fig:turtle}
+    \item Example table: Table~\ref{tab:table_example}
+    \item Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
+    \item Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}
 \end{itemize}
+If we were to add an additional label, \LaTeX{} will automatically renumber all existing references the next time we compile the document. We can see this in action when we add a new numbered equation or section.
 
-\subsection{\LaTeX{} (usually) knows better than you}
-A mistake many people new to \LaTeX{} make is trying to force images to go in particular places. This is often very hard and not necessary. \LaTeX{} is very good at placing floats in places that look good, and do not break the flow or layout of the document too much.
-
-There are several placement specifiers that we can provide to the float commands in order to give \LaTeX{} hints on where we want the float to go. These go right after begin float macro. e.g. \lstinline|\begin{figure}[placement specifier] ... \end{figure}|. Table~\ref{tab:placement-specs} shows all of the available placement specifiers.
-
-\begin{table}
+We recommend using the \lstinline{hyperref} package to convert references into hyperlinks for easy navigation on a PDF viewer.
+This package also allows us to add custom text for references such as:
+\begin{lstlisting}
+See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}.
+View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
+\end{lstlisting}
+See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}. \\
+View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
+\newpage
+\section{Diagrams}
+If we wish to generate simple plots of functions, or complex diagrams, we can do so with \LaTeX{} itself.
+The \lstinline{tikz} library provides a multitude of packages for various kinds of diagrams.
+\begin{figure}[H]
     \centering
-    \caption{Placement specifiers for floats. Multiple of these can be specified}
-    \label{tab:placement-specs}
-    \begin{tabular}{ll}
-        \toprule
-        Spec. & Location                                                 \\
-        \midrule
-        h     & Place \emph{approximately} here                          \\
-        t     & Place at top of page                                     \\
-        b     & Place at bottom of page                                  \\
-        p     & Place on page for only floats                            \\
-        !     & Override internal placement parameters (force placement) \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
+    \includegraphics[height = 6.5cm]{tikz/frequency_plot.pdf}
+    \caption{Band pass filter.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 6.5cm]{tikz/graph.pdf}
+    \caption{Graph of three functions.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 0.7\linewidth]{tikz/circuit.pdf}
+    \caption{RL circuit.}
+\end{figure}
+\newpage
 \section{Citations}
 There are many ways to manage bibliographies, citations, and reference lists in \LaTeX{}, and many of them are outdated or have been superseded by newer alternatives. The method that I use is with a combination of BibLaTeX and Biber. BibLaTeX is the frontend in \LaTeX{} that handles citations and printing the bibliography. Biber is the backend which manages the database of all the references. The \lstinline{biblatex} package needs to be included with \lstinline|\usepackage[style=ieee]{biblatex}| in the preamble. The IEEE style can be replaced with others, such as APA. This changes both the citation and bibliography style.
 
@@ -673,176 +707,57 @@ References are stored in a database file with a \lstinline{.bib} extension. An e
 These sources can be cited with \lstinline|\cite{referencename}| (no parentheses) or \lstinline|\parencite{referencename}| (with parentheses). For example \parencite{colu92} \cite{phil99}
 
 At the end of the document, the bibliography can be printed with \lstinline{\printbibliography}. It will only print sources that are actually cited in the document.
-
-\section{Other Use Cases}
-
-\subsection{In-Place Diagrams}
-
-In cases where it may be convenient/elegant to draw simple plots/diagrams with LaTeX itself, the \lstinline{tikz} packages provides support for this. In addition, the plots shown in Figures~\ref{frequencyplot} and \ref{graphplot} also require the \lstinline{pgfplots} package.
-
-% \begin{figure}
-%     \centering
-%     \begin{tikzpicture}
-%         \begin{axis}[xtick = {-6200, 6200}, xticklabels = {\tiny-6200, \tiny6200}, scaled x ticks = false, ytick = {0,1}, yticklabels = {0, \(a\)}, ymin = -0.5, ymax = 1.5, xlabel = Frequency (Hz), ylabel = Magnitude]
-%             \addplot[color = black, <-] coordinates {(-12000,0) (-6200,0)};
-%             \addplot[color = black, <-] coordinates {(12000,0) (6200,0)};
-%             \addplot[color = black, dotted] coordinates {(-6200,0) (-6200,1)};
-%             \addplot[color = black, dotted] coordinates {(6200,0) (6200,1)};
-%             \addplot[color = black] coordinates {(-6200,1) (6200,1)};
-%         \end{axis}
-%     \end{tikzpicture}
-%     \caption{Frequency Plot from EGB242}
-%     \label{frequencyplot}
-% \end{figure}
-
-% \begin{figure}
-%     \centering
-%     \begin{tikzpicture}
-%         \begin{axis}[legend style={legend pos=north west}]
-%             \legend{\(x=-\sqrt{y}\),\(x=\sqrt{y}\),\(x=y-2\)}
-%             \addplot [
-%                 red,
-%                 domain=-2:0,
-%                 samples=200,
-%             ]{x^2};
-
-%             \addplot [
-%                 blue,
-%                 domain=0:3,
-%                 samples=200,
-%             ]{x^2};
-
-%             \addplot [
-%                 green,
-%                 domain=-3:4,
-%                 samples=200,
-%             ]{x+2};
-
-%             \addplot [
-%                 black,
-%                 dashed,
-%                 domain=-2:2,
-%                 samples=200,
-%                 pin edge = solid
-%             ]{1} node [pos=0.95,pin=355:{\(\{y=1\}\)}] {};
-
-%             \addplot [
-%                 black,
-%                 dashed,
-%                 domain=1:3,
-%                 samples=200,
-%                 pin edge = solid
-%             ]{4} node [pos=0.95,pin=355:{\(\{y=4\}\)}] {};
-
-%             \addplot [
-%                 black,
-%                 dashed,
-%                 domain=-0.5:0.5,
-%                 samples=200,
-%                 pin edge = solid
-%             ]{0} node [pos=0.95,pin=355:{\(\{y=0\}\)}] {};
-
-%             \addplot[
-%                 only marks,
-%             ]
-%             coordinates{(-1,1) (2,4)}
-%             node [pos=0, pin=270:{\([-1,1]\)}] {}
-%             node [pos=1, pin=135:{\([2,4]\)}] {};
-
-%             \addplot [
-%                 only marks,
-%             ]
-%             coordinates{(0,0)}
-%             node [pos=0, pin=270:{\([0,0]\)}] {};
-%         \end{axis}
-%     \end{tikzpicture}
-%     \caption{Graph Plot from MXB105}
-%     \label{graphplot}
-% \end{figure}
-
-\subsection{Circuit Diagrams}
-
-It may be useful at some point to be able to construct circuit diagrams in LaTeX, and so the \lstinline{circuitikz} package can be used in order to implement this functionality. Shown below in Figure \ref{circuitdiagram} is an example of a circuit diagram one might construct.
-
-% \begin{figure}
-%     \centering
-%     \begin{circuitikz}
-%         \draw (0,0)
-%         to[american current source=0.42A] (0,4)
-%         to[short] (2,4)
-%         to[R= 350 <\ohm>, v^>=\(\)] (2,0)
-%         to[short] (0,0)
-%         (1,2) node[scale=2]{\(\circlearrowright\)}
-%         (1,2) node[scale=0.66]{\(i_s\)};
-
-%         \draw (2,4)
-%         to[R= 2.97 <\ohm>, v^>=\(\)] (6,4)
-%         to[R= 16.5 <\ohm>, v_>=\(\)] (6,2)
-%         to[empty led, v_>=26.2 <\volt>] (6,0)
-%         to[R= 2.97 <\ohm>, v_>=\(\)] (2,0)
-%         (4,2) node[scale=2]{\(\circlearrowright\)}
-%         (4,2) node[scale=0.66]{\(i_1\)};
-%         \draw (6,4)
-%         to[R=0.27 <\ohm>, v^>=\(\)] (10,4)
-%         to[R= 16.5 <\ohm>, v_>=\(\)] (10,2)
-%         to[empty led, v_>=26.2 <\volt>] (10,0)
-%         to[R=0.27 <\ohm>, v_>=\(\)] (6,0)
-%         (8,2) node[scale=2]{\(\circlearrowright\)}
-%         (8,2) node[scale=0.66]{\(i_2\)};
-%         \draw (10,4)
-%         to[R=0.36 <\ohm>, v^>=\(\)] (14,4)
-%         to[R= 16.5 <\ohm>, v_>=\(\)] (14,2)
-%         to[empty led, v_>=26.2 <\volt>] (14,0)
-%         to[R=0.36 <\ohm>, v_>=\(\)] (10,0)
-%         (12,2) node[scale=2]{\(\circlearrowright\)}
-%         (12,2) node[scale=0.66]{\(i_3\)};
-%     \end{circuitikz}
-%     \caption{Circuit Diagram from EGB120}
-%     \label{circuitdiagram}
-% \end{figure}
-
-\subsection{Matrices/Vectors}
-
-It may also be convenient at some point to be able to express matrices and vectors in MATLAB. These have their own environments which come from the \lstinline{amsmath} package, and can be used to produce the following:
-
-\begin{align*}
-    \begin{bmatrix}
-        x'_1(t) \\
-        x'_2(t) \\
-        x'_3(t) \\
-        x'_4(t)
-    \end{bmatrix}
-     & =
-    \begin{bmatrix}
-        -0.1 & 0.05 & 0    & 0    \\
-        0.05 & -0.2 & 0.05 & 0.05 \\
-        0.05 & 0.05 & -0.2 & 0.05 \\
-        0    & 0    & 0.05 & -0.1
-    \end{bmatrix}
-    \begin{bmatrix}
-        x_1(t) \\
-        x_2(t) \\
-        x_3(t) \\
-        x_4(t)
-    \end{bmatrix}
-    +
-    \begin{bmatrix}
-        500 \\
-        250 \\
-        100 \\
-        10
-    \end{bmatrix}
-\end{align*}
-
 \newpage
+\section{Miscellaneous}
+\subsection{Horizontal Spacing}
+If we want to add horizontal space we can use the following macros:
+\begin{lstlisting}
+\begin{align*}
+    A & \!     B \\
+    A &        B \\
+    A & \,     B \\
+    A & \:     B \\
+    A & \;     B \\
+    A & \      B \\
+    A & \quad  B \\
+    A & \qquad B
+\end{align*}
+\end{lstlisting}
+\begin{align*}
+    A & \!     B \\
+    A & B        \\
+    A & \,     B \\
+    A & \:     B \\
+    A & \;     B \\
+    A & \      B \\
+    A & \quad  B \\
+    A & \qquad B
+\end{align*}
+\subsection{Managing Large Documents}
+If we want to organise large \LaTeX{} project files, we can split our source code into the preamble, body and even sections, using the \lstinline{\input} macro. %chktex 27
+
+The following example requires the file: \directory{src/extras.tex}.
+If we place the following code in the document (right after this text), then we should see an additional section appear.
+\begin{lstlisting}
+\input{src/extras.tex}
+\end{lstlisting}
+{\color{red}\hrule}
+\input{src/extras.tex}
+{\color{red}\hrule}
+The {\color{red} red} horizontal rules have been placed for clarity. The content inside those rules was taken from another file.
+
+We can even reference the labels from an external file:
+\begin{lstlisting}
+Reference to marker in another file: Equation~\ref{eq:bonus}. 
+\end{lstlisting}
+Reference to marker in another file: Equation~\ref{eq:bonus}.
 \section{Other Resources}
 \begin{itemize}
-    \item The \LaTeX{} Wikibook -- Good reference documentation and guides -- \url{https://en.wikibooks.org/wiki/LaTeX}
-    \item The \TeX{} Stack Exchange -- Answers to most of your questions -- \url{https://tex.stackexchange.com/}
-    \item Comprehensive \TeX{} Archive Network (CTAN) -- Package database -- \url{https://ctan.org/}
+    \item \href{https://en.wikibooks.org/wiki/LaTeX}{Wikibooks} --- Reference documentation and guides
+    \item \href{https://www.overleaf.com/learn/latex/Tutorials}{Overleaf} --- Reference documentation and guides
+    \item \href{https://tex.stackexchange.com/}{The \TeX{} Stack Exchange} --- Q\&A site for both \LaTeX{} and typesetting issues
+    \item \href{https://ctan.org/}{The Comprehensive \TeX{} Archive Network (CTAN)} --- Package database
 \end{itemize}
-
 \newpage
 \printbibliography
-
 \end{document}

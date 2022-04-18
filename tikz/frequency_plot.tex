@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{unicode-math}
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xtick = {-6200, 6200}, 
+        xticklabels = {\tiny-6200, \tiny6200}, 
+        scaled x ticks = false, 
+        ytick = {0, 1}, 
+        yticklabels = {0, \(a\)},
+        ymin = -0.5, 
+        ymax = 1.5, 
+        xlabel = Frequency (Hz), 
+        ylabel = Magnitude
+        ]
+        \addplot[color = black, <-] coordinates {(-12000, 0) (-6200, 0)};
+        \addplot[color = black, <-] coordinates {(12000, 0) (6200, 0)};
+        \addplot[color = black, dotted] coordinates {(-6200, 0) (-6200, 1)};
+        \addplot[color = black, dotted] coordinates {(6200, 0) (6200, 1)};
+        \addplot[color = black] coordinates {(-6200, 1) (6200, 1)};
+    \end{axis}
+\end{tikzpicture}
+\end{document}
