@@ -56,7 +56,7 @@
 \usepackage{color}                              % Needed for colouring source code syntax
 
 %% References
-\usepackage[style=ieee]{biblatex}               % Controls bibliography and citations
+\usepackage[style=APA]{biblatex}                % Controls bibliography and citations
 \usepackage[hidelinks]{hyperref}                % Support for links. Autolinks citations, references, and TOC
 
 %% Lists
@@ -67,6 +67,16 @@
 
 %% Menukey and directory path formatting
 \usepackage{menukeys}
+
+%% Create boxed environments
+\usepackage{tcolorbox}
+
+% Custom box for displaying example outputs in this document
+\newtcolorbox{outputbox}[1][]{
+    colback=white,
+    title=Output,
+    #1
+}
 
 %% Extra operator example
 \DeclareMathOperator{\proj}{proj}
@@ -91,8 +101,11 @@
 	showtabs=false,            % Don't underscore tabs
 	keepspaces,                % Keep spaces as spaces, not whitespace
 	commentstyle=\color{red},  % Colour comments as red
-	% keywordstyle=\color{blue}, % Colour keywords as blue
+	keywordstyle=\color{blue}, % Colour keywords as blue
 	breaklines=true,           % Break lines, so they don't go over the page
+    morekeywords={
+        LaTeX,TeX,textbf,textit,emph,tableofcontents,section,subsection,subsubsection,newcommand,begin,addcontentsline,mathbb,frac,odv,pdv,odif,lvert,rvert,lVert,rVert,text,caption,listoffigures,listoftables,lstinline,includegraphics,label,linewidth,ref,pageref,printbibliography
+    }
 }
 
 % -------------------------------------
@@ -139,7 +152,7 @@
 % from the sections
 \tableofcontents
 
-% List of figures/tables are also generated automatically 
+% List of images/tables are also generated automatically 
 \listoffigures
 \listoftables
 
@@ -152,7 +165,7 @@
 % -------------------------------------
 
 \section{Introduction}
-``\LaTeX{} is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. \LaTeX{} is the de facto standard for the communication and publication of scientific documents. \LaTeX{} is available as free software''. \parencite{latex_project_latex_2018}
+``\LaTeX{} is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. \LaTeX{} is the de facto standard for the communication and publication of scientific documents. \LaTeX{} is available as free software''. \parencite{latex_project_latex}
 
 One of the key differences between \LaTeX{} and more common word processors such as MS Word, LibreOffice etc., is the separation of content and presentation. In \LaTeX{}, the author describes the general structure of the document (i.e., section headings, paragraphs, equations, and figures), and the layout and typesetting is handled by \LaTeX{} (or rather the underlying \TeX{} backend).
 
@@ -192,7 +205,9 @@ For example
 \boldanditalics{Bold and italics text}
 \end{lstlisting}
 \newcommand{\boldanditalics}[1]{\textbf{\textit{#1}}}
-\boldanditalics{Bold and italics text}
+\begin{outputbox}
+    \boldanditalics{Bold and italics text}
+\end{outputbox}
 \subsubsection{Environments}
 Environments are used to format large blocks of text which often contain many lines or multiple macros. Environments use opening \lstinline|\begin| and closing \lstinline|\end| tags so that everything inside those tags will be formatted in a special manner depending on the type of the environment.
 \begin{lstlisting}
@@ -204,7 +219,7 @@ Common environments include \lstinline{figure}, \lstinline{equation}, \lstinline
 \newpage
 \section{Basic Structure}
 \subsection{Sections}
-Sections are used to divide the document into parts. A new section is started with the \lstinline|\section{section_name}| macro. Section titles are formatted to be bold and larger than regular text. The number preceding the titles are automatically determined.
+Sections are used to divide the document into parts. A new section is started with the \lstinline{\section} macro. Section titles are formatted to be bold and larger than regular text. The number preceding the title is automatically determined.
 
 The table of contents (\lstinline{\tableofcontents}) is also generated from these section macros, so that page numbers and section numbers are set automatically.
 \subsection{Subsections}
@@ -241,19 +256,21 @@ also generates the bullet symbol.
           \end{itemize}
 \end{itemize}
 \end{lstlisting}
-\begin{itemize}
-    \item List entries start with the \lstinline{\item} macro and are indicated by the black dot
-    \item We can create multiple entries
-          \begin{itemize}
-              \item We can nest lists by creating another \lstinline{itemize} environment
-                    \begin{itemize}
-                        \item The marker changes in each nested list to reflect the depth
-                              \begin{itemize}
-                                  \item List markers, spacing, and other behaviour can be customised with the \lstinline{enumitem} package
-                              \end{itemize}
-                    \end{itemize}
-          \end{itemize}
-\end{itemize}
+\begin{outputbox}
+    \begin{itemize}
+        \item List entries start with the \lstinline{\item} macro and are indicated by the black dot
+        \item We can create multiple entries
+              \begin{itemize}
+                  \item We can nest lists by creating another \lstinline{itemize} environment
+                        \begin{itemize}
+                            \item The marker changes in each nested list to reflect the depth
+                                  \begin{itemize}
+                                      \item List markers, spacing, and other behaviour can be customised with the \linebreak \lstinline{enumitem} package
+                                  \end{itemize}
+                        \end{itemize}
+              \end{itemize}
+    \end{itemize}
+\end{outputbox}
 Numbered (ordered) lists use the same syntax as unordered lists but use the \lstinline{enumerate} environment.
 \begin{lstlisting}
 \begin{enumerate}
@@ -267,16 +284,18 @@ Numbered (ordered) lists use the same syntax as unordered lists but use the \lst
           \end{enumerate}
 \end{enumerate}
 \end{lstlisting}
-\begin{enumerate}
-    \item List entries are numbered automatically
-    \item Nested lists are also numbered
-          \begin{enumerate}
-              \item But use a different number format
-                    \begin{enumerate}
-                        \item Such as lowercase letters and roman numerals
-                    \end{enumerate}
-          \end{enumerate}
-\end{enumerate}
+\begin{outputbox}
+    \begin{enumerate}
+        \item List entries are numbered automatically
+        \item Nested lists are also numbered
+              \begin{enumerate}
+                  \item But use a different number format
+                        \begin{enumerate}
+                            \item Such as lowercase letters and roman numerals
+                        \end{enumerate}
+              \end{enumerate}
+    \end{enumerate}
+\end{outputbox}
 We can change the top-level number format by specifying a value to the \lstinline{label}
 parameter.
 \begin{lstlisting}
@@ -309,17 +328,20 @@ Mathematical expressions can be contained ``inline'' (within) text and require l
 \begin{lstlisting}
 Let \(\mathbb{N}\) denote the set of all natural numbers.
 \end{lstlisting}
-Let \(\mathbb{N}\) denote the set of all natural numbers.
-
+\begin{outputbox}
+    Let \(\mathbb{N}\) denote the set of all natural numbers.
+\end{outputbox}
 Mathematical expressions typeset outside paragraph text appear as standalone, display style math:
 \begin{lstlisting}
 \[
     \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
 \]
 \end{lstlisting}
-\[
-    \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
-\]
+\begin{outputbox}
+    \[
+        \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
+    \]
+\end{outputbox}
 Note that we commonly use \lstinline|\equation| environments for automatic vertical spacing and equation numbering
 (as with section headings).
 \begin{lstlisting}
@@ -327,18 +349,22 @@ Note that we commonly use \lstinline|\equation| environments for automatic verti
     a^2 + b^2 = c^2
 \end{equation}
 \end{lstlisting}
-\begin{equation}
-    a^2 + b^2 = c^2
-\end{equation}
+\begin{outputbox}
+    \begin{equation}
+        a^2 + b^2 = c^2
+    \end{equation}
+\end{outputbox}
 We can use the starred version of this environment to remove the equation label.
 \begin{lstlisting}
 \begin{equation*}
     a^2 + b^2 = c^2
 \end{equation*}
 \end{lstlisting}
-\begin{equation*}
-    a^2 + b^2 = c^2
-\end{equation*}
+\begin{outputbox}
+    \begin{equation*}
+        a^2 + b^2 = c^2
+    \end{equation*}
+\end{outputbox}
 \subsection{Paired Delimiters}
 \begin{table}[H]
     \centering
@@ -407,13 +433,13 @@ Here are a few suggestions
     \renewcommand{\arraystretch}{2.2}
     \begin{tabular}{c c c c}
         \toprule
-        \textbf{Name} & \textbf{\LaTeX{} Command}                        & \textbf{Inline}                          & \textbf{Display Style}                                 \\
+        \textbf{Name} & \textbf{\LaTeX{} Command}                     & \textbf{Inline}                       & \textbf{Display Style}                              \\
         \midrule
-        Summations    & \lstinline|\sum_{i=1}^n i|                       & \(\sum_{i=1}^n i\)                       & \(\displaystyle \sum_{i=1}^n i\)                       \\
-        Limits        & \lstinline|\lim_{x \to 0} \frac{\sin{x}}{x}|     & \(\lim_{x \to 0} \frac{\sin{x}}{x}\)     & \(\displaystyle \lim_{x \to 0} \frac{\sin{x}}{x}\)     \\
-        Derivatives   & \lstinline|\odv{f}{x} \pdv*{F}{t} \odif{\Omega}| & \(\odv{f}{x} \pdv*{F}{t} \odif{\Omega}\) & \(\displaystyle \odv{f}{x} \pdv*{F}{t} \odif{\Omega}\) \\
-        Integrals     & \lstinline|\int_0^\infty e^{-x^2} \odif{x}|      & \(\int_0^\infty e^{-x^2} \odif{x}\)      & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)      \\
-        Union         & \lstinline|\bigcup_{i=1}^n S_i|                  & \(\bigcup_{i=1}^n S_i\)                  & \(\displaystyle \bigcup_{i=1}^n S_i\)                  \\
+        Summations    & \lstinline|\sum_{n = 1}^\infty \frac{1}{n^s}| & \(\sum_{n = 1}^\infty \frac{1}{n^s}\) & \(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^s}\) \\
+        Limits        & \lstinline|\lim_{x \to \infty} \frac{1}{x}|   & \(\lim_{x \to \infty} \frac{1}{x}\)   & \(\displaystyle \lim_{x \to \infty} \frac{1}{x}\)   \\
+        Derivatives   & \lstinline|\odv[order=2]{f}{x} \pdv*{f}{t}|   & \(\odv[order=2]{f}{x} \pdv*{f}{t}\)   & \(\displaystyle \odv[order=2]{f}{x} \pdv*{f}{t}\)   \\
+        Integrals     & \lstinline|\int_0^\infty e^{-x^2} \odif{x}|   & \(\int_0^\infty e^{-x^2} \odif{x}\)   & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)   \\
+        Union         & \lstinline|\bigcup_{i = 1}^n S_i|             & \(\bigcup_{i=1}^n S_i\)               & \(\displaystyle \bigcup_{i=1}^n S_i\)               \\
         \bottomrule
     \end{tabular}
     \endgroup
@@ -445,18 +471,16 @@ The \lstinline{gather} environment allows us to display a set of consecutive equ
 New lines are separated using \lstinline|\\|.
 \begin{lstlisting}
 \begin{gather}
-    \sum_{i = 0}^n f\left( i \right) = 
-        f\left( 0 \right) + f\left( 1 \right) 
-        + \cdots + f\left( n \right) \\
-    \prod_{i = 0}^n f\left( i \right) = 
-        f\left( 0 \right) \times f\left( 1 \right) 
-        \times \cdots \times f\left( n \right)
-\end{gather}
-\end{lstlisting}
-\begin{gather}
     \sum_{i = 0}^n f\left( i \right) = f\left( 0 \right) + f\left( 1 \right) + \cdots + f\left( n \right) \\
     \prod_{i = 0}^n f\left( i \right) = f\left( 0 \right) \times f\left( 1 \right) \times \cdots \times f\left( n \right)
 \end{gather}
+\end{lstlisting}
+\begin{outputbox}
+    \begin{gather}
+        \sum_{i = 0}^n f\left( i \right) = f\left( 0 \right) + f\left( 1 \right) + \cdots + f\left( n \right) \\
+        \prod_{i = 0}^n f\left( i \right) = f\left( 0 \right) \times f\left( 1 \right) \times \cdots \times f\left( n \right)
+    \end{gather}
+\end{outputbox}
 \newpage
 \subsubsection{Align}
 The \lstinline{align} environment allows us to display consecutive equations that are also aligned. The alignment is determined by the placement of the \lstinline{&} character. This alignment character breaks the equation into ``columns'' that are either right or left aligned, following the pattern: \lstinline{rlrlrl}\dots.
@@ -466,17 +490,19 @@ The \lstinline{align} environment allows us to display consecutive equations tha
     R & = L & R & = & = & L & R = & L
 \end{align}
 \end{lstlisting}
-\begin{align}
-    R & = L & R & = & = & L & R = & L
-\end{align}
-This can be illustrated using a table.
+\begin{outputbox}
+    \begin{align}
+        R & = L & R & = & = & L & R = & L
+    \end{align}
+\end{outputbox}
+This can be illustrated using a table where the ampersands (\lstinline{&}) are horizontally aligned with the pipes (\lstinline{|}).
 \begin{table}[H]
     \centering
-    \begin{tabular}{wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}@{\makebox[\widthof{\&}][c]{|}}wc{4.2em}} % chktex 44
+    \begin{tabular}{wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}} % chktex 44
         Right & Left & Right & Left & Right & Left & Right & Left \\
         \midrule
     \end{tabular}
-    \begin{tabular}{wr{4.2em}@{\&}wl{4.2em}@{\&}wr{4.2em}@{\&}wl{4.2em}@{\&}wr{4.2em}@{\&}wl{4.2em}@{\&}wr{4.2em}@{\&}wl{4.2em}}
+    \begin{tabular}{wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}}
         \(R\) & \(= L\) & \(R\) & \(=\) & \(=\) & \(L\) & \(R =\) & \(L\) \\
     \end{tabular}
     % \caption{} % \label{}
@@ -497,6 +523,8 @@ With this in mind, we can create aligned equations as shown below.
                 & \vdots                                                                                                          &             & \vdots                                   \\
     \symbf{v}_i & = \symbf{w}_i - \sum_{j = 1}^{i - 1} \proj_{\symbf{q}_j} \left( \symbf{w}_i \right)                             & \symbf{q}_i & = \frac{\symbf{v}_i}{\norm{\symbf{v}_i}}
 \end{align*}
+\pagebreak
+\subsection{Text Mode}
 If we want to write normal text in math mode, we need to use the \lstinline{\text} macro.
 \begin{lstlisting}
 \begin{align*}
@@ -504,52 +532,57 @@ If we want to write normal text in math mode, we need to use the \lstinline{\tex
     Text in math mode
 \end{align*}
 \end{lstlisting}
-\begin{align*}
-    \text{Text in text mode} \\
-    Text in math mode
-\end{align*}
+\begin{outputbox}
+    \begin{align*}
+        \text{Text in text mode} \\
+        Text in math mode
+    \end{align*}
+\end{outputbox}
 Notice that spaces are ignored in math mode.
 \subsection{Additional Environments \& Symbols}
 The \lstinline{amsmath} package also allows us to use many matrix environments using:
 \begin{itemize}
     \item \lstinline{matrix} for a matrix without any enclosing symbols
-    \item \lstinline{pmatrix} for paretheses
+    \item \lstinline{pmatrix} for parentheses
     \item \lstinline{bmatrix} for brackets
     \item \lstinline{Bmatrix} for braces
-    \item \lstinline{vmatrix} for vertical bars
-    \item \lstinline{Vmatrix} for double vertical bars
+    \item \lstinline{vmatrix} for pipes
+    \item \lstinline{Vmatrix} for double pipes
 \end{itemize}
-\begin{equation*}
-    \begin{matrix}
-        a & b \\
-        c & d
-    \end{matrix}
-    \quad
-    \begin{pmatrix}
-        a & b \\
-        c & d
-    \end{pmatrix}
-    \quad
-    \begin{bmatrix}
-        a & b \\
-        c & d
-    \end{bmatrix}
-    \quad
-    \begin{Bmatrix}
-        a & b \\
-        c & d
-    \end{Bmatrix}
-    \quad
-    \begin{vmatrix}
-        a & b \\
-        c & d
-    \end{vmatrix}
-    \quad
-    \begin{Vmatrix}
-        a & b \\
-        c & d
-    \end{Vmatrix}
-\end{equation*}
+\begin{outputbox}
+
+    \begin{equation*}
+        \begin{matrix}
+            a & b \\
+            c & d
+        \end{matrix}
+        \quad
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+        \quad
+        \begin{bmatrix}
+            a & b \\
+            c & d
+        \end{bmatrix}
+        \quad
+        \begin{Bmatrix}
+            a & b \\
+            c & d
+        \end{Bmatrix}
+        \quad
+        \begin{vmatrix}
+            a & b \\
+            c & d
+        \end{vmatrix}
+        \quad
+        \begin{Vmatrix}
+            a & b \\
+            c & d
+        \end{Vmatrix}
+    \end{equation*}
+\end{outputbox}
 \LaTeX{} provides lots of symbols that can be installed from the \href{https://ctan.org}{Comprehensive TeX Archive Network} that are used in math mode, including the greek alphabet (shown below). A short (but extensive) list can be found at \href{https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}{The Great, Big List of \LaTeX{} Symbols}.
 \begin{equation*}
     \alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu \xi \pi \varpi \rho \varrho \sigma \varsigma \tau \upsilon \phi \varphi \chi \psi \omega
@@ -567,9 +600,9 @@ Bringing all of these together can give pretty equations like:
 \begin{equation*}
     \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
 \end{equation*}
-\begin{equation*}\label{eq:schrodingers_equation}
+\begin{equation}\label{eq:schrodingers_equation}
     i \hbar \pdv*{\Psi\left( x,\: t \right)}{t} = -\frac{\hbar^2}{2m} \pdv[order=2]{}{x} \Psi\left( x,\: t \right) + V\left( x,\: t \right) \Psi\left( x,\: t \right)
-\end{equation*}
+\end{equation}
 \newpage
 \section{Figures, Tables, and Code}
 \subsection{Figures and Tables}\label{sec:figures_and_tables}
@@ -580,137 +613,238 @@ move to the next page if it encounters a vertical overflow.
 The float environment for figures is \lstinline{figure} and \lstinline{table} for tables.
 Floats are containers for objects that cannot be displayed over multiple pages.
 They should always have a descriptive caption (\lstinline{\caption}) so that the reader does not have to rely on the contents, and also so that we can reference them using hyperlinks.
+\begin{lstlisting}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/cat.jpg}
-    \caption{This is a caption for the figure. The figure numbering is automatic.}\label{fig:cat}
+    \includegraphics[width=0.5\linewidth]{images/cat.jpg}
+    \caption{This is a description of the figure.}\label{fig:cat}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1cm,height=5cm]{figures/cat.jpg}
-    \caption{Providing a second dimension may skew the image.}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.47\textwidth}
+\end{lstlisting}
+\begin{outputbox}
+    \begin{figure}[H]
         \centering
-        \includegraphics[height=3.5cm]{figures/rabbit.jpg}
+        \includegraphics[width=0.5\linewidth]{images/cat.jpg}
+        \caption{This is a description of the figure.}\label{fig:cat}
+    \end{figure}
+\end{outputbox}
+Providing a second dimension may skew the image:
+\begin{lstlisting}    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1cm, height=5cm]{images/cat.jpg}
+    \caption{Skewed image of cat.}
+\end{figure}
+\end{lstlisting}
+\begin{outputbox}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1cm, height=5cm]{images/cat.jpg}
+        \caption{Skewed image of cat.}
+    \end{figure}
+\end{outputbox}
+An example using the \lstinline{subfigure} environment.
+\begin{lstlisting}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.47\linewidth}
+        \centering
+        \includegraphics[height=3.5cm]{images/rabbit.jpg}
         \caption{The first subfigure.}
     \end{subfigure}
-    \begin{subfigure}{0.47\textwidth}
+    \begin{subfigure}{0.47\linewidth}
         \centering
-        \includegraphics[height=3.5cm]{figures/turtle.jpg}
+        \includegraphics[height=3.5cm]{images/turtle.jpg}
         \caption{The second subfigure.}\label{fig:turtle}
     \end{subfigure}
-    \caption{A caption for both subfigures.}
+    \caption{A description for both subfigures.}
 \end{figure}
+\end{lstlisting}
+\begin{outputbox}
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}{0.47\linewidth}
+            \centering
+            \includegraphics[height=3.5cm]{images/rabbit.jpg}
+            \caption{The first subfigure.}
+        \end{subfigure}
+        \begin{subfigure}{0.47\linewidth}
+            \centering
+            \includegraphics[height=3.5cm]{images/turtle.jpg}
+            \caption{The second subfigure.}\label{fig:turtle}
+        \end{subfigure}
+        \caption{A caption for both subfigures.}
+    \end{figure}
+\end{outputbox}
+\pagebreak
+An example of a table:
+\begin{lstlisting}
 \begin{table}[H]
     \centering
-    \caption{An example of a table. Captions are placed above tables.}\label{tab:table_example}
-    \begin{tabular}{|l|c r|} % chktex 44
-        \hline % chktex 44
-              & Column 1 & Column 2 \\
-        \hline % chktex 44
-        Row 1 & 7        & 2        \\
-        Row 2 & 8        & 9        \\
-        Row 3 & 2        & 0        \\
-        Row 4 & 4        & 1        \\
-        \hline % chktex 44
+    \caption{Table descriptions precede the table.}\label{tab:table}
+    \begin{tabular}{l c r}
+        \toprule
+        \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+        \midrule
+        3                 & 1                 & 4                 \\
+        1                 & 5                 & 9                 \\
+        2                 & 6                 & 5                 \\
+        3                 & 5                 & 8                 \\
+        \bottomrule
     \end{tabular}
 \end{table}
-Note that we also use the \lstinline{\centering} macro to horizontally center the figures and tables, and this macro
-can also be used in subfigures.
+\end{lstlisting}
+\begin{table}[H]
+    \centering
+    \caption{Table descriptions precede the table.}\label{tab:table}
+    \begin{tabular}{l c r}
+        \toprule
+        \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+        \midrule
+        3                 & 1                 & 4                 \\
+        1                 & 5                 & 9                 \\
+        2                 & 6                 & 5                 \\
+        3                 & 5                 & 8                 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+Note that we also use the \lstinline{\centering} macro to horizontally centre the contents of the floats.
 \subsection{List of figures and tables}
 A list of figures and tables can be printed with \lstinline{\listoffigures} and  \lstinline{\listoftables}.
 These are similar to the table of contents.
 \subsection{Code}
-Source code can be displayed using the \lstinline{\lstlisting} environment and in addition to the environment,
+Source code can be displayed using the \lstinline{lstlisting} environment and in addition to the environment,
 code can also be displayed inline with the \lstinline{\lstinline} macro (this is how code has been formatted throughout this document).
-\begin{figure}[H]
-    \caption{An example listing.}
+\begin{lstlisting}[escapeinside={$!}{!$}]
+\begin{lstlisting}[language=c++, keywordstyle=\color{blue}]
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World!" << std::endl;
+    return 0
+}
+\end$!!${lstlisting}
+\end{lstlisting}
+\begin{outputbox}
     \begin{lstlisting}[language=c++,keywordstyle=\color{blue}]
 #include <iostream>
 
 int main() {
     std::cout << "Hello World!" << std::endl;
     return 0;
-}\end{lstlisting}
-\end{figure}
+}
+\end{lstlisting}
+\end{outputbox}
 Example inline code:
 \begin{lstlisting}
-Here is text formatted as code \lstinline{System.Double}.
+The \lstinline{System.Double} class is used for double precision floating-point values.
 \end{lstlisting}
-Here is text formatted as code \lstinline{System.Double}.
-
+\begin{outputbox}
+    The \lstinline{System.Double} class is used for double precision floating-point values.
+\end{outputbox}
 If the inline code contains braces (\lstinline|{ }|), we need to delineate the argument using another symbol.
 \begin{lstlisting}
-Example containing braces \lstinline|set = { 1, 2, 3 }|.
+We define the array: \lstinline|int[] array = { 1, 2, 3 }|.
 \end{lstlisting}
-Example containing braces \lstinline|set = { 1, 2, 3 }|.
-
-The example illustrates how we must delineate the arguments with the same symbol, in this case, pipes (\lstinline{|}), but we cannot use comment delimiters (\lstinline{\%}). For example, \lstinline|\lstinline%code%| will not compile.
+\begin{outputbox}
+    We define the array: \lstinline|int[] array = { 1, 2, 3 }|.
+\end{outputbox}
+Here we can use the same symbol to delineate the arguments inside the macro. In this case, we use pipes (\lstinline{|}), but we can use any symbol apart from the percentage sign (\lstinline{%}), i.e., \lstinline|\lstinline%code%| will not compile.
 \subsection{References \& Labels}
-Throughout this document you may have noticed that everything is numbered (e.g.\ equations, sections, figures, tables, etc.).
+Throughout this document, many elements are numbered (e.g.\ equations, sections, figures, tables, etc.).
 
-It is incredibly easy to reference figures, equations, sections, or any element on a page with \LaTeX{}. Anything that is numbered (and some things that are not) can be marked using the \lstinline{\label} macro. This marker can then be referenced anywhere in the document (even before it is defined) with the \lstinline{\ref} macro, and its page number can be obtained with the \lstinline{\pageref} macro.
+These elements (and others) can be marked using the \lstinline{\label} macro. This marker can then be referenced anywhere in the document (even before it is defined) with the \lstinline{\ref} macro, and its page number can be obtained through the \lstinline{\pageref} macro.
 
-Below are some examples of references.
+The examples in Section~\ref{sec:figures_and_tables} contained many caption markers, and the following example will show how they are referenced.
 \begin{lstlisting}
-Cat figure: Figure~\ref{fig:cat}
-Turtle subfigure: Figure~\ref{fig:turtle}
-Example table: Table~\ref{tab:table_example}
-Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
-Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}    
-\end{lstlisting}
 \begin{itemize}
     \item Cat figure: Figure~\ref{fig:cat}
     \item Turtle subfigure: Figure~\ref{fig:turtle}
-    \item Example table: Table~\ref{tab:table_example}
+    \item Example table: Table~\ref{tab:table}
     \item Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
     \item Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}
 \end{itemize}
-If we were to add an additional label, \LaTeX{} will automatically renumber all existing references the next time we compile the document. We can see this in action when we add a new numbered equation or section.
-
+\end{lstlisting}
+\begin{outputbox}
+    \begin{itemize}
+        \item Cat figure: Figure~\ref{fig:cat}
+        \item Turtle subfigure: Figure~\ref{fig:turtle}
+        \item Example table: Table~\ref{tab:table}
+        \item Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
+        \item Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}
+    \end{itemize}
+\end{outputbox}
+If we were to add an additional label, \LaTeX{} will automatically renumber all existing references the next time we compile the document.
+\subsubsection{Hyperlinks}
 We recommend using the \lstinline{hyperref} package to convert references into hyperlinks for easy navigation on a PDF viewer.
 This package also allows us to add custom text for references such as:
 \begin{lstlisting}
 See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}.
+
 View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
 \end{lstlisting}
-See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}. \\
-View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
+\begin{outputbox}
+    See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}.
+
+    View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
+\end{outputbox}
 \newpage
 \section{Diagrams}
 If we wish to generate simple plots of functions, or complex diagrams, we can do so with \LaTeX{} itself.
 The \lstinline{tikz} library provides a multitude of packages for various kinds of diagrams.
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 6.5cm]{tikz/frequency_plot.pdf}
+    \includegraphics[height = 6.5cm]{figures/frequency_plot.pdf}
     \caption{Band pass filter.}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 6.5cm]{tikz/graph.pdf}
+    \includegraphics[height = 6.5cm]{figures/graph.pdf}
     \caption{Graph of three functions.}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.7\linewidth]{tikz/circuit.pdf}
+    \includegraphics[width = 0.7\linewidth]{figures/circuit.pdf}
     \caption{RL circuit.}
 \end{figure}
 \newpage
-\section{Citations}
-There are many ways to manage bibliographies, citations, and reference lists in \LaTeX{}, and many of them are outdated or have been superseded by newer alternatives. The method that I use is with a combination of BibLaTeX and Biber. BibLaTeX is the frontend in \LaTeX{} that handles citations and printing the bibliography. Biber is the backend which manages the database of all the references. The \lstinline{biblatex} package needs to be included with \lstinline|\usepackage[style=ieee]{biblatex}| in the preamble. The IEEE style can be replaced with others, such as APA. This changes both the citation and bibliography style.
+\section{Citations, Bibliographies \& Reference Lists}
+There are many ways to manage citations, bibliographies, and reference lists in \LaTeX{}. This document will introduce a method that combines BibLaTeX with Biber.
 
-References are stored in a database file with a \lstinline{.bib} extension. An example database file for the sources used in this document is shown below. Each entry in the database file refers to an source, with the necessary fields filled. In the preamble, the database file needs to be added with \lstinline|\addbibresource{references.bibF}|.
+BibLaTeX is the frontend in \LaTeX{} that prints the bibliography and Biber is the backend which manages the database which contains all references.
 
-These sources can be cited with \lstinline|\cite{referencename}| (no parentheses) or \lstinline|\parencite{referencename}| (with parentheses). For example \parencite{colu92} \cite{phil99}
+When importing the \lstinline{biblatex} package we must supply the reference style as follows:
+\begin{lstlisting}
+\usepackage[style=APA]{biblatex}
+\end{lstlisting}
+This affects both the citations and bibliography.
 
-At the end of the document, the bibliography can be printed with \lstinline{\printbibliography}. It will only print sources that are actually cited in the document.
+The references are stored in a Bibliographical Database file that uses the \directory{.bib} extension. A sample database file has been provided in the project directory.
+
+The database file is added with
+\begin{lstlisting}
+\addbibresource{path\to\database.bib}
+\end{lstlisting}
+To cite the sources in this file, we can use the following macros:
+\begin{lstlisting}
+\cite{reference_name}
+\parencite{reference_name}
+\end{lstlisting}
+For example:
+\begin{lstlisting}
+Source 1 ---~\parencite{colu92} 
+
+Source 2 ---~\cite{phil99}
+\end{lstlisting}
+\begin{outputbox}
+    Source 1 ---~\parencite{colu92}
+
+    Source 2 ---~\cite{phil99}
+\end{outputbox}
+The bibliography can be printed with the \lstinline{\printbibliography} macro, which will only print sources that are actually cited in the document.
 \newpage
 \section{Miscellaneous}
 \subsection{Horizontal Spacing}
-If we want to add horizontal space we can use the following macros:
+The following macros control horizontal spacing:
 \begin{lstlisting}
 \begin{align*}
     A & \!     B \\
@@ -723,34 +857,37 @@ If we want to add horizontal space we can use the following macros:
     A & \qquad B
 \end{align*}
 \end{lstlisting}
-\begin{align*}
-    A & \!     B \\
-    A & B        \\
-    A & \,     B \\
-    A & \:     B \\
-    A & \;     B \\
-    A & \      B \\
-    A & \quad  B \\
-    A & \qquad B
-\end{align*}
+\begin{outputbox}
+    \begin{align*}
+        A & \!     B \\
+        A & B        \\
+        A & \,     B \\
+        A & \:     B \\
+        A & \;     B \\
+        A & \      B \\
+        A & \quad  B \\
+        A & \qquad B
+    \end{align*}
+\end{outputbox}
 \subsection{Managing Large Documents}
-If we want to organise large \LaTeX{} project files, we can split our source code into the preamble, body and even sections, using the \lstinline{\input} macro. %chktex 27
+If we want to organise large \LaTeX{} project files, we can split our source code up into multiple files using the \lstinline{\input} macro. % chktex 27
 
 The following example requires the file: \directory{src/extras.tex}.
 If we place the following code in the document (right after this text), then we should see an additional section appear.
 \begin{lstlisting}
 \input{src/extras.tex}
 \end{lstlisting}
-{\color{red}\hrule}
-\input{src/extras.tex}
-{\color{red}\hrule}
-The {\color{red} red} horizontal rules have been placed for clarity. The content inside those rules was taken from another file.
-
-We can even reference the labels from an external file:
+\begin{outputbox}
+    \input{src/extras.tex}
+\end{outputbox}
+We can even reference the markers that were defined in this file:
 \begin{lstlisting}
-Reference to marker in another file: Equation~\ref{eq:bonus}. 
+The polygamma function is summarised by Equation~\ref{eq:bonus}. 
 \end{lstlisting}
-Reference to marker in another file: Equation~\ref{eq:bonus}.
+\begin{outputbox}
+    The polygamma function is summarised by Equation~\ref{eq:bonus}.
+\end{outputbox}
+\newpage
 \section{Other Resources}
 \begin{itemize}
     \item \href{https://en.wikibooks.org/wiki/LaTeX}{Wikibooks} --- Reference documentation and guides
