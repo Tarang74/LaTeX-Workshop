@@ -1,4 +1,5 @@
-%!TEX program = xelatex
+%!TEX TS-program = xelatex
+%!TEX options = -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1 "%DOC%"
 % -------------------------------------
 % QUT Mathematics Society
 % LaTeX Workshop
@@ -56,7 +57,7 @@
 \usepackage{color}                              % Needed for colouring source code syntax
 
 %% References
-\usepackage[style=APA]{biblatex}                % Controls bibliography and citations
+\usepackage[style=apa]{biblatex}                % Controls bibliography and citations
 \usepackage[hidelinks]{hyperref}                % Support for links. Autolinks citations, references, and TOC
 
 %% Lists
@@ -70,20 +71,6 @@
 
 %% Create boxed environments
 \usepackage{tcolorbox}
-
-% Custom box for displaying example outputs in this document
-\newtcolorbox{outputbox}[1][]{
-    colback=white,
-    title=Output,
-    #1
-}
-
-%% Extra operator example
-\DeclareMathOperator{\proj}{proj}
-
-%% Font used by QUT (remove to use original TeX font)
-\setmainfont{TeX Gyre Pagella}
-\setmathfont{TeX Gyre Pagella Math}
 
 % -------------------------------------
 %% Global settings
@@ -107,6 +94,23 @@
         LaTeX,TeX,textbf,textit,emph,tableofcontents,section,subsection,subsubsection,newcommand,begin,addcontentsline,mathbb,frac,odv,pdv,odif,lvert,rvert,lVert,rVert,text,caption,listoffigures,listoftables,lstinline,includegraphics,label,linewidth,ref,pageref,printbibliography
     }
 }
+
+% Custom box for displaying example outputs in this document
+\newtcolorbox{outputbox}[1][]{
+    colback=white,
+    title=Output,
+    #1
+}
+
+%% Extra operator example
+\DeclareMathOperator{\proj}{proj}
+
+%% Font used by QUT (remove to use original TeX font)
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+
+% Hide \vbox underfull warnings for the workshop
+\raggedbottom
 
 % -------------------------------------
 %% Miscellaneous settings
@@ -145,7 +149,7 @@
 % Places the title, author, and date.
 \maketitle
 
-% Page number style for table of contents
+% Page number style for the table of contents
 \pagenumbering{roman}
 
 % Places the table of contents which is generated automatically 
@@ -167,7 +171,7 @@
 \section{Introduction}
 ``\LaTeX{} is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. \LaTeX{} is the de facto standard for the communication and publication of scientific documents. \LaTeX{} is available as free software''. \parencite{latex_project_latex}
 
-One of the key differences between \LaTeX{} and more common word processors such as MS Word, LibreOffice etc., is the separation of content and presentation. In \LaTeX{}, the author describes the general structure of the document (i.e., section headings, paragraphs, equations, and figures), and the layout and typesetting is handled by \LaTeX{} (or rather the underlying \TeX{} backend).
+One of the key differences between \LaTeX{} and more common word processors such as MS Word, LibreOffice etc., is the separation of content and presentation. In \LaTeX{}, the author describes the general structure of the document (i.e., section headings, paragraphs, equations, and figures), and the layout and typesetting are handled by \LaTeX{} (or rather the underlying \TeX{} backend).
 
 There are several advantages to this:
 \begin{itemize}
@@ -627,6 +631,7 @@ They should always have a descriptive caption (\lstinline{\caption}) so that the
         \caption{This is a description of the figure.}\label{fig:cat}
     \end{figure}
 \end{outputbox}
+\pagebreak
 Providing a second dimension may skew the image:
 \begin{lstlisting}    
 \begin{figure}[H]
@@ -708,13 +713,13 @@ An example of a table:
     \end{tabular}
 \end{table}
 Note that we also use the \lstinline{\centering} macro to horizontally centre the contents of the floats.
-\subsection{List of figures and tables}
+\subsection{List of Figures and Tables}
 A list of figures and tables can be printed with \lstinline{\listoffigures} and  \lstinline{\listoftables}.
 These are similar to the table of contents.
 \subsection{Code}
 Source code can be displayed using the \lstinline{lstlisting} environment and in addition to the environment,
 code can also be displayed inline with the \lstinline{\lstinline} macro (this is how code has been formatted throughout this document).
-\begin{lstlisting}[escapeinside={$!}{!$}]
+\begin{lstlisting}[escapeinside={@!}{!@}]
 \begin{lstlisting}[language=c++, keywordstyle=\color{blue}]
 #include <iostream>
 
@@ -722,7 +727,7 @@ int main() {
     std::cout << "Hello World!" << std::endl;
     return 0
 }
-\end$!!${lstlisting}
+\end@!!@{lstlisting}
 \end{lstlisting}
 \begin{outputbox}
     \begin{lstlisting}[language=c++,keywordstyle=\color{blue}]
@@ -748,7 +753,7 @@ We define the array: \lstinline|int[] array = { 1, 2, 3 }|.
 \begin{outputbox}
     We define the array: \lstinline|int[] array = { 1, 2, 3 }|.
 \end{outputbox}
-Here we can use the same symbol to delineate the arguments inside the macro. In this case, we use pipes (\lstinline{|}), but we can use any symbol apart from the percentage sign (\lstinline{%}), i.e., \lstinline|\lstinline%code%| will not compile.
+Here we can use the same symbol to delineate the arguments inside the macro. In this case, we use pipes (\lstinline{|}), but we can use any symbol apart from the percentage sign (\lstinline|%|), i.e., \lstinline|\lstinline%code%| will not compile.
 \subsection{References \& Labels}
 Throughout this document, many elements are numbered (e.g.\ equations, sections, figures, tables, etc.).
 
@@ -810,7 +815,7 @@ The \lstinline{tikz} library provides a multitude of packages for various kinds 
 \section{Citations, Bibliographies \& Reference Lists}
 There are many ways to manage citations, bibliographies, and reference lists in \LaTeX{}. This document will introduce a method that combines BibLaTeX with Biber.
 
-BibLaTeX is the frontend in \LaTeX{} that prints the bibliography and Biber is the backend which manages the database which contains all references.
+BibLaTeX is the frontend in \LaTeX{} that prints the bibliography and Biber is the backend that manages the database which contains all references.
 
 When importing the \lstinline{biblatex} package we must supply the reference style as follows:
 \begin{lstlisting}
@@ -840,7 +845,7 @@ Source 2 ---~\cite{phil99}
 
     Source 2 ---~\cite{phil99}
 \end{outputbox}
-The bibliography can be printed with the \lstinline{\printbibliography} macro, which will only print sources that are actually cited in the document.
+The bibliography can be printed with the \lstinline{\printbibliography} macro, which will only print sources that are cited in the document.
 \newpage
 \section{Miscellaneous}
 \subsection{Horizontal Spacing}
