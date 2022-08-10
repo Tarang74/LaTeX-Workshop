@@ -1,7 +1,3 @@
-%!BIB program = biber
-%!BIB options = --input-directory Debug --output-directory Debug "main.bcf"
-%!TEX TS-program = xelatex
-%!TEX options = -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1 "%DOC%"
 % -------------------------------------
 % QUT Mathematics Society
 % LaTeX Workshop
@@ -9,19 +5,41 @@
 % -------------------------------------
 
 % -------------------------------------
+% Preprocessing directives
+% -------------------------------------
+
+% The following 4 lines beginning with `%!` contain preprocessing directives.
+% They provide options to the various programs so that the compilation process
+% is constant across all platforms.
+% These lines are generally placed at the top of the document.
+
+% Biber:
+% The following directives should only be enabled when bibliography references
+% are modified.
+% Otherwise place an additional `%` at the beginning of both lines to disable them,
+% or if no bibliography is utilised, remove them completely.
+%!BIB program = biber
+%!BIB options = --input-directory Debug --output-directory Debug "main.bcf"
+
+% TeX:
+% The following directives are used to control the behaviour of the TeX engine.
+%!TEX TS-program = xelatex
+%!TEX options = -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1 "%DOC%"
+
+% -------------------------------------
 % Preamble
 % -------------------------------------
 
-% In the preamble you define the type of document you are writing,
+% In the preamble we define the type of document we are writing,
 % load additional packages and set various parameters.
 
 % -------------------------------------
 %% Document declaration
 % -------------------------------------
 
-% This is the start of every LaTeX document.
+% This is at the start of every LaTeX document.
 
-% The document class specifies the overall type of document you are writing.
+% The document class specifies the overall type of document we are writing.
 \documentclass[11pt, twoside]{article}
 % 'article' is most common.
 % 'report' is similar to 'article', but allows for chapters.
@@ -743,7 +761,7 @@ We define the array: \mintinline{tex}|int[] array = { 1, 2, 3 }|.
 \begin{outputbox}
     We define the array: \mintinline{tex}|int[] array = { 1, 2, 3 }|.
 \end{outputbox}
-Here we can use the same symbol to delineate the arguments inside the macro. In this case, we use pipes (\mintinline{tex}{|}), but we can use any symbol apart from the percentage sign (\mintinline{tex}{%}), i.e.,
+Here we can use the same symbol to delineate the arguments inside the macro. In this case, \linebreak we use pipes (\mintinline{tex}{|}), but we can use any symbol apart from the percentage sign (\mintinline{tex}{%}), i.e.,
 \linebreak \mintinline{tex}{\mintinline{tex}%code%} will not compile.
 \subsection{References \& Labels}
 Throughout this document, many elements are numbered (e.g.\ equations, sections, figures, tables, etc.).
