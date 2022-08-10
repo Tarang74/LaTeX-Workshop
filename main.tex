@@ -1,8 +1,11 @@
+%!BIB program = biber
+%!BIB options = --input-directory Debug --output-directory Debug "main.bcf"
 %!TEX TS-program = xelatex
 %!TEX options = -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1 "%DOC%"
 % -------------------------------------
 % QUT Mathematics Society
 % LaTeX Workshop
+% Created by: Tarang Janawalkar (2022)
 % -------------------------------------
 
 % -------------------------------------
@@ -16,13 +19,13 @@
 %% Document declaration
 % -------------------------------------
 
-% This is the start of every LaTeX document. 
+% This is the start of every LaTeX document.
 
-% The document class specifies the overall type of document you are writing. 
+% The document class specifies the overall type of document you are writing.
 \documentclass[11pt, twoside]{article}
-% 'article' is most common. 
-% 'report' is similar to 'article', but allows for chapters. 
-% 'book' is for writing large books. 
+% 'article' is most common.
+% 'report' is similar to 'article', but allows for chapters.
+% 'book' is for writing large books.
 % 'beamer' is for making presentations.
 
 % -------------------------------------
@@ -53,7 +56,7 @@
 \usepackage{array}                              % Column formatting
 
 %% Source code
-\usepackage{listings}                           % Source code layout, formatting and styling
+\usepackage[outputdir=Debug]{minted}               % Source code layout, formatting and styling
 \usepackage{color}                              % Needed for colouring source code syntax
 
 %% References
@@ -76,23 +79,10 @@
 %% Global settings
 % -------------------------------------
 
-\lstset{
-	language=tex,              % Language for syntax highlighting
-	basicstyle=\ttfamily,      % Style for fonts
-	numbers=left,              % Line numbers
-	numberstyle=\tiny,         % Line number style
-	frame=tb,                  % Frame lines on top and bottom
-	tabsize=4,                 % Size of tabs
-	columns=fixed,             % Fix character columns
-	showstringspaces=false,    % Don't underscore spaces
-	showtabs=false,            % Don't underscore tabs
-	keepspaces,                % Keep spaces as spaces, not whitespace
-	commentstyle=\color{red},  % Colour comments as red
-	keywordstyle=\color{blue}, % Colour keywords as blue
-	breaklines=true,           % Break lines, so they don't go over the page
-    morekeywords={
-        LaTeX,TeX,textbf,textit,emph,tableofcontents,section,subsection,subsubsection,newcommand,begin,addcontentsline,mathbb,frac,odv,pdv,odif,lvert,rvert,lVert,rVert,text,caption,listoffigures,listoftables,lstinline,includegraphics,label,linewidth,ref,pageref,printbibliography
-    }
+\setminted[tex]{
+	frame=lines,                 % Frame lines
+	linenos,                     % Line numbers
+    breaklines                   % Break lines
 }
 
 % Custom box for displaying example outputs in this document
@@ -152,11 +142,11 @@
 % Page number style for the table of contents
 \pagenumbering{roman}
 
-% Places the table of contents which is generated automatically 
+% Places the table of contents which is generated automatically
 % from the sections
 \tableofcontents
 
-% List of images/tables are also generated automatically 
+% List of images/tables are also generated automatically
 \listoffigures
 \listoftables
 
@@ -181,71 +171,71 @@ There are several advantages to this:
 \end{itemize}
 \LaTeX{} is written in plaintext and processed by an external program to generate output files (usually PDFs).
 \subsection{Pronunciation and Spelling}
-\LaTeX{} is pronounced \emph{lah-tech} or \emph{lay-tech}, but \TeX{} is never pronounced \emph{tecks}. It is typeset using the \lstinline|\LaTeX{}| macro or with the capitalisation ``LaTeX''.
+\LaTeX{} is pronounced \emph{lah-tech} or \emph{lay-tech}, but \TeX{} is never pronounced \emph{tecks}. It is typeset using the \mintinline{tex}{\LaTeX{}} macro or with the capitalisation ``LaTeX''.
 \subsection{Language Structures}
 There are two major language structures that we encounter when using \LaTeX{}; \textit{macros} and \textit{environments}.
 \subsubsection{Macros}
 Macros (or commands) tell \LaTeX{} how to do things. They use the following syntax
-\begin{lstlisting}
+\begin{minted}{tex}
 \commandname
 % or
 \commandname[optional args]{required args}
-\end{lstlisting}
+\end{minted}
 Macros provide functionality for layouts, symbols, styles, etc. As shown below, common font styles can be invoked using macros.
 \begin{description}
-    \item[Bold face] \lstinline|\textbf{Text}| --- \textbf{Text}
-    \item[Italics] \lstinline|\textit{Text}| --- \textit{Text}
-    \item[Emphasis] \lstinline|\emph{Text}| --- \emph{Text} (either upright or italics depending on surrounding text)
-    \item[Underline] \lstinline|\underline{Text}| --- \underline{Text}
+    \item[Bold face] \mintinline{tex}|\textbf{Text}| --- \textbf{Text}
+    \item[Italics] \mintinline{tex}|\textit{Text}| --- \textit{Text}
+    \item[Emphasis] \mintinline{tex}|\emph{Text}| --- \emph{Text} (either upright or italics depending on surrounding text)
+    \item[Underline] \mintinline{tex}|\underline{Text}| --- \underline{Text}
 \end{description}
 We can also define custom macros that combine other macros or simplify repetitive instructions.
-\begin{lstlisting}
+\begin{minted}{tex}
 \newcommand{\commandname}[number_of_arguments]{command_body}
-\end{lstlisting}
-Arguments can be referenced inside the command body with the \lstinline|#argument_number| syntax.
+\end{minted}
+Arguments can be referenced inside the command body with the \mintinline{tex}{#argument_number} syntax.
 For example
-\begin{lstlisting}
+\begin{minted}{tex}
 \newcommand{\boldanditalics}[1]{\textbf{\textit{#1}}}
 \boldanditalics{Bold and italics text}
-\end{lstlisting}
+\end{minted}
 \newcommand{\boldanditalics}[1]{\textbf{\textit{#1}}}
 \begin{outputbox}
     \boldanditalics{Bold and italics text}
 \end{outputbox}
 \subsubsection{Environments}
-Environments are used to format large blocks of text which often contain many lines or multiple macros. Environments use opening \lstinline|\begin| and closing \lstinline|\end| tags so that everything inside those tags will be formatted in a special manner depending on the type of the environment.
-\begin{lstlisting}
+Environments are used to format large blocks of text which often contain many lines or multiple macros. Environments use opening \mintinline{tex}{\begin} and closing \mintinline{tex}{\end} tags so that everything inside those tags will be formatted in a special manner depending on the type of the environment.
+\begin{minted}{tex}
 \begin{environment_name}[optional_arguments]{required_arguments}
     ...
-\end{environment_name} 
-\end{lstlisting}
-Common environments include \lstinline{figure}, \lstinline{equation}, \lstinline{itemize} (these will be discussed later), etc.
+\end{environment_name}
+\end{minted}
+Common environments include \mintinline{tex}{figure}, \mintinline{tex}{equation}, \mintinline{tex}{itemize} (these will be discussed later), etc.
 \newpage
 \section{Basic Structure}
 \subsection{Sections}
-Sections are used to divide the document into parts. A new section is started with the \lstinline{\section} macro. Section titles are formatted to be bold and larger than regular text. The number preceding the title is automatically determined.
+Sections are used to divide the document into parts. A new section is started with the \mintinline{tex}{\section} macro. Section titles are formatted to be bold and larger than regular text. The number preceding the title is automatically determined.
 
-The table of contents (\lstinline{\tableofcontents}) is also generated from these section macros, so that page numbers and section numbers are set automatically.
+The table of contents (\mintinline{tex}{\tableofcontents}) is also generated from these section macros, so that page numbers and section numbers are set automatically.
 \subsection{Subsections}
-We can split sections into smaller subsections \lstinline|\subsection{Subsections}|,
+We can split sections into smaller subsections \mintinline{tex}|\subsection{Subsections}|,
 \subsubsection{Subsubsections}
-and also subsubsections \lstinline|\subsubsection{Subsubsections}|.
+and also subsubsections \mintinline{tex}|\subsubsection{Subsubsections}|.
 \subsection*{Unnumbered sections}
 \addcontentsline{toc}{subsection}{Unumbered sections}
 We can remove section numbering by using the starred version of the section macro
-e.g.\ \lstinline|\subsection*{Unnumbered sections}|.
+e.g. \linebreak \mintinline{tex}|\subsection*{Unnumbered sections}|.
 
 As this also removes the section from the table of contents, we can manually add it using
-\begin{lstlisting}
+\begin{minted}{tex}
 \addcontentsline{toc}{subsection}{Unumbered sections}
-\end{lstlisting}
+\end{minted}
 remembering to place this immediately after the section macro so that the reference is set to the
 correct location.
 \subsection{Lists}
-Unordered (bullet) lists are produced by the \lstinline{itemize} environment,
-where each list entry starts by using the \lstinline{\item} macro, which
+Unordered (bullet) lists are produced by the \mintinline{tex}{itemize} environment,
+where each list entry starts by using the \mintinline{tex}{\item} macro, which
 also generates the bullet symbol.
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{itemize}
     \item List entries ...
     \item We can ...
@@ -259,24 +249,24 @@ also generates the bullet symbol.
                     \end{itemize}
           \end{itemize}
 \end{itemize}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{itemize}
-        \item List entries start with the \lstinline{\item} macro and are indicated by the black dot
+        \item List entries start with the \mintinline{tex}{\item} macro and are indicated by the black dot
         \item We can create multiple entries
               \begin{itemize}
-                  \item We can nest lists by creating another \lstinline{itemize} environment
+                  \item We can nest lists by creating another \mintinline{tex}{itemize} environment
                         \begin{itemize}
                             \item The marker changes in each nested list to reflect the depth
                                   \begin{itemize}
-                                      \item List markers, spacing, and other behaviour can be customised with the \linebreak \lstinline{enumitem} package
+                                      \item List markers, spacing, and other behaviour can be customised with the \linebreak \mintinline{tex}{enumitem} package
                                   \end{itemize}
                         \end{itemize}
               \end{itemize}
     \end{itemize}
 \end{outputbox}
-Numbered (ordered) lists use the same syntax as unordered lists but use the \lstinline{enumerate} environment.
-\begin{lstlisting}
+Numbered (ordered) lists use the same syntax as unordered lists but use the \mintinline{tex}{enumerate} environment.
+\begin{minted}{tex}
 \begin{enumerate}
     \item List entries ...
     \item Nested lists ...
@@ -287,7 +277,7 @@ Numbered (ordered) lists use the same syntax as unordered lists but use the \lst
                     \end{enumerate}
           \end{enumerate}
 \end{enumerate}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{enumerate}
         \item List entries are numbered automatically
@@ -300,70 +290,70 @@ Numbered (ordered) lists use the same syntax as unordered lists but use the \lst
               \end{enumerate}
     \end{enumerate}
 \end{outputbox}
-We can change the top-level number format by specifying a value to the \lstinline{label}
+We can change the top-level number format by specifying a value to the \mintinline{tex}{label}
 parameter.
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{enumerate}[label=label_specifier]
     \item ...
 \end{enumerate}
-\end{lstlisting}
+\end{minted}
 The following label specifiers can be used to override the default numbering format:
 \begin{enumerate}[label=\arabic*.]
-    \item --- \lstinline|[label=\arabic*.]| (Default)
+    \item --- \mintinline{tex}{[label=\arabic*.]} (Default)
 \end{enumerate}
 \begin{enumerate}[label=<\Roman*>]
-    \item --- \lstinline|[label=<\Roman*>]|
+    \item --- \mintinline{tex}{[label=<\Roman*>]}
 \end{enumerate}
 \begin{enumerate}[label=\roman*]
-    \item --- \lstinline|[label=\roman*]|
+    \item --- \mintinline{tex}{[label=\roman*]}
 \end{enumerate}
 \begin{enumerate}[label=(\alph*)]
-    \item --- \lstinline|[label=(\alph*)]|
+    \item --- \mintinline{tex}{[label=(\alph*)]}
 \end{enumerate}
 \begin{enumerate}[label=Part \Alph*:]
-    \item --- \lstinline|[label=Part \Alph*:]|
+    \item --- \mintinline{tex}{[label=Part \Alph*:]}
 \end{enumerate}
 \newpage
 \section{Mathematics}
 One of \LaTeX{}'s strengths is how it formats mathematical expressions.
-There are two ways to format mathematical expressions; inline using \lstinline|\( \)| and display style using \lstinline|\[ \]|.
+There are two ways to format mathematical expressions; inline using \mintinline{tex}{\( \)} and display style using \mintinline{tex}{\[ \]}.
 
 Mathematical expressions can be contained ``inline'' (within) text and require less space:
-\begin{lstlisting}
+\begin{minted}{tex}
 Let \(\mathbb{N}\) denote the set of all natural numbers.
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     Let \(\mathbb{N}\) denote the set of all natural numbers.
 \end{outputbox}
 Mathematical expressions typeset outside paragraph text appear as standalone, display style math:
-\begin{lstlisting}
+\begin{minted}{tex}
 \[
     \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
 \]
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \[
         \lim_{\Delta{t} \to \infty} \frac{f\left( t + \Delta{t} \right) - f\left( t \right)}{\Delta{t}}
     \]
 \end{outputbox}
-Note that we commonly use \lstinline|\equation| environments for automatic vertical spacing and equation numbering
+Note that we commonly use \mintinline{tex}{\equation} environments for automatic vertical spacing and equation numbering
 (as with section headings).
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{equation}
     a^2 + b^2 = c^2
 \end{equation}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{equation}
         a^2 + b^2 = c^2
     \end{equation}
 \end{outputbox}
 We can use the starred version of this environment to remove the equation label.
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{equation*}
     a^2 + b^2 = c^2
 \end{equation*}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{equation*}
         a^2 + b^2 = c^2
@@ -376,33 +366,33 @@ We can use the starred version of this environment to remove the equation label.
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{c c c c}
         \toprule
-        \textbf{Name}  & \textbf{\LaTeX{} Command}                & \textbf{Inline}                  & \textbf{Display Style}                         \\
+        \textbf{Name}  & \textbf{\LaTeX{} Command}                      & \textbf{Inline}                  & \textbf{Display Style}                         \\
         \midrule
-        Parentheses    & \lstinline|\left( a \right)|             & \(\left( a \right)\)             & \(\displaystyle \left( a \right)\)             \\ % chktex 37
-        Brackets       & \lstinline|\left[ a \right]|             & \(\left[ a \right]\)             & \(\displaystyle \left[ a \right]\)             \\
-        Braces         & \lstinline|\left\{ a \right\}|           & \(\left\{ a \right\}\)           & \(\displaystyle \left\{ a \right\}\)           \\
-        Angle brackets & \lstinline|\left\langle a \right\rangle| & \(\left\langle a \right\rangle\) & \(\displaystyle \left\langle a \right\rangle\) \\
-        Pipes          & \lstinline|\left\lvert a \right\lvert|   & \(\left\lvert a \right\lvert\)   & \(\displaystyle \left\lvert a \right\lvert\)   \\
-        Double Pipes   & \lstinline|\left\lVert a \right\lVert|   & \(\left\lVert a \right\lVert\)   & \(\displaystyle \left\lVert a \right\lVert\)   \\
-        Ceiling        & \lstinline|\left\lceil a \right\rceil|   & \(\left\lceil a \right\rceil\)   & \(\displaystyle \left\lceil a \right\rceil\)   \\
-        Floor          & \lstinline|\left\lfloor a \right\rfloor| & \(\left\lfloor a \right\rfloor\) & \(\displaystyle \left\lfloor a \right\rfloor\) \\
+        Parentheses    & \mintinline{tex}{\left( a \right)}             & \(\left( a \right)\)             & \(\displaystyle \left( a \right)\)             \\ % chktex 37
+        Brackets       & \mintinline{tex}{\left[ a \right]}             & \(\left[ a \right]\)             & \(\displaystyle \left[ a \right]\)             \\
+        Braces         & \mintinline{tex}|\left\{ a \right\}|           & \(\left\{ a \right\}\)           & \(\displaystyle \left\{ a \right\}\)           \\
+        Angle brackets & \mintinline{tex}{\left\langle a \right\rangle} & \(\left\langle a \right\rangle\) & \(\displaystyle \left\langle a \right\rangle\) \\
+        Pipes          & \mintinline{tex}{\left\lvert a \right\lvert}   & \(\left\lvert a \right\lvert\)   & \(\displaystyle \left\lvert a \right\lvert\)   \\
+        Double Pipes   & \mintinline{tex}{\left\lVert a \right\lVert}   & \(\left\lVert a \right\lVert\)   & \(\displaystyle \left\lVert a \right\lVert\)   \\
+        Ceiling        & \mintinline{tex}{\left\lceil a \right\rceil}   & \(\left\lceil a \right\rceil\)   & \(\displaystyle \left\lceil a \right\rceil\)   \\
+        Floor          & \mintinline{tex}{\left\lfloor a \right\rfloor} & \(\left\lfloor a \right\rfloor\) & \(\displaystyle \left\lfloor a \right\rfloor\) \\
         \bottomrule
     \end{tabular}
     \endgroup
     \caption{Paired Delimiters in \LaTeX{}.} % \label{}
 \end{table}
 Note that we can declare custom paired delimiters for the final five examples using the following syntax:
-\begin{lstlisting}
+\begin{minted}{tex}
 \DeclarePairedDelimiter{\paired_delimiter_name}{left_delimiter}{right_delimiter}
-\end{lstlisting}
+\end{minted}
 Here are a few suggestions
-\begin{lstlisting}
+\begin{minted}{tex}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\abracket}{\langle}{\rangle}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\end{lstlisting}
+\end{minted}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\abracket}{\langle}{\rangle}
@@ -415,16 +405,16 @@ Here are a few suggestions
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{c c c c}
         \toprule
-        \textbf{Name}  & \textbf{\LaTeX{} Command}                     & \textbf{Inline}                       & \textbf{Display Style}                              \\
+        \textbf{Name}  & \textbf{\LaTeX{} Command}                           & \textbf{Inline}                       & \textbf{Display Style}                              \\
         \midrule
-        Addition       & \lstinline|a + b|                             & \(a + b\)                             & \(\displaystyle a + b\)                             \\
-        Subtraction    & \lstinline|a - b|                             & \(a - b\)                             & \(\displaystyle a - b\)                             \\ % chktex 8
-        Multiplication & \lstinline|a \cdot \left( b \times c \right)| & \(a \cdot \left( b \times c \right)\) & \(\displaystyle a \cdot \left( b \times c \right)\) \\ % chktex 37
-        Inequalities   & \lstinline|a \ll b < c \leq d|                & \(a \ll b < c \leq d\)                & \(\displaystyle a \ll b < c \leq d\)                \\
-        Fractions      & \lstinline|\frac{a}{b}|                       & \(\frac{a}{b}\)                       & \(\displaystyle \frac{a}{b}\)                       \\
-        Superscripts   & \lstinline|a^2|                               & \(a^2\)                               & \(\displaystyle a^2\)                               \\
-        Subscripts     & \lstinline|a_i|                               & \(a_i\)                               & \(\displaystyle a_i\)                               \\
-        Square root    & \lstinline|\sqrt{a}|                          & \(\sqrt{a}\)                          & \(\displaystyle \sqrt{a}\)                          \\
+        Addition       & \mintinline{tex}{a + b}                             & \(a + b\)                             & \(\displaystyle a + b\)                             \\
+        Subtraction    & \mintinline{tex}{a - b}                             & \(a - b\)                             & \(\displaystyle a - b\)                             \\ % chktex 8
+        Multiplication & \mintinline{tex}{a \cdot \left( b \times c \right)} & \(a \cdot \left( b \times c \right)\) & \(\displaystyle a \cdot \left( b \times c \right)\) \\ % chktex 37
+        Inequalities   & \mintinline{tex}{a \ll b < c \leq d}                & \(a \ll b < c \leq d\)                & \(\displaystyle a \ll b < c \leq d\)                \\
+        Fractions      & \mintinline{tex}|\frac{a}{b}|                       & \(\frac{a}{b}\)                       & \(\displaystyle \frac{a}{b}\)                       \\
+        Superscripts   & \mintinline{tex}{a^2}                               & \(a^2\)                               & \(\displaystyle a^2\)                               \\
+        Subscripts     & \mintinline{tex}{a_i}                               & \(a_i\)                               & \(\displaystyle a_i\)                               \\
+        Square root    & \mintinline{tex}|\sqrt{a}|                          & \(\sqrt{a}\)                          & \(\displaystyle \sqrt{a}\)                          \\
         \bottomrule
     \end{tabular}
     \endgroup
@@ -437,13 +427,13 @@ Here are a few suggestions
     \renewcommand{\arraystretch}{2.2}
     \begin{tabular}{c c c c}
         \toprule
-        \textbf{Name} & \textbf{\LaTeX{} Command}                     & \textbf{Inline}                       & \textbf{Display Style}                              \\
+        \textbf{Name} & \textbf{\LaTeX{} Command}                           & \textbf{Inline}                       & \textbf{Display Style}                              \\
         \midrule
-        Summations    & \lstinline|\sum_{n = 1}^\infty \frac{1}{n^s}| & \(\sum_{n = 1}^\infty \frac{1}{n^s}\) & \(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^s}\) \\
-        Limits        & \lstinline|\lim_{x \to \infty} \frac{1}{x}|   & \(\lim_{x \to \infty} \frac{1}{x}\)   & \(\displaystyle \lim_{x \to \infty} \frac{1}{x}\)   \\
-        Derivatives   & \lstinline|\odv[order=2]{f}{x} \pdv*{f}{t}|   & \(\odv[order=2]{f}{x} \pdv*{f}{t}\)   & \(\displaystyle \odv[order=2]{f}{x} \pdv*{f}{t}\)   \\
-        Integrals     & \lstinline|\int_0^\infty e^{-x^2} \odif{x}|   & \(\int_0^\infty e^{-x^2} \odif{x}\)   & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)   \\
-        Union         & \lstinline|\bigcup_{i = 1}^n S_i|             & \(\bigcup_{i=1}^n S_i\)               & \(\displaystyle \bigcup_{i=1}^n S_i\)               \\
+        Summations    & \mintinline{tex}|\sum_{n = 1}^\infty \frac{1}{n^s}| & \(\sum_{n = 1}^\infty \frac{1}{n^s}\) & \(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^s}\) \\
+        Limits        & \mintinline{tex}|\lim_{x \to \infty} \frac{1}{x}|   & \(\lim_{x \to \infty} \frac{1}{x}\)   & \(\displaystyle \lim_{x \to \infty} \frac{1}{x}\)   \\
+        Derivatives   & \mintinline{tex}|\odv[order=2]{f}{x} \pdv*{f}{t}|   & \(\odv[order=2]{f}{x} \pdv*{f}{t}\)   & \(\displaystyle \odv[order=2]{f}{x} \pdv*{f}{t}\)   \\
+        Integrals     & \mintinline{tex}|\int_0^\infty e^{-x^2} \odif{x}|   & \(\int_0^\infty e^{-x^2} \odif{x}\)   & \(\displaystyle \int_0^\infty e^{-x^2} \odif{x}\)   \\
+        Union         & \mintinline{tex}|\bigcup_{i = 1}^n S_i|             & \(\bigcup_{i=1}^n S_i\)               & \(\displaystyle \bigcup_{i=1}^n S_i\)               \\
         \bottomrule
     \end{tabular}
     \endgroup
@@ -456,29 +446,29 @@ Here are a few suggestions
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{c c c c}
         \toprule
-        \textbf{Name}     & \textbf{\LaTeX{} Command}             & \textbf{Inline}               & \textbf{Display Style}                      \\
+        \textbf{Name}     & \textbf{\LaTeX{} Command}                   & \textbf{Inline}               & \textbf{Display Style}                      \\
         \midrule
-        Sine              & \lstinline|\sin{\left( x \right)}|    & \(\sin{\left( x \right)}\)    & \(\displaystyle \sin{\left( x \right)}\)    \\ % chktex 37
-        Inverse Sine      & \lstinline|\arcsin{\left( x \right)}| & \(\arcsin{\left( x \right)}\) & \(\displaystyle \arcsin{\left( x \right)}\) \\ % chktex 37
-        Logarithm         & \lstinline|\log{\left( x \right)}|    & \(\log{\left( x \right)}\)    & \(\displaystyle \log{\left( x \right)}\)    \\ % chktex 37
-        Natural Logarithm & \lstinline|\ln{\left( x \right)}|     & \(\ln{\left( x \right)}\)     & \(\displaystyle \ln{\left( x \right)}\)     \\ % chktex 37
-        Exponential       & \lstinline|\exp{\left( x \right)}|    & \(\exp{\left( x \right)}\)    & \(\displaystyle \exp{\left( x \right)}\)    \\ % chktex 37
+        Sine              & \mintinline{tex}|\sin{\left( x \right)}|    & \(\sin{\left( x \right)}\)    & \(\displaystyle \sin{\left( x \right)}\)    \\ % chktex 37
+        Inverse Sine      & \mintinline{tex}|\arcsin{\left( x \right)}| & \(\arcsin{\left( x \right)}\) & \(\displaystyle \arcsin{\left( x \right)}\) \\ % chktex 37
+        Logarithm         & \mintinline{tex}|\log{\left( x \right)}|    & \(\log{\left( x \right)}\)    & \(\displaystyle \log{\left( x \right)}\)    \\ % chktex 37
+        Natural Logarithm & \mintinline{tex}|\ln{\left( x \right)}|     & \(\ln{\left( x \right)}\)     & \(\displaystyle \ln{\left( x \right)}\)     \\ % chktex 37
+        Exponential       & \mintinline{tex}|\exp{\left( x \right)}|    & \(\exp{\left( x \right)}\)    & \(\displaystyle \exp{\left( x \right)}\)    \\ % chktex 37
         \bottomrule
     \end{tabular}
     \endgroup
     \caption{Common large operators in \LaTeX{}.} % \label{}
 \end{table}
 \subsection{Multi-line Equations}
-As \lstinline{equation} only allows single line equations, we can use other environments to group multiple equations into one environment.
+As \mintinline{tex}{equation} only allows single line equations, we can use other environments to group multiple equations into one environment.
 \subsubsection{Gather}
-The \lstinline{gather} environment allows us to display a set of consecutive equations with multiple lines.
-New lines are separated using \lstinline|\\|.
-\begin{lstlisting}
+The \mintinline{tex}{gather} environment allows us to display a set of consecutive equations with multiple lines.
+New lines are separated using \mintinline{tex}{\\}.
+\begin{minted}{tex}
 \begin{gather}
     \sum_{i = 0}^n f\left( i \right) = f\left( 0 \right) + f\left( 1 \right) + \cdots + f\left( n \right) \\
     \prod_{i = 0}^n f\left( i \right) = f\left( 0 \right) \times f\left( 1 \right) \times \cdots \times f\left( n \right)
 \end{gather}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{gather}
         \sum_{i = 0}^n f\left( i \right) = f\left( 0 \right) + f\left( 1 \right) + \cdots + f\left( n \right) \\
@@ -487,19 +477,19 @@ New lines are separated using \lstinline|\\|.
 \end{outputbox}
 \newpage
 \subsubsection{Align}
-The \lstinline{align} environment allows us to display consecutive equations that are also aligned. The alignment is determined by the placement of the \lstinline{&} character. This alignment character breaks the equation into ``columns'' that are either right or left aligned, following the pattern: \lstinline{rlrlrl}\dots.
-\begin{lstlisting}
+The \mintinline{tex}{align} environment allows us to display consecutive equations that are also aligned. The alignment is determined by the placement of the \mintinline{tex}{&} character. This alignment character breaks the equation into ``columns'' that are either right or left aligned, following the pattern: \mintinline{tex}{rlrlrl}\dots.
+\begin{minted}{tex}
 \begin{align}
 %   R &  L  & R & L & R & L &  R  & L
     R & = L & R & = & = & L & R = & L
 \end{align}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{align}
         R & = L & R & = & = & L & R = & L
     \end{align}
 \end{outputbox}
-This can be illustrated using a table where the ampersands (\lstinline{&}) are horizontally aligned with the pipes (\lstinline{|}).
+This can be illustrated using a table where the ampersands (\mintinline{tex}{&}) are horizontally aligned with the pipes (\mintinline{tex}{|}).
 \begin{table}[H]
     \centering
     \begin{tabular}{wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}} % chktex 44
@@ -529,13 +519,13 @@ With this in mind, we can create aligned equations as shown below.
 \end{align*}
 \pagebreak
 \subsection{Text Mode}
-If we want to write normal text in math mode, we need to use the \lstinline{\text} macro.
-\begin{lstlisting}
+If we want to write normal text in math mode, we need to use the \mintinline{tex}{\text} macro.
+\begin{minted}{tex}
 \begin{align*}
     \text{Text in text mode} \\
     Text in math mode
 \end{align*}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{align*}
         \text{Text in text mode} \\
@@ -544,14 +534,14 @@ If we want to write normal text in math mode, we need to use the \lstinline{\tex
 \end{outputbox}
 Notice that spaces are ignored in math mode.
 \subsection{Additional Environments \& Symbols}
-The \lstinline{amsmath} package also allows us to use many matrix environments using:
+The \mintinline{tex}{amsmath} package also allows us to use many matrix environments using:
 \begin{itemize}
-    \item \lstinline{matrix} for a matrix without any enclosing symbols
-    \item \lstinline{pmatrix} for parentheses
-    \item \lstinline{bmatrix} for brackets
-    \item \lstinline{Bmatrix} for braces
-    \item \lstinline{vmatrix} for pipes
-    \item \lstinline{Vmatrix} for double pipes
+    \item \mintinline{tex}{matrix} for a matrix without any enclosing symbols
+    \item \mintinline{tex}{pmatrix} for parentheses
+    \item \mintinline{tex}{bmatrix} for brackets
+    \item \mintinline{tex}{Bmatrix} for braces
+    \item \mintinline{tex}{vmatrix} for pipes
+    \item \mintinline{tex}{Vmatrix} for double pipes
 \end{itemize}
 \begin{outputbox}
 
@@ -614,16 +604,16 @@ Bringing all of these together can give pretty equations like:
 We generally use floats to allow \LaTeX{} to algorithmically place figures on a page, and
 move to the next page if it encounters a vertical overflow.
 
-The float environment for figures is \lstinline{figure} and \lstinline{table} for tables.
+The float environment for figures is \mintinline{tex}{figure} and \mintinline{tex}{table} for tables.
 Floats are containers for objects that cannot be displayed over multiple pages.
-They should always have a descriptive caption (\lstinline{\caption}) so that the reader does not have to rely on the contents, and also so that we can reference them using hyperlinks.
-\begin{lstlisting}
+They should always have a descriptive caption (\mintinline{tex}{\caption}) so that the reader does not have to rely on the contents, and also so that we can reference them using hyperlinks.
+\begin{minted}{tex}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{images/cat.jpg}
     \caption{This is a description of the figure.}\label{fig:cat}
 \end{figure}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{figure}[H]
         \centering
@@ -633,13 +623,13 @@ They should always have a descriptive caption (\lstinline{\caption}) so that the
 \end{outputbox}
 \pagebreak
 Providing a second dimension may skew the image:
-\begin{lstlisting}    
+\begin{minted}{tex}
 \begin{figure}[H]
     \centering
     \includegraphics[width=1cm, height=5cm]{images/cat.jpg}
     \caption{Skewed image of cat.}
 \end{figure}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{figure}[H]
         \centering
@@ -647,8 +637,8 @@ Providing a second dimension may skew the image:
         \caption{Skewed image of cat.}
     \end{figure}
 \end{outputbox}
-An example using the \lstinline{subfigure} environment.
-\begin{lstlisting}
+An example using the \mintinline{tex}{subfigure} environment.
+\begin{minted}{tex}
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.47\linewidth}
@@ -663,7 +653,7 @@ An example using the \lstinline{subfigure} environment.
     \end{subfigure}
     \caption{A description for both subfigures.}
 \end{figure}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{figure}[H]
         \centering
@@ -682,7 +672,7 @@ An example using the \lstinline{subfigure} environment.
 \end{outputbox}
 \pagebreak
 An example of a table:
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{table}[H]
     \centering
     \caption{Table descriptions precede the table.}\label{tab:table}
@@ -697,7 +687,7 @@ An example of a table:
         \bottomrule
     \end{tabular}
 \end{table}
-\end{lstlisting}
+\end{minted}
 \begin{table}[H]
     \centering
     \caption{Table descriptions precede the table.}\label{tab:table}
@@ -712,55 +702,56 @@ An example of a table:
         \bottomrule
     \end{tabular}
 \end{table}
-Note that we also use the \lstinline{\centering} macro to horizontally centre the contents of the floats.
+Note that we also use the \mintinline{tex}{\centering} macro to horizontally centre the contents of the floats.
 \subsection{List of Figures and Tables}
-A list of figures and tables can be printed with \lstinline{\listoffigures} and  \lstinline{\listoftables}.
+A list of figures and tables can be printed with \mintinline{tex}{\listoffigures} and  \mintinline{tex}{\listoftables}.
 These are similar to the table of contents.
 \subsection{Code}
-Source code can be displayed using the \lstinline{lstlisting} environment and in addition to the environment,
-code can also be displayed inline with the \lstinline{\lstinline} macro (this is how code has been formatted throughout this document).
-\begin{lstlisting}[escapeinside={@!}{!@}]
-\begin{lstlisting}[language=c++, keywordstyle=\color{blue}]
+Source code can be displayed using the \mintinline{tex}{minted} environment and in addition to the environment,
+code can also be displayed inline with the \mintinline{tex}{\mintinline{tex}} macro (this is how code has been formatted throughout this document).
+\begin{minted}[escapeinside=||]{tex}
+\begin{minted}{cpp}
 #include <iostream>
 
 int main() {
     std::cout << "Hello World!" << std::endl;
     return 0
 }
-\end@!!@{lstlisting}
-\end{lstlisting}
+\end||{minted}
+\end{minted}
 \begin{outputbox}
-    \begin{lstlisting}[language=c++,keywordstyle=\color{blue}]
+    \begin{minted}{cpp}
 #include <iostream>
 
 int main() {
     std::cout << "Hello World!" << std::endl;
     return 0;
 }
-\end{lstlisting}
+\end{minted}
 \end{outputbox}
 Example inline code:
-\begin{lstlisting}
-The \lstinline{System.Double} class is used for double precision floating-point values.
-\end{lstlisting}
+\begin{minted}{tex}
+The \mintinline{tex}{System.Double} class is used for double precision floating-point values.
+\end{minted}
 \begin{outputbox}
-    The \lstinline{System.Double} class is used for double precision floating-point values.
+    The \mintinline{tex}{System.Double} class is used for double precision floating-point values.
 \end{outputbox}
-If the inline code contains braces (\lstinline|{ }|), we need to delineate the argument using another symbol.
-\begin{lstlisting}
-We define the array: \lstinline|int[] array = { 1, 2, 3 }|.
-\end{lstlisting}
+If the inline code contains braces (\mintinline{tex}|{ }|), we need to delineate the argument using another symbol.
+\begin{minted}{tex}
+We define the array: \mintinline{tex}|int[] array = { 1, 2, 3 }|.
+\end{minted}
 \begin{outputbox}
-    We define the array: \lstinline|int[] array = { 1, 2, 3 }|.
+    We define the array: \mintinline{tex}|int[] array = { 1, 2, 3 }|.
 \end{outputbox}
-Here we can use the same symbol to delineate the arguments inside the macro. In this case, we use pipes (\lstinline{|}), but we can use any symbol apart from the percentage sign (\lstinline|%|), i.e., \lstinline|\lstinline%code%| will not compile.
+Here we can use the same symbol to delineate the arguments inside the macro. In this case, we use pipes (\mintinline{tex}{|}), but we can use any symbol apart from the percentage sign (\mintinline{tex}{%}), i.e.,
+\linebreak \mintinline{tex}{\mintinline{tex}%code%} will not compile.
 \subsection{References \& Labels}
 Throughout this document, many elements are numbered (e.g.\ equations, sections, figures, tables, etc.).
 
-These elements (and others) can be marked using the \lstinline{\label} macro. This marker can then be referenced anywhere in the document (even before it is defined) with the \lstinline{\ref} macro, and its page number can be obtained through the \lstinline{\pageref} macro.
+These elements (and others) can be marked using the \mintinline{tex}{\label} macro. This marker can then be referenced anywhere in the document (even before it is defined) with the \mintinline{tex}{\ref} macro, and its page number can be obtained through the \mintinline{tex}{\pageref} macro.
 
 The examples in Section~\ref{sec:figures_and_tables} contained many caption markers, and the following example will show how they are referenced.
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{itemize}
     \item Cat figure: Figure~\ref{fig:cat}
     \item Turtle subfigure: Figure~\ref{fig:turtle}
@@ -768,7 +759,7 @@ The examples in Section~\ref{sec:figures_and_tables} contained many caption mark
     \item Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
     \item Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}
 \end{itemize}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{itemize}
         \item Cat figure: Figure~\ref{fig:cat}
@@ -780,13 +771,13 @@ The examples in Section~\ref{sec:figures_and_tables} contained many caption mark
 \end{outputbox}
 If we were to add an additional label, \LaTeX{} will automatically renumber all existing references the next time we compile the document.
 \subsubsection{Hyperlinks}
-We recommend using the \lstinline{hyperref} package to convert references into hyperlinks for easy navigation on a PDF viewer.
+We recommend using the \mintinline{tex}{hyperref} package to convert references into hyperlinks for easy navigation on a PDF viewer.
 This package also allows us to add custom text for references such as:
-\begin{lstlisting}
+\begin{minted}{tex}
 See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}.
 
 View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}.
 
@@ -795,7 +786,7 @@ View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
 \newpage
 \section{Diagrams}
 If we wish to generate simple plots of functions, or complex diagrams, we can do so with \LaTeX{} itself.
-The \lstinline{tikz} library provides a multitude of packages for various kinds of diagrams.
+The \mintinline{tex}{tikz} library provides a multitude of packages for various kinds of diagrams.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 6.5cm]{figures/frequency_plot.pdf}
@@ -817,40 +808,40 @@ There are many ways to manage citations, bibliographies, and reference lists in 
 
 BibLaTeX is the frontend in \LaTeX{} that prints the bibliography and Biber is the backend that manages the database which contains all references.
 
-When importing the \lstinline{biblatex} package we must supply the reference style as follows:
-\begin{lstlisting}
+When importing the \mintinline{tex}{biblatex} package we must supply the reference style as follows:
+\begin{minted}{tex}
 \usepackage[style=APA]{biblatex}
-\end{lstlisting}
+\end{minted}
 This affects both the citations and bibliography.
 
 The references are stored in a Bibliographical Database file that uses the \directory{.bib} extension. A sample database file has been provided in the project directory.
 
 The database file is added with
-\begin{lstlisting}
-\addbibresource{path\to\database.bib}
-\end{lstlisting}
+\begin{minted}{tex}
+\addbibresource{path/to/database.bib}
+\end{minted}
 To cite the sources in this file, we can use the following macros:
-\begin{lstlisting}
+\begin{minted}{tex}
 \cite{reference_name}
 \parencite{reference_name}
-\end{lstlisting}
+\end{minted}
 For example:
-\begin{lstlisting}
-Source 1 ---~\parencite{colu92} 
+\begin{minted}{tex}
+Source 1 ---~\parencite{colu92}
 
 Source 2 ---~\cite{phil99}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     Source 1 ---~\parencite{colu92}
 
     Source 2 ---~\cite{phil99}
 \end{outputbox}
-The bibliography can be printed with the \lstinline{\printbibliography} macro, which will only print sources that are cited in the document.
+The bibliography can be printed with the \mintinline{tex}{\printbibliography} macro, which will only print sources that are cited in the document.
 \newpage
 \section{Miscellaneous}
 \subsection{Horizontal Spacing}
 The following macros control horizontal spacing:
-\begin{lstlisting}
+\begin{minted}{tex}
 \begin{align*}
     A & \!     B \\
     A &        B \\
@@ -861,7 +852,7 @@ The following macros control horizontal spacing:
     A & \quad  B \\
     A & \qquad B
 \end{align*}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \begin{align*}
         A & \!     B \\
@@ -875,20 +866,20 @@ The following macros control horizontal spacing:
     \end{align*}
 \end{outputbox}
 \subsection{Managing Large Documents}
-If we want to organise large \LaTeX{} project files, we can split our source code up into multiple files using the \lstinline{\input} macro. % chktex 27
+If we want to organise large \LaTeX{} project files, we can split our source code up into multiple files using the \mintinline{tex}{\input} macro. % chktex 27
 
 The following example requires the file: \directory{src/extras.tex}.
 If we place the following code in the document (right after this text), then we should see an additional section appear.
-\begin{lstlisting}
+\begin{minted}{tex}
 \input{src/extras.tex}
-\end{lstlisting}
+\end{minted}
 \begin{outputbox}
     \input{src/extras.tex}
 \end{outputbox}
 We can even reference the markers that were defined in this file:
-\begin{lstlisting}
-The polygamma function is summarised by Equation~\ref{eq:bonus}. 
-\end{lstlisting}
+\begin{minted}{tex}
+The polygamma function is summarised by Equation~\ref{eq:bonus}.
+\end{minted}
 \begin{outputbox}
     The polygamma function is summarised by Equation~\ref{eq:bonus}.
 \end{outputbox}
