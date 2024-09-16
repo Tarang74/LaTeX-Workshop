@@ -44,3 +44,6 @@
 
 # Pygmentize output
 Debug/_minted-main
+
+# LaTeXindent backups
+*.bak*

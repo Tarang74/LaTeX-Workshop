@@ -177,41 +177,60 @@
 % -------------------------------------
 
 \section{Introduction}
-``\LaTeX{} is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation. \LaTeX{} is the de facto standard for the communication and publication of scientific documents. \LaTeX{} is available as free software''. \parencite{latex_project_latex}
+``\LaTeX{} is a high-quality typesetting system; it includes features
+designed for the production of technical and scientific documentation.
+\LaTeX{} is the de facto standard for the communication and publication
+of scientific documents. \LaTeX{} is available as free software'' \parencite{latex_project_latex}.
 
-One of the key differences between \LaTeX{} and more common word processors such as MS Word, LibreOffice etc., is the separation of content and presentation. In \LaTeX{}, the author describes the general structure of the document (i.e., section headings, paragraphs, equations, and figures), and the layout and typesetting are handled by \LaTeX{} (or rather the underlying \TeX{} backend).
+One of the key differences between \LaTeX{} and more common word
+processors such as MS Word, LibreOffice etc., is the separation of
+content and presentation. In \LaTeX{}, the author describes the general
+structure of the document (i.e., section headings, paragraphs,
+equations, and figures), and the layout and typesetting are handled by
+\LaTeX{} (or rather the underlying \TeX{} backend).
 
 There are several advantages to this:
 \begin{itemize}
-    \item The author can focus on the actual content without worrying about layout and presentation
-    \item The presentation can be modified without introducing major changes to the document
-    \item \LaTeX{}'s standard format allows authors to easily conform to styles provided by external publishers
+    \item The author can focus on the actual content without worrying
+          about layout and presentation
+    \item The presentation can be modified without introducing major
+          changes to the document
+    \item \LaTeX{}'s standard format allows authors to easily conform to
+          styles provided by external publishers
 \end{itemize}
-\LaTeX{} is written in plaintext and processed by an external program to generate output files (usually PDFs).
+\LaTeX{} is written in plaintext and processed by an external program to
+generate output files (usually PDFs).
 \subsection{Pronunciation and Spelling}
-\LaTeX{} is pronounced \emph{lah-tech} or \emph{lay-tech}, but \TeX{} is never pronounced \emph{tecks}. It is typeset using the \mintinline{tex}{\LaTeX{}} macro or with the capitalisation ``LaTeX''.
+\LaTeX{} is pronounced \emph{lah-tech} or \emph{lay-tech}, but \TeX{} is
+never pronounced \emph{tecks}. It is typeset using the
+\mintinline{tex}{\LaTeX{}} macro or with the capitalisation ``LaTeX''.
 \subsection{Language Structures}
-There are two major language structures that we encounter when using \LaTeX{}; \textit{macros} and \textit{environments}.
+There are two major language structures that we encounter when using
+\LaTeX{}; \textit{macros} and \textit{environments}.
 \subsubsection{Macros}
-Macros (or commands) tell \LaTeX{} how to do things. They use the following syntax
+Macros (or commands) tell \LaTeX{} how to do things. They use the
+following syntax
 \begin{minted}{tex}
 \commandname
 % or
 \commandname[optional args]{required args}
 \end{minted}
-Macros provide functionality for layouts, symbols, styles, etc. As shown below, common font styles can be invoked using macros.
+Macros provide functionality for layouts, symbols, styles, etc. As
+shown below, common font styles can be invoked using macros.
 \begin{description}
     \item[Bold face] \mintinline{tex}|\textbf{Text}| --- \textbf{Text}
     \item[Italics] \mintinline{tex}|\textit{Text}| --- \textit{Text}
-    \item[Emphasis] \mintinline{tex}|\emph{Text}| --- \emph{Text} (either upright or italics depending on surrounding text)
-    \item[Underline] \mintinline{tex}|\underline{Text}| --- \underline{Text}
+    \item[Emphasis] \mintinline{tex}|\emph{Text}| --- \emph{Text}
+          (either upright or italics depending on surrounding text)
+    \item[Underline] \mintinline{tex}|\underline{Text}| ---
+          \underline{Text}
 \end{description}
 We can also define custom macros that combine other macros or simplify repetitive instructions.
 \begin{minted}{tex}
 \newcommand{\commandname}[number_of_arguments]{command_body}
 \end{minted}
-Arguments can be referenced inside the command body with the \mintinline{tex}{#argument_number} syntax.
-For example
+Arguments can be referenced inside the command body with the
+\mintinline{tex}{#argument_number} syntax. For example
 \begin{minted}{tex}
 \newcommand{\boldanditalics}[1]{\textbf{\textit{#1}}}
 \boldanditalics{Bold and italics text}
@@ -221,38 +240,48 @@ For example
     \boldanditalics{Bold and italics text}
 \end{outputbox}
 \subsubsection{Environments}
-Environments are used to format large blocks of text which often contain many lines or multiple macros. Environments use opening \mintinline{tex}{\begin} and closing \mintinline{tex}{\end} tags so that everything inside those tags will be formatted in a special manner depending on the type of the environment.
+Environments are used to format large blocks of text which often
+contain many lines or multiple macros. Environments use opening
+\mintinline{tex}{\begin} and closing \mintinline{tex}{\end} tags so % chktex 14
+that everything inside those tags will be formatted in a special manner
+depending on the type of the environment.
 \begin{minted}{tex}
 \begin{environment_name}[optional_arguments]{required_arguments}
     ...
 \end{environment_name}
 \end{minted}
-Common environments include \mintinline{tex}{figure}, \mintinline{tex}{equation}, \mintinline{tex}{itemize} (these will be discussed later), etc.
-\newpage
+Common environments include \mintinline{tex}{figure},
+\mintinline{tex}{equation}, \mintinline{tex}{itemize} (these will be
+discussed later), etc.\ \newpage
 \section{Basic Structure}
 \subsection{Sections}
-Sections are used to divide the document into parts. A new section is started with the \mintinline{tex}{\section} macro. Section titles are formatted to be bold and larger than regular text. The number preceding the title is automatically determined.
+Sections are used to divide the document into parts. A new section is
+started with the \mintinline{tex}{\section} macro. Section titles are
+formatted to be bold and larger than regular text. The number preceding
+the title is automatically determined.
 
-The table of contents (\mintinline{tex}{\tableofcontents}) is also generated from these section macros, so that page numbers and section numbers are set automatically.
+The table of contents (\mintinline{tex}{\tableofcontents}) is also
+generated from these section macros, so that page numbers and section
+numbers are set automatically.
 \subsection{Subsections}
 We can split sections into smaller subsections \mintinline{tex}|\subsection{Subsections}|,
 \subsubsection{Subsubsections}
 and also subsubsections \mintinline{tex}|\subsubsection{Subsubsections}|.
 \subsection*{Unnumbered sections}
 \addcontentsline{toc}{subsection}{Unumbered sections}
-We can remove section numbering by using the starred version of the section macro
-e.g. \linebreak \mintinline{tex}|\subsection*{Unnumbered sections}|.
-
-As this also removes the section from the table of contents, we can manually add it using
+We can remove section numbering by using the starred version of the
+section macro i.e., \linebreak \mintinline{tex}|\subsection*{Unnumbered sections}|.
+As this also removes the section from the table of contents, we can
+manually add it using
 \begin{minted}{tex}
 \addcontentsline{toc}{subsection}{Unumbered sections}
 \end{minted}
-remembering to place this immediately after the section macro so that the reference is set to the
-correct location.
+remembering to place this immediately after the section macro so that
+the reference is set to the correct location.
 \subsection{Lists}
-Unordered (bullet) lists are produced by the \mintinline{tex}{itemize} environment,
-where each list entry starts by using the \mintinline{tex}{\item} macro, which
-also generates the bullet symbol.
+Unordered (bullet) lists are produced by the \mintinline{tex}{itemize}
+environment, where each list entry starts by using the
+\mintinline{tex}{\item} macro, which also generates the bullet symbol.
 \begin{minted}{tex}
 \begin{itemize}
     \item List entries ...
@@ -270,20 +299,28 @@ also generates the bullet symbol.
 \end{minted}
 \begin{outputbox}
     \begin{itemize}
-        \item List entries start with the \mintinline{tex}{\item} macro and are indicated by the black dot
+        \item List entries start with the \mintinline{tex}{\item} macro
+              and are indicated by the black dot
         \item We can create multiple entries
               \begin{itemize}
-                  \item We can nest lists by creating another \mintinline{tex}{itemize} environment
+                  \item We can nest lists by creating another
+                        \mintinline{tex}{itemize} environment
                         \begin{itemize}
-                            \item The marker changes in each nested list to reflect the depth
+                            \item The marker changes in each nested
+                                  list to reflect the depth
                                   \begin{itemize}
-                                      \item List markers, spacing, and other behaviour can be customised with the \linebreak \mintinline{tex}{enumitem} package
+                                      \item List markers, spacing, and
+                                            other behaviour can be
+                                            customised with the
+                                            \mintinline{tex}{enumitem}
+                                            package
                                   \end{itemize}
                         \end{itemize}
               \end{itemize}
     \end{itemize}
 \end{outputbox}
-Numbered (ordered) lists use the same syntax as unordered lists but use the \mintinline{tex}{enumerate} environment.
+Numbered (ordered) lists use the same syntax as unordered lists but use
+the \mintinline{tex}{enumerate} environment.
 \begin{minted}{tex}
 \begin{enumerate}
     \item List entries ...
@@ -303,19 +340,21 @@ Numbered (ordered) lists use the same syntax as unordered lists but use the \min
               \begin{enumerate}
                   \item But use a different number format
                         \begin{enumerate}
-                            \item Such as lowercase letters and roman numerals
+                            \item Such as lowercase letters and roman
+                                  numerals
                         \end{enumerate}
               \end{enumerate}
     \end{enumerate}
 \end{outputbox}
-We can change the top-level number format by specifying a value to the \mintinline{tex}{label}
-parameter.
+We can change the top-level number format by specifying a value to the
+\mintinline{tex}{label} parameter.
 \begin{minted}{tex}
 \begin{enumerate}[label=label_specifier]
     \item ...
 \end{enumerate}
 \end{minted}
-The following label specifiers can be used to override the default numbering format:
+The following label specifiers can be used to override the default
+numbering format:
 \begin{enumerate}[label=\arabic*.]
     \item --- \mintinline{tex}{[label=\arabic*.]} (Default)
 \end{enumerate}
@@ -334,9 +373,11 @@ The following label specifiers can be used to override the default numbering for
 \newpage
 \section{Mathematics}
 One of \LaTeX{}'s strengths is how it formats mathematical expressions.
-There are two ways to format mathematical expressions; inline using \mintinline{tex}{\( \)} and display style using \mintinline{tex}{\[ \]}.
+There are two ways to format mathematical expressions; inline using
+\mintinline{tex}{\( \)} and display style using \mintinline{tex}{\[ \]}.
 
-Mathematical expressions can be contained ``inline'' (within) text and require less space:
+Mathematical expressions can be contained ``inline'' (within) text and
+require less space:
 \begin{minted}{tex}
 Let \(\mathbb{N}\) denote the set of all natural numbers.
 \end{minted}
@@ -477,10 +518,13 @@ Here are a few suggestions
     \caption{Common large operators in \LaTeX{}.} % \label{}
 \end{table}
 \subsection{Multi-line Equations}
-As \mintinline{tex}{equation} only allows single line equations, we can use other environments to group multiple equations into one environment.
+As \mintinline{tex}{equation} only allows single line equations, we can
+use other environments to group multiple equations into one
+environment.
 \subsubsection{Gather}
-The \mintinline{tex}{gather} environment allows us to display a set of consecutive equations with multiple lines.
-New lines are separated using \mintinline{tex}{\\}.
+The \mintinline{tex}{gather} environment allows us to display a set of
+consecutive equations with multiple lines. New lines are separated
+using \mintinline{tex}{\\}.
 \begin{minted}{tex}
 \begin{gather}
     \sum_{i = 0}^n f\left( i \right) = f\left( 0 \right) + f\left( 1 \right) + \cdots + f\left( n \right) \\
@@ -495,7 +539,12 @@ New lines are separated using \mintinline{tex}{\\}.
 \end{outputbox}
 \newpage
 \subsubsection{Align}
-The \mintinline{tex}{align} environment allows us to display consecutive equations that are also aligned. The alignment is determined by the placement of the \mintinline{tex}{&} character. This alignment character breaks the equation into ``columns'' that are either right or left aligned, following the pattern: \mintinline{tex}{rlrlrl}\dots.
+The \mintinline{tex}{align} environment allows us to display
+consecutive equations that are also aligned. The alignment is
+determined by the placement of the \mintinline{tex}{&} character. This
+alignment character breaks the equation into ``columns'' that are
+either right or left aligned, following the pattern:
+\mintinline{tex}{rlrlrl}\dots.
 \begin{minted}{tex}
 \begin{align}
 %   R &  L  & R & L & R & L &  R  & L
@@ -510,11 +559,13 @@ The \mintinline{tex}{align} environment allows us to display consecutive equatio
 This can be illustrated using a table where the ampersands (\mintinline{tex}{&}) are horizontally aligned with the pipes (\mintinline{tex}{|}).
 \begin{table}[H]
     \centering
-    \begin{tabular}{wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}} % chktex 44
+    \begin{tabular}
+        {wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}@{\makebox[\widthof{\&}][c]{{\color{blue}|}}}wc{4.2em}} % chktex 44
         Right & Left & Right & Left & Right & Left & Right & Left \\
         \midrule
     \end{tabular}
-    \begin{tabular}{wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}}
+    \begin{tabular}
+        {wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}@{{\color{blue}\&}}wr{4.2em}@{{\color{blue}\&}}wl{4.2em}}
         \(R\) & \(= L\) & \(R\) & \(=\) & \(=\) & \(L\) & \(R =\) & \(L\) \\
     \end{tabular}
     % \caption{} % \label{}
@@ -537,7 +588,8 @@ With this in mind, we can create aligned equations as shown below.
 \end{align*}
 \pagebreak
 \subsection{Text Mode}
-If we want to write normal text in math mode, we need to use the \mintinline{tex}{\text} macro.
+If we want to write normal text in math mode, we need to use the
+\mintinline{tex}{\text} macro.
 \begin{minted}{tex}
 \begin{align*}
     \text{Text in text mode} \\
@@ -552,7 +604,8 @@ If we want to write normal text in math mode, we need to use the \mintinline{tex
 \end{outputbox}
 Notice that spaces are ignored in math mode.
 \subsection{Additional Environments \& Symbols}
-The \mintinline{tex}{amsmath} package also allows us to use many matrix environments using:
+The \mintinline{tex}{amsmath} package also allows us to use many matrix
+environments using:
 \begin{itemize}
     \item \mintinline{tex}{matrix} for a matrix without any enclosing symbols
     \item \mintinline{tex}{pmatrix} for parentheses
@@ -612,7 +665,8 @@ Bringing all of these together can give pretty equations like:
 \begin{equation*}
     \ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}
 \end{equation*}
-\begin{equation}\label{eq:schrodingers_equation}
+\begin{equation}
+    \label{eq:schrodingers_equation}
     i \hbar \pdv*{\Psi\left( x,\: t \right)}{t} = -\frac{\hbar^2}{2m} \pdv[order=2]{}{x} \Psi\left( x,\: t \right) + V\left( x,\: t \right) \Psi\left( x,\: t \right)
 \end{equation}
 \newpage
@@ -622,9 +676,12 @@ Bringing all of these together can give pretty equations like:
 We generally use floats to allow \LaTeX{} to algorithmically place figures on a page, and
 move to the next page if it encounters a vertical overflow.
 
-The float environment for figures is \mintinline{tex}{figure} and \mintinline{tex}{table} for tables.
-Floats are containers for objects that cannot be displayed over multiple pages.
-They should always have a descriptive caption (\mintinline{tex}{\caption}) so that the reader does not have to rely on the contents, and also so that we can reference them using hyperlinks.
+The float environment for figures is \mintinline{tex}{figure} and
+\mintinline{tex}{table} for tables. Floats are containers for objects
+that cannot be displayed over multiple pages. They should always have a
+descriptive caption (\mintinline{tex}{\caption}) so that the reader
+does not have to rely on the contents, and also so that we can
+reference them using hyperlinks.
 \begin{minted}{tex}
 \begin{figure}[H]
     \centering
@@ -722,11 +779,14 @@ An example of a table:
 \end{table}
 Note that we also use the \mintinline{tex}{\centering} macro to horizontally centre the contents of the floats.
 \subsection{List of Figures and Tables}
-A list of figures and tables can be printed with \mintinline{tex}{\listoffigures} and  \mintinline{tex}{\listoftables}.
+A list of figures and tables can be printed with
+\mintinline{tex}{\listoffigures} and \mintinline{tex}{\listoftables}.
 These are similar to the table of contents.
 \subsection{Code}
-Source code can be displayed using the \mintinline{tex}{minted} environment and in addition to the environment,
-code can also be displayed inline with the \mintinline{tex}{\mintinline{tex}} macro (this is how code has been formatted throughout this document).
+Source code can be displayed using the \mintinline{tex}{minted}
+environment and in addition to the environment, code can also be
+displayed inline with the \mintinline{tex}{\mintinline{tex}} macro
+(this is how code has been formatted throughout this document).
 \begin{minted}[escapeinside=||]{tex}
 \begin{minted}{cpp}
 #include <iostream>
@@ -761,14 +821,23 @@ We define the array: \mintinline{tex}|int[] array = { 1, 2, 3 }|.
 \begin{outputbox}
     We define the array: \mintinline{tex}|int[] array = { 1, 2, 3 }|.
 \end{outputbox}
-Here we can use the same symbol to delineate the arguments inside the macro. In this case, \linebreak we use pipes (\mintinline{tex}{|}), but we can use any symbol apart from the percentage sign (\mintinline{tex}{%}), i.e.,
-\linebreak \mintinline{tex}{\mintinline{tex}%code%} will not compile.
+Here we can use the same symbol to delineate the arguments inside the
+macro. In this case we use pipes (\mintinline{tex}{|}), but we can use
+any symbol apart from the percentage sign (\%), i.e., \linebreak
+\mintinline{tex}|\mintinline{tex}%code%| will not compile.
 \subsection{References \& Labels}
-Throughout this document, many elements are numbered (e.g.\ equations, sections, figures, tables, etc.).
+Throughout this document, many elements are numbered (e.g.\ equations,
+sections, figures, tables, etc.).
 
-These elements (and others) can be marked using the \mintinline{tex}{\label} macro. This marker can then be referenced anywhere in the document (even before it is defined) with the \mintinline{tex}{\ref} macro, and its page number can be obtained through the \mintinline{tex}{\pageref} macro.
+These elements (and others) can be marked using the
+\mintinline{tex}{\label} macro. This marker can then be referenced
+anywhere in the document (even before it is defined) with the
+\mintinline{tex}{\ref} macro, and its page number can be obtained
+through the \mintinline{tex}{\pageref} macro.
 
-The examples in Section~\ref{sec:figures_and_tables} contained many caption markers, and the following example will show how they are referenced.
+The examples in Section~\ref{sec:figures_and_tables} contained many
+caption markers, and the following example will show how they are
+referenced.
 \begin{minted}{tex}
 \begin{itemize}
     \item Cat figure: Figure~\ref{fig:cat}
@@ -783,14 +852,18 @@ The examples in Section~\ref{sec:figures_and_tables} contained many caption mark
         \item Cat figure: Figure~\ref{fig:cat}
         \item Turtle subfigure: Figure~\ref{fig:turtle}
         \item Example table: Table~\ref{tab:table}
-        \item Schrödinger's equation: Equation~\ref{eq:schrodingers_equation}
-        \item Figures \& Tables subsection: Section~\ref{sec:figures_and_tables} on Page~\pageref{sec:figures_and_tables}
+        \item Schrödinger's equation:
+              Equation~\ref{eq:schrodingers_equation}
+        \item Figures \& Tables subsection:
+              Section~\ref{sec:figures_and_tables} on
+              Page~\pageref{sec:figures_and_tables}
     \end{itemize}
 \end{outputbox}
 If we were to add an additional label, \LaTeX{} will automatically renumber all existing references the next time we compile the document.
 \subsubsection{Hyperlinks}
-We recommend using the \mintinline{tex}{hyperref} package to convert references into hyperlinks for easy navigation on a PDF viewer.
-This package also allows us to add custom text for references such as:
+We recommend using the \mintinline{tex}{hyperref} package to convert
+references into hyperlinks for easy navigation on a PDF viewer. This
+package also allows us to add custom text for references such as:
 \begin{minted}{tex}
 See the \LaTeX{} Project \href{https://www.latex-project.org/}{here}.
 
@@ -803,8 +876,9 @@ View \hyperref[eq:schrodingers_equation]{Schrödinger's Equation}.
 \end{outputbox}
 \newpage
 \section{Diagrams}
-If we wish to generate simple plots of functions, or complex diagrams, we can do so with \LaTeX{} itself.
-The \mintinline{tex}{tikz} library provides a multitude of packages for various kinds of diagrams.
+If we wish to generate simple plots of functions, or complex diagrams,
+we can do so with \LaTeX{} itself. The \mintinline{tex}{tikz} library
+provides a multitude of packages for various kinds of diagrams.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 6.5cm]{figures/frequency_plot.pdf}
@@ -822,17 +896,24 @@ The \mintinline{tex}{tikz} library provides a multitude of packages for various 
 \end{figure}
 \newpage
 \section{Citations, Bibliographies \& Reference Lists}
-There are many ways to manage citations, bibliographies, and reference lists in \LaTeX{}. This document will introduce a method that combines BibLaTeX with Biber.
+There are many ways to manage citations, bibliographies, and reference
+lists in \LaTeX{}. This document will introduce a method that combines
+BibLaTeX with Biber.
 
-BibLaTeX is the frontend in \LaTeX{} that prints the bibliography and Biber is the backend that manages the database which contains all references.
+BibLaTeX is the frontend in \LaTeX{} that prints the bibliography and
+Biber is the backend that manages the database which contains all
+references.
 
-When importing the \mintinline{tex}{biblatex} package we must supply the reference style as follows:
+When importing the \mintinline{tex}{biblatex} package we must supply
+the reference style as follows:
 \begin{minted}{tex}
 \usepackage[style=APA]{biblatex}
 \end{minted}
 This affects both the citations and bibliography.
 
-The references are stored in a Bibliographical Database file that uses the \directory{.bib} extension. A sample database file has been provided in the project directory.
+The references are stored in a Bibliographical Database file that uses
+the \directory{.bib} extension. A sample database file has been
+provided in the project directory.
 
 The database file is added with
 \begin{minted}{tex}
@@ -884,10 +965,13 @@ The following macros control horizontal spacing:
     \end{align*}
 \end{outputbox}
 \subsection{Managing Large Documents}
-If we want to organise large \LaTeX{} project files, we can split our source code up into multiple files using the \mintinline{tex}{\input} macro. % chktex 27
+If we want to organise large \LaTeX{} project files, we can split our
+source code up into multiple files using the \mintinline{tex}{\input}
+macro.% chktex 27
 
-The following example requires the file: \directory{src/extras.tex}.
-If we place the following code in the document (right after this text), then we should see an additional section appear.
+The following example requires the file: \directory{src/extras.tex}. If
+we place the following code in the document (right after this text),
+then we should see an additional section appear.
 \begin{minted}{tex}
 \input{src/extras.tex}
 \end{minted}
